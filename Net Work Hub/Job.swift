@@ -1,5 +1,5 @@
 //
-//  Item.swift
+//  Job.swift
 //  Net Work Hub
 //
 //  Created by Isaac Vanmeter on 11/9/23.
@@ -8,8 +8,7 @@
 import Foundation
 import SwiftData
 
-@Model
-final class Job {
+class Job: Identifiable {
     var rid: Int
     var userId: Int
     var engineerId: Int
@@ -19,11 +18,11 @@ final class Job {
     var category: String
     var targetCost: Double
     var targetCompletion: Date
-    var actualCost: Date
+    var actualCost: Double
     var actualCompletion: Date
     var createDate: Date
     
-    init(rid: Int, userId: Int, engineerId: Int, title: String, status: String, categoryId: Int, category: String, targetCost: Double, targetCompletion: Date, actualCost: Date, actualCompletion: Date, createDate: Date) {
+    init(rid: Int, userId: Int, engineerId: Int, title: String, status: String, categoryId: Int, category: String, targetCost: Double, targetCompletion: Date, actualCost: Double, actualCompletion: Date, createDate: Date) {
         self.rid = rid
         self.userId = userId
         self.engineerId = engineerId

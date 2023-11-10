@@ -9,18 +9,24 @@
 /* Begin PBXBuildFile section */
 		113FA0912AFD99E700403AFC /* Net_Work_HubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113FA0902AFD99E700403AFC /* Net_Work_HubApp.swift */; };
 		113FA0932AFD99E700403AFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113FA0922AFD99E700403AFC /* ContentView.swift */; };
-		113FA0952AFD99E700403AFC /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113FA0942AFD99E700403AFC /* Item.swift */; };
+		113FA0952AFD99E700403AFC /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113FA0942AFD99E700403AFC /* Job.swift */; };
 		113FA0972AFD99E800403AFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 113FA0962AFD99E800403AFC /* Assets.xcassets */; };
 		113FA09A2AFD99E800403AFC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 113FA0992AFD99E800403AFC /* Preview Assets.xcassets */; };
+		113FA0A12AFD9BFD00403AFC /* JobRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113FA0A02AFD9BFD00403AFC /* JobRowView.swift */; };
+		113FA0A32AFDA31800403AFC /* DashboardView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113FA0A22AFDA31800403AFC /* DashboardView+ViewModel.swift */; };
+		113FA0A52AFDAB1000403AFC /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113FA0A42AFDAB1000403AFC /* DashboardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		113FA08D2AFD99E700403AFC /* Net Work Hub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Net Work Hub.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		113FA0902AFD99E700403AFC /* Net_Work_HubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Net_Work_HubApp.swift; sourceTree = "<group>"; };
 		113FA0922AFD99E700403AFC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		113FA0942AFD99E700403AFC /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		113FA0942AFD99E700403AFC /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		113FA0962AFD99E800403AFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		113FA0992AFD99E800403AFC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		113FA0A02AFD9BFD00403AFC /* JobRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobRowView.swift; sourceTree = "<group>"; };
+		113FA0A22AFDA31800403AFC /* DashboardView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DashboardView+ViewModel.swift"; sourceTree = "<group>"; };
+		113FA0A42AFDAB1000403AFC /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,11 +59,13 @@
 		113FA08F2AFD99E700403AFC /* Net Work Hub */ = {
 			isa = PBXGroup;
 			children = (
+				113FA0A62AFDAB2200403AFC /* Dashboard */,
 				113FA0902AFD99E700403AFC /* Net_Work_HubApp.swift */,
 				113FA0922AFD99E700403AFC /* ContentView.swift */,
-				113FA0942AFD99E700403AFC /* Item.swift */,
+				113FA0942AFD99E700403AFC /* Job.swift */,
 				113FA0962AFD99E800403AFC /* Assets.xcassets */,
 				113FA0982AFD99E800403AFC /* Preview Content */,
+				113FA0A02AFD9BFD00403AFC /* JobRowView.swift */,
 			);
 			path = "Net Work Hub";
 			sourceTree = "<group>";
@@ -68,6 +76,15 @@
 				113FA0992AFD99E800403AFC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		113FA0A62AFDAB2200403AFC /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				113FA0A42AFDAB1000403AFC /* DashboardView.swift */,
+				113FA0A22AFDA31800403AFC /* DashboardView+ViewModel.swift */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,7 +158,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				113FA0932AFD99E700403AFC /* ContentView.swift in Sources */,
-				113FA0952AFD99E700403AFC /* Item.swift in Sources */,
+				113FA0A52AFDAB1000403AFC /* DashboardView.swift in Sources */,
+				113FA0A12AFD9BFD00403AFC /* JobRowView.swift in Sources */,
+				113FA0A32AFDA31800403AFC /* DashboardView+ViewModel.swift in Sources */,
+				113FA0952AFD99E700403AFC /* Job.swift in Sources */,
 				113FA0912AFD99E700403AFC /* Net_Work_HubApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
