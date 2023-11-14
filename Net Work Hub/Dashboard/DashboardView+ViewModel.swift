@@ -9,6 +9,8 @@ import Foundation
 
 extension DashboardView {
     class ViewModel: ObservableObject {
+        @Published var user = User()
+        @Published var jobs = [Job]()
         @Published var showAddJob = false
         @Published var showUserProfile = false
         

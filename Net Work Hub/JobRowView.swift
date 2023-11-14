@@ -16,8 +16,8 @@ struct JobRowView: View {
                 .foregroundStyle(getIconColor())
             
             VStack(alignment: .leading) {
-                Text(job.title)
-                Text(job.status.capitalized)
+                Text(job.title ?? "")
+                Text((job.status ?? "").capitalized)
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }
@@ -25,7 +25,7 @@ struct JobRowView: View {
     }
     
     func getIcon() -> Image {
-        switch(job.status.lowercased()) {
+        switch((job.status ?? "").lowercased()) {
         case "complete":
             return Image(systemName: "checkmark.circle.fill")
         case "taking bids":
@@ -40,7 +40,7 @@ struct JobRowView: View {
     }
     
     func getIconColor() -> Color {
-        switch(job.status.lowercased()) {
+        switch((job.status ?? "").lowercased()) {
         case "complete":
             return .green
         case "taking bids":

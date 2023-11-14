@@ -15,6 +15,11 @@
 		113FA0A12AFD9BFD00403AFC /* JobRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113FA0A02AFD9BFD00403AFC /* JobRowView.swift */; };
 		113FA0A32AFDA31800403AFC /* DashboardView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113FA0A22AFDA31800403AFC /* DashboardView+ViewModel.swift */; };
 		113FA0A52AFDAB1000403AFC /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113FA0A42AFDAB1000403AFC /* DashboardView.swift */; };
+		113FA0AF2B040EF100403AFC /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113FA0AE2B040EF100403AFC /* PrimaryButton.swift */; };
+		113FA0B22B0410BD00403AFC /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113FA0B12B0410BD00403AFC /* UserProfileView.swift */; };
+		113FA0B42B0410CD00403AFC /* UserProfileView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113FA0B32B0410CD00403AFC /* UserProfileView+ViewModel.swift */; };
+		113FA0B62B04115300403AFC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113FA0B52B04115300403AFC /* User.swift */; };
+		113FA0B82B041C6B00403AFC /* JobList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113FA0B72B041C6B00403AFC /* JobList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +32,11 @@
 		113FA0A02AFD9BFD00403AFC /* JobRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobRowView.swift; sourceTree = "<group>"; };
 		113FA0A22AFDA31800403AFC /* DashboardView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DashboardView+ViewModel.swift"; sourceTree = "<group>"; };
 		113FA0A42AFDAB1000403AFC /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		113FA0AE2B040EF100403AFC /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		113FA0B12B0410BD00403AFC /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		113FA0B32B0410CD00403AFC /* UserProfileView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserProfileView+ViewModel.swift"; sourceTree = "<group>"; };
+		113FA0B52B04115300403AFC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		113FA0B72B041C6B00403AFC /* JobList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +69,12 @@
 		113FA08F2AFD99E700403AFC /* Net Work Hub */ = {
 			isa = PBXGroup;
 			children = (
+				113FA0B02B0410AC00403AFC /* User Profile */,
+				113FA0AD2B040EE300403AFC /* Assets */,
+				113FA0AC2B040EE000403AFC /* Models */,
 				113FA0A62AFDAB2200403AFC /* Dashboard */,
 				113FA0902AFD99E700403AFC /* Net_Work_HubApp.swift */,
 				113FA0922AFD99E700403AFC /* ContentView.swift */,
-				113FA0942AFD99E700403AFC /* Job.swift */,
 				113FA0962AFD99E800403AFC /* Assets.xcassets */,
 				113FA0982AFD99E800403AFC /* Preview Content */,
 				113FA0A02AFD9BFD00403AFC /* JobRowView.swift */,
@@ -83,8 +95,35 @@
 			children = (
 				113FA0A42AFDAB1000403AFC /* DashboardView.swift */,
 				113FA0A22AFDA31800403AFC /* DashboardView+ViewModel.swift */,
+				113FA0B72B041C6B00403AFC /* JobList.swift */,
 			);
 			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		113FA0AC2B040EE000403AFC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				113FA0942AFD99E700403AFC /* Job.swift */,
+				113FA0B52B04115300403AFC /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		113FA0AD2B040EE300403AFC /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				113FA0AE2B040EF100403AFC /* PrimaryButton.swift */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		113FA0B02B0410AC00403AFC /* User Profile */ = {
+			isa = PBXGroup;
+			children = (
+				113FA0B12B0410BD00403AFC /* UserProfileView.swift */,
+				113FA0B32B0410CD00403AFC /* UserProfileView+ViewModel.swift */,
+			);
+			path = "User Profile";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,11 +196,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				113FA0B42B0410CD00403AFC /* UserProfileView+ViewModel.swift in Sources */,
 				113FA0932AFD99E700403AFC /* ContentView.swift in Sources */,
 				113FA0A52AFDAB1000403AFC /* DashboardView.swift in Sources */,
+				113FA0B82B041C6B00403AFC /* JobList.swift in Sources */,
 				113FA0A12AFD9BFD00403AFC /* JobRowView.swift in Sources */,
+				113FA0B22B0410BD00403AFC /* UserProfileView.swift in Sources */,
 				113FA0A32AFDA31800403AFC /* DashboardView+ViewModel.swift in Sources */,
+				113FA0AF2B040EF100403AFC /* PrimaryButton.swift in Sources */,
 				113FA0952AFD99E700403AFC /* Job.swift in Sources */,
+				113FA0B62B04115300403AFC /* User.swift in Sources */,
 				113FA0912AFD99E700403AFC /* Net_Work_HubApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

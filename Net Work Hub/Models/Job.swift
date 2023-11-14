@@ -7,10 +7,6 @@
 
 import Foundation
 
-extension Job: Identifiable {
-    var id: String { return jobId }
-}
-
 struct Job: Codable {
     var jobId: String
     var userId: String?

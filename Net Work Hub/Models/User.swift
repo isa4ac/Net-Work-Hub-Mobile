@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+struct User: Codable {
+    var id: String?
+    var timeZone: String?
+    var email: String?
+    var preferredName: String?
+    var firstName: String?
+    var lastName: String?
+    var businessName: String?
+    var profileDescription: String?
+}

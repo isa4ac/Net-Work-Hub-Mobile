@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+extension UserProfileView {
+    class ViewModel: ObservableObject {
+        
+    }
+}
