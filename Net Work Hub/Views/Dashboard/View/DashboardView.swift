@@ -14,17 +14,14 @@ struct DashboardView: View {
             jobList
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        viewModel.showUserProfile.toggle()
+                    NavigationLink {
+                        UserProfileView()
                     } label: {
                         Label("Your Profile", systemImage: "person.circle.fill")
                     }
                 }
             }
-            .navigationTitle("Hello " + (viewModel.user.firstName ?? ""))
-        }
-        .fullScreenCover(isPresented: $viewModel.showUserProfile) {
-            UserProfileView()
+            .navigationTitle("Dashboard")
         }
     }
 }

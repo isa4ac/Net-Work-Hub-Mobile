@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11048CF32B0C33B10069A8C6 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11048CF22B0C33B10069A8C6 /* Binding.swift */; };
+		11048CFC2B0C3C1F0069A8C6 /* AddJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11048CFB2B0C3C1F0069A8C6 /* AddJobView.swift */; };
+		11048D012B0C3C5B0069A8C6 /* AddJobView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11048D002B0C3C5B0069A8C6 /* AddJobView+ViewModel.swift */; };
+		11048D032B0C41CB0069A8C6 /* NWHTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11048D022B0C41CB0069A8C6 /* NWHTextField.swift */; };
 		113FA0912AFD99E700403AFC /* Net_Work_HubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113FA0902AFD99E700403AFC /* Net_Work_HubApp.swift */; };
 		113FA0932AFD99E700403AFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113FA0922AFD99E700403AFC /* ContentView.swift */; };
 		113FA0952AFD99E700403AFC /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113FA0942AFD99E700403AFC /* Job.swift */; };
@@ -23,6 +27,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11048CF22B0C33B10069A8C6 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
+		11048CFB2B0C3C1F0069A8C6 /* AddJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJobView.swift; sourceTree = "<group>"; };
+		11048D002B0C3C5B0069A8C6 /* AddJobView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddJobView+ViewModel.swift"; sourceTree = "<group>"; };
+		11048D022B0C41CB0069A8C6 /* NWHTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWHTextField.swift; sourceTree = "<group>"; };
 		113FA08D2AFD99E700403AFC /* Net Work Hub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Net Work Hub.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		113FA0902AFD99E700403AFC /* Net_Work_HubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Net_Work_HubApp.swift; sourceTree = "<group>"; };
 		113FA0922AFD99E700403AFC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,6 +58,83 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11048CF12B0C339E0069A8C6 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				11048CF22B0C33B10069A8C6 /* Binding.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		11048CF42B0C33EB0069A8C6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				113FA0A42AFDAB1000403AFC /* DashboardView.swift */,
+				113FA0B72B041C6B00403AFC /* JobList.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		11048CF52B0C33F50069A8C6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				113FA0A22AFDA31800403AFC /* DashboardView+ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		11048CF82B0C37320069A8C6 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				113FA0A02AFD9BFD00403AFC /* JobRowView.swift */,
+				113FA0AE2B040EF100403AFC /* PrimaryButton.swift */,
+				11048D022B0C41CB0069A8C6 /* NWHTextField.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		11048CF92B0C3BDE0069A8C6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				11048CFA2B0C3BE40069A8C6 /* Job */,
+				113FA0A62AFDAB2200403AFC /* Dashboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		11048CFA2B0C3BE40069A8C6 /* Job */ = {
+			isa = PBXGroup;
+			children = (
+				11048CFD2B0C3C330069A8C6 /* AddJob */,
+			);
+			path = Job;
+			sourceTree = "<group>";
+		};
+		11048CFD2B0C3C330069A8C6 /* AddJob */ = {
+			isa = PBXGroup;
+			children = (
+				11048CFF2B0C3C420069A8C6 /* ViewModel */,
+				11048CFE2B0C3C3E0069A8C6 /* View */,
+			);
+			path = AddJob;
+			sourceTree = "<group>";
+		};
+		11048CFE2B0C3C3E0069A8C6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				11048CFB2B0C3C1F0069A8C6 /* AddJobView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		11048CFF2B0C3C420069A8C6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				11048D002B0C3C5B0069A8C6 /* AddJobView+ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		113FA0842AFD99E700403AFC = {
 			isa = PBXGroup;
 			children = (
@@ -69,15 +154,14 @@
 		113FA08F2AFD99E700403AFC /* Net Work Hub */ = {
 			isa = PBXGroup;
 			children = (
+				11048CF92B0C3BDE0069A8C6 /* Views */,
 				113FA0B02B0410AC00403AFC /* User Profile */,
 				113FA0AD2B040EE300403AFC /* Assets */,
 				113FA0AC2B040EE000403AFC /* Models */,
-				113FA0A62AFDAB2200403AFC /* Dashboard */,
 				113FA0902AFD99E700403AFC /* Net_Work_HubApp.swift */,
 				113FA0922AFD99E700403AFC /* ContentView.swift */,
 				113FA0962AFD99E800403AFC /* Assets.xcassets */,
 				113FA0982AFD99E800403AFC /* Preview Content */,
-				113FA0A02AFD9BFD00403AFC /* JobRowView.swift */,
 			);
 			path = "Net Work Hub";
 			sourceTree = "<group>";
@@ -93,9 +177,8 @@
 		113FA0A62AFDAB2200403AFC /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				113FA0A42AFDAB1000403AFC /* DashboardView.swift */,
-				113FA0A22AFDA31800403AFC /* DashboardView+ViewModel.swift */,
-				113FA0B72B041C6B00403AFC /* JobList.swift */,
+				11048CF52B0C33F50069A8C6 /* ViewModel */,
+				11048CF42B0C33EB0069A8C6 /* View */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -112,7 +195,8 @@
 		113FA0AD2B040EE300403AFC /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				113FA0AE2B040EF100403AFC /* PrimaryButton.swift */,
+				11048CF82B0C37320069A8C6 /* CustomViews */,
+				11048CF12B0C339E0069A8C6 /* Extentions */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -198,14 +282,18 @@
 			files = (
 				113FA0B42B0410CD00403AFC /* UserProfileView+ViewModel.swift in Sources */,
 				113FA0932AFD99E700403AFC /* ContentView.swift in Sources */,
+				11048D032B0C41CB0069A8C6 /* NWHTextField.swift in Sources */,
 				113FA0A52AFDAB1000403AFC /* DashboardView.swift in Sources */,
 				113FA0B82B041C6B00403AFC /* JobList.swift in Sources */,
 				113FA0A12AFD9BFD00403AFC /* JobRowView.swift in Sources */,
 				113FA0B22B0410BD00403AFC /* UserProfileView.swift in Sources */,
+				11048CFC2B0C3C1F0069A8C6 /* AddJobView.swift in Sources */,
+				11048D012B0C3C5B0069A8C6 /* AddJobView+ViewModel.swift in Sources */,
 				113FA0A32AFDA31800403AFC /* DashboardView+ViewModel.swift in Sources */,
 				113FA0AF2B040EF100403AFC /* PrimaryButton.swift in Sources */,
 				113FA0952AFD99E700403AFC /* Job.swift in Sources */,
 				113FA0B62B04115300403AFC /* User.swift in Sources */,
+				11048CF32B0C33B10069A8C6 /* Binding.swift in Sources */,
 				113FA0912AFD99E700403AFC /* Net_Work_HubApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

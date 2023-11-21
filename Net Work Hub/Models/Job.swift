@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Job: Codable {
+struct Job: Codable, Hashable {
     var jobId: String
     var userId: String?
     var engineerId: String?
