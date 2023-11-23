@@ -24,6 +24,9 @@
 		113FA0B42B0410CD00403AFC /* UserProfileView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113FA0B32B0410CD00403AFC /* UserProfileView+ViewModel.swift */; };
 		113FA0B62B04115300403AFC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113FA0B52B04115300403AFC /* User.swift */; };
 		113FA0B82B041C6B00403AFC /* JobList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113FA0B72B041C6B00403AFC /* JobList.swift */; };
+		11D2EDA32B0EC8B400E1F0F5 /* NWHConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D2EDA22B0EC8B400E1F0F5 /* NWHConnector.swift */; };
+		11D2EDA52B0EE76B00E1F0F5 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D2EDA42B0EE76B00E1F0F5 /* DataController.swift */; };
+		11D2EDA72B0EEB9500E1F0F5 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D2EDA62B0EEB9500E1F0F5 /* View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +48,9 @@
 		113FA0B32B0410CD00403AFC /* UserProfileView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserProfileView+ViewModel.swift"; sourceTree = "<group>"; };
 		113FA0B52B04115300403AFC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		113FA0B72B041C6B00403AFC /* JobList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobList.swift; sourceTree = "<group>"; };
+		11D2EDA22B0EC8B400E1F0F5 /* NWHConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWHConnector.swift; sourceTree = "<group>"; };
+		11D2EDA42B0EE76B00E1F0F5 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		11D2EDA62B0EEB9500E1F0F5 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				11048CF22B0C33B10069A8C6 /* Binding.swift */,
+				11D2EDA62B0EEB9500E1F0F5 /* View.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -188,6 +195,8 @@
 			children = (
 				113FA0942AFD99E700403AFC /* Job.swift */,
 				113FA0B52B04115300403AFC /* User.swift */,
+				11D2EDA22B0EC8B400E1F0F5 /* NWHConnector.swift */,
+				11D2EDA42B0EE76B00E1F0F5 /* DataController.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -285,13 +294,16 @@
 				11048D032B0C41CB0069A8C6 /* NWHTextField.swift in Sources */,
 				113FA0A52AFDAB1000403AFC /* DashboardView.swift in Sources */,
 				113FA0B82B041C6B00403AFC /* JobList.swift in Sources */,
+				11D2EDA32B0EC8B400E1F0F5 /* NWHConnector.swift in Sources */,
 				113FA0A12AFD9BFD00403AFC /* JobRowView.swift in Sources */,
+				11D2EDA52B0EE76B00E1F0F5 /* DataController.swift in Sources */,
 				113FA0B22B0410BD00403AFC /* UserProfileView.swift in Sources */,
 				11048CFC2B0C3C1F0069A8C6 /* AddJobView.swift in Sources */,
 				11048D012B0C3C5B0069A8C6 /* AddJobView+ViewModel.swift in Sources */,
 				113FA0A32AFDA31800403AFC /* DashboardView+ViewModel.swift in Sources */,
 				113FA0AF2B040EF100403AFC /* PrimaryButton.swift in Sources */,
 				113FA0952AFD99E700403AFC /* Job.swift in Sources */,
+				11D2EDA72B0EEB9500E1F0F5 /* View.swift in Sources */,
 				113FA0B62B04115300403AFC /* User.swift in Sources */,
 				11048CF32B0C33B10069A8C6 /* Binding.swift in Sources */,
 				113FA0912AFD99E700403AFC /* Net_Work_HubApp.swift in Sources */,

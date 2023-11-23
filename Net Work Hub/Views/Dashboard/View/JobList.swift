@@ -12,19 +12,24 @@ extension DashboardView {
     var jobList: some View {
         NavigationStack {
             List {
-                ForEach(viewModel.jobs, id: \.jobId) { job in
-                    JobRowView(job: job)
-//                    NavigationLink {
-//                        // job detail page
-//                    } label: {
-//                        JobRowView(job: job)
-//                    }
+                Section {
+                    ForEach(dataController.activeJobs, id: \.jobDetail_Id_PK) { job in
+                        JobRowView(job: job)
+                        //                    NavigationLink {
+                        //                        // job detail page
+                        //                    } label: {
+                        //                        JobRowView(job: job)
+                        //                    }
+                    }
+                    // TODO: MAKE onDelete FUNCTION ONCE DELETE JOB SERVICE IS IMPLEMENTED
+                    //                .onDelete(perform: viewModel.deleteJobs)
                 }
-                .onDelete(perform: viewModel.deleteJobs)
-                PrimaryButton(text: "Add Job", action: {
-                    viewModel.showAddJob = true
-                })
-                .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+                Section {
+                    PrimaryButton(text: "Add Job", action: {
+                        viewModel.showAddJob = true
+                    })
+                    .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+                }
             }
         }
         .navigationDestination(for: Job.self) { job in

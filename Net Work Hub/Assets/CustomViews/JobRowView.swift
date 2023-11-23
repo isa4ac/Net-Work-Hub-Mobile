@@ -16,8 +16,8 @@ struct JobRowView: View {
                 .foregroundStyle(getIconColor())
             
             VStack(alignment: .leading) {
-                Text(job.title ?? "")
-                Text((job.status ?? "").capitalized)
+                Text(job.jobDetail_Title ?? "")
+                Text((job.define_Job_Status_Name ?? "").capitalized)
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }
@@ -25,14 +25,14 @@ struct JobRowView: View {
     }
     
     func getIcon() -> Image {
-        switch((job.status ?? "").lowercased()) {
-        case "complete":
+        switch((job.define_Job_Status_Name ?? "").lowercased()) {
+        case "job-status-closed":
             return Image(systemName: "checkmark.circle.fill")
-        case "taking bids":
+        case "job-status-open":
             return Image(systemName: "minus.circle.fill")
-        case "in progress":
+        case "job-status-in-progress":
             return Image(systemName: "minus.circle.fill")
-        case "action needed":
+        case "job-status-action-needed":
             return Image(systemName: "exclamationmark.circle.fill")
         default:
             return Image(String())
@@ -40,14 +40,14 @@ struct JobRowView: View {
     }
     
     func getIconColor() -> Color {
-        switch((job.status ?? "").lowercased()) {
-        case "complete":
+        switch((job.define_Job_Status_Name ?? "").lowercased()) {
+        case "job-status-closed":
             return .green
-        case "taking bids":
+        case "job-status-open":
             return .yellow
-        case "in progress":
+        case "job-status-in-progress":
             return .yellow
-        case "action needed":
+        case "job-status-action-needed":
             return .red
         default:
             return .clear

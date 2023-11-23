@@ -8,26 +8,20 @@
 import Foundation
 
 struct Job: Codable, Hashable {
-    var jobId: String
-    var userId: String?
-    var engineerId: String?
-    var status: String?
-    var posted: String? // date
-    var title: String?
-    var description: String?
-    var targetBudget: String?
-    var targetDate: String?
-    var acceptedBudget: String?
-    var acceptedDate: String?
-    var actualBudget: String?
-    var actualDate: String?
+    var jobDetail_Id_PK: String
+    var jobDetail_Engineer_UserId_FK: String?
+    var define_Job_Status_Name: String?
+    var jobDetail_Posted_DT: String? // date
+    var jobDetail_Title: String?
+    var jobDetail_Description: String?
+    var jobDetail_Proposal_Target_Budget: String?
+    var jobDetail_Proposal_Target_Date: String?
+    var jobDetail_Proposal_Agreed_Budget: String?
+    var jobDetail_Proposal_Agreed_Date: String?
+    var jobDetail_Proposal_Final_Budget: String?
+    var jobDetail_Proposal_Final_Date: String
 //    var acceptedByBusiness: String? // bool
 //    var acceptedByBusinessDate: String? // date
 //    var acceptedByEngineer: String? // bool
 //    var acceptedByEngineerDate: String? // date
-//    var finishedByBusiness: String // bool
-//    var finishedByBusinessDate: String? // date
-//    var finishedByEngineer: String? // bool
-//    var finishedByEngineerDate: String? // date
-    var notes: String?
 }

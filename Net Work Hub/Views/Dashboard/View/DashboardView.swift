@@ -8,20 +8,30 @@
 import SwiftUI
 
 struct DashboardView: View {
+    @EnvironmentObject var dataController: DataController
     @StateObject var viewModel = ViewModel()
     var body: some View {
-        NavigationStack {
-            jobList
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    NavigationLink {
-                        UserProfileView()
-                    } label: {
-                        Label("Your Profile", systemImage: "person.circle.fill")
-                    }
+        if viewModel.isLoading {
+            ProgressView()
+                .onFirstAppear {
+                    dataController.updateUserJobs(completion: {
+                        viewModel.isLoading = false
+                    })
                 }
+        } else {
+            NavigationStack {
+                jobList
+                    .toolbar {
+                        ToolbarItem(placement: .topBarTrailing) {
+                            NavigationLink {
+                                UserProfileView()
+                            } label: {
+                                Label("Your Profile", systemImage: "person.circle.fill")
+                            }
+                        }
+                    }
+                    .navigationTitle("Dashboard")
             }
-            .navigationTitle("Dashboard")
         }
     }
 }
