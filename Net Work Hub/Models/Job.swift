@@ -19,7 +19,7 @@ struct Job: Codable, Hashable {
     var jobDetail_Proposal_Agreed_Budget: String?
     var jobDetail_Proposal_Agreed_Date: String?
     var jobDetail_Proposal_Final_Budget: String?
-    var jobDetail_Proposal_Final_Date: String
+    var jobDetail_Proposal_Final_Date: String?
 //    var acceptedByBusiness: String? // bool
 //    var acceptedByBusinessDate: String? // date
 //    var acceptedByEngineer: String? // bool

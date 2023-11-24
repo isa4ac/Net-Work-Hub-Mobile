@@ -26,4 +26,8 @@ extension View {
     func onFirstAppear(perform: @escaping () -> Void) -> some View {
         modifier(OnFirstAppear(perform: perform))
     }
+    
+    func numbersOnly(_ text: Binding<String>, includeDecimal: Bool = false, isCurrency: Bool = false) -> some View {
+        self.modifier(NumberOnlyViewModifier(text: text, isCurrency: isCurrency, includeDecimal: includeDecimal))
+    }
 }

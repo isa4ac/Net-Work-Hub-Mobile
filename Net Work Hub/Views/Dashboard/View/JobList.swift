@@ -36,7 +36,8 @@ extension DashboardView {
             // job detial
         }
         .navigationDestination(isPresented: $viewModel.showAddJob) {
-            AddJobView()
+            AddJobView(isPresented: $viewModel.showAddJob, isMainLoading: $viewModel.isLoading)
+//                .environmentObject(dataController)
         }
     }
 }

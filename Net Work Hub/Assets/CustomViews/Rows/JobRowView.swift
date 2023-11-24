@@ -25,14 +25,14 @@ struct JobRowView: View {
     }
     
     func getIcon() -> Image {
-        switch((job.define_Job_Status_Name ?? "").lowercased()) {
-        case "job-status-closed":
+        switch((job.define_Job_Status_Name ?? "")) {
+        case "Closed":
             return Image(systemName: "checkmark.circle.fill")
-        case "job-status-open":
+        case "Open for Bids":
             return Image(systemName: "minus.circle.fill")
-        case "job-status-in-progress":
+        case "Work In Progress":
             return Image(systemName: "minus.circle.fill")
-        case "job-status-action-needed":
+        case "Action Needed From Business":
             return Image(systemName: "exclamationmark.circle.fill")
         default:
             return Image(String())
@@ -40,14 +40,14 @@ struct JobRowView: View {
     }
     
     func getIconColor() -> Color {
-        switch((job.define_Job_Status_Name ?? "").lowercased()) {
-        case "job-status-closed":
+        switch((job.define_Job_Status_Name ?? "")) {
+        case "Closed":
             return .green
-        case "job-status-open":
+        case "Open for Bids":
             return .yellow
-        case "job-status-in-progress":
+        case "Work In Progress":
             return .yellow
-        case "job-status-action-needed":
+        case "Action Needed From Business":
             return .red
         default:
             return .clear

@@ -10,7 +10,8 @@
 		11048CF32B0C33B10069A8C6 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11048CF22B0C33B10069A8C6 /* Binding.swift */; };
 		11048CFC2B0C3C1F0069A8C6 /* AddJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11048CFB2B0C3C1F0069A8C6 /* AddJobView.swift */; };
 		11048D012B0C3C5B0069A8C6 /* AddJobView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11048D002B0C3C5B0069A8C6 /* AddJobView+ViewModel.swift */; };
-		11048D032B0C41CB0069A8C6 /* NWHTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11048D022B0C41CB0069A8C6 /* NWHTextField.swift */; };
+		11048D032B0C41CB0069A8C6 /* NWHTextEntryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11048D022B0C41CB0069A8C6 /* NWHTextEntryRowView.swift */; };
+		113863702B113A95008FAD77 /* NumbersOnlyViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1138636F2B113A95008FAD77 /* NumbersOnlyViewModifier.swift */; };
 		113FA0912AFD99E700403AFC /* Net_Work_HubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113FA0902AFD99E700403AFC /* Net_Work_HubApp.swift */; };
 		113FA0932AFD99E700403AFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113FA0922AFD99E700403AFC /* ContentView.swift */; };
 		113FA0952AFD99E700403AFC /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113FA0942AFD99E700403AFC /* Job.swift */; };
@@ -33,7 +34,8 @@
 		11048CF22B0C33B10069A8C6 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		11048CFB2B0C3C1F0069A8C6 /* AddJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJobView.swift; sourceTree = "<group>"; };
 		11048D002B0C3C5B0069A8C6 /* AddJobView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddJobView+ViewModel.swift"; sourceTree = "<group>"; };
-		11048D022B0C41CB0069A8C6 /* NWHTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWHTextField.swift; sourceTree = "<group>"; };
+		11048D022B0C41CB0069A8C6 /* NWHTextEntryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWHTextEntryRowView.swift; sourceTree = "<group>"; };
+		1138636F2B113A95008FAD77 /* NumbersOnlyViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersOnlyViewModifier.swift; sourceTree = "<group>"; };
 		113FA08D2AFD99E700403AFC /* Net Work Hub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Net Work Hub.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		113FA0902AFD99E700403AFC /* Net_Work_HubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Net_Work_HubApp.swift; sourceTree = "<group>"; };
 		113FA0922AFD99E700403AFC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,9 +95,8 @@
 		11048CF82B0C37320069A8C6 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				113FA0A02AFD9BFD00403AFC /* JobRowView.swift */,
-				113FA0AE2B040EF100403AFC /* PrimaryButton.swift */,
-				11048D022B0C41CB0069A8C6 /* NWHTextField.swift */,
+				113863722B113AFD008FAD77 /* Buttons */,
+				113863712B113AF5008FAD77 /* Rows */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -103,6 +104,7 @@
 		11048CF92B0C3BDE0069A8C6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				113FA0B02B0410AC00403AFC /* User Profile */,
 				11048CFA2B0C3BE40069A8C6 /* Job */,
 				113FA0A62AFDAB2200403AFC /* Dashboard */,
 			);
@@ -120,8 +122,8 @@
 		11048CFD2B0C3C330069A8C6 /* AddJob */ = {
 			isa = PBXGroup;
 			children = (
-				11048CFF2B0C3C420069A8C6 /* ViewModel */,
 				11048CFE2B0C3C3E0069A8C6 /* View */,
+				11048CFF2B0C3C420069A8C6 /* ViewModel */,
 			);
 			path = AddJob;
 			sourceTree = "<group>";
@@ -140,6 +142,47 @@
 				11048D002B0C3C5B0069A8C6 /* AddJobView+ViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1138636C2B1139BA008FAD77 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				113FA0B12B0410BD00403AFC /* UserProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1138636D2B1139BF008FAD77 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				113FA0B32B0410CD00403AFC /* UserProfileView+ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1138636E2B113A74008FAD77 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				1138636F2B113A95008FAD77 /* NumbersOnlyViewModifier.swift */,
+			);
+			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
+		113863712B113AF5008FAD77 /* Rows */ = {
+			isa = PBXGroup;
+			children = (
+				113FA0A02AFD9BFD00403AFC /* JobRowView.swift */,
+				11048D022B0C41CB0069A8C6 /* NWHTextEntryRowView.swift */,
+			);
+			path = Rows;
+			sourceTree = "<group>";
+		};
+		113863722B113AFD008FAD77 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				113FA0AE2B040EF100403AFC /* PrimaryButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		113FA0842AFD99E700403AFC = {
@@ -162,7 +205,6 @@
 			isa = PBXGroup;
 			children = (
 				11048CF92B0C3BDE0069A8C6 /* Views */,
-				113FA0B02B0410AC00403AFC /* User Profile */,
 				113FA0AD2B040EE300403AFC /* Assets */,
 				113FA0AC2B040EE000403AFC /* Models */,
 				113FA0902AFD99E700403AFC /* Net_Work_HubApp.swift */,
@@ -184,8 +226,8 @@
 		113FA0A62AFDAB2200403AFC /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				11048CF52B0C33F50069A8C6 /* ViewModel */,
 				11048CF42B0C33EB0069A8C6 /* View */,
+				11048CF52B0C33F50069A8C6 /* ViewModel */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -204,6 +246,7 @@
 		113FA0AD2B040EE300403AFC /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				1138636E2B113A74008FAD77 /* ViewModifiers */,
 				11048CF82B0C37320069A8C6 /* CustomViews */,
 				11048CF12B0C339E0069A8C6 /* Extentions */,
 			);
@@ -213,8 +256,8 @@
 		113FA0B02B0410AC00403AFC /* User Profile */ = {
 			isa = PBXGroup;
 			children = (
-				113FA0B12B0410BD00403AFC /* UserProfileView.swift */,
-				113FA0B32B0410CD00403AFC /* UserProfileView+ViewModel.swift */,
+				1138636C2B1139BA008FAD77 /* View */,
+				1138636D2B1139BF008FAD77 /* ViewModel */,
 			);
 			path = "User Profile";
 			sourceTree = "<group>";
@@ -291,13 +334,14 @@
 			files = (
 				113FA0B42B0410CD00403AFC /* UserProfileView+ViewModel.swift in Sources */,
 				113FA0932AFD99E700403AFC /* ContentView.swift in Sources */,
-				11048D032B0C41CB0069A8C6 /* NWHTextField.swift in Sources */,
+				11048D032B0C41CB0069A8C6 /* NWHTextEntryRowView.swift in Sources */,
 				113FA0A52AFDAB1000403AFC /* DashboardView.swift in Sources */,
 				113FA0B82B041C6B00403AFC /* JobList.swift in Sources */,
 				11D2EDA32B0EC8B400E1F0F5 /* NWHConnector.swift in Sources */,
 				113FA0A12AFD9BFD00403AFC /* JobRowView.swift in Sources */,
 				11D2EDA52B0EE76B00E1F0F5 /* DataController.swift in Sources */,
 				113FA0B22B0410BD00403AFC /* UserProfileView.swift in Sources */,
+				113863702B113A95008FAD77 /* NumbersOnlyViewModifier.swift in Sources */,
 				11048CFC2B0C3C1F0069A8C6 /* AddJobView.swift in Sources */,
 				11048D012B0C3C5B0069A8C6 /* AddJobView+ViewModel.swift in Sources */,
 				113FA0A32AFDA31800403AFC /* DashboardView+ViewModel.swift in Sources */,

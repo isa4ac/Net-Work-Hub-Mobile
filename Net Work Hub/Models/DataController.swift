@@ -35,4 +35,33 @@ class DataController: ObservableObject {
         })
     }
     
+    func addUserJob(_ job: Job, completion: @escaping () -> ()) {
+        let params = ["business_user_id" : "\(currentUserId)",
+                      "job_status" : "job-status-open",
+                      "job_title" : job.jobDetail_Title ?? "",
+                      "job_description" : job.jobDetail_Description ?? "",
+                      "target_budget" : job.jobDetail_Proposal_Target_Budget ?? "",
+                      "target_date" : job.jobDetail_Proposal_Target_Date ?? "" ] // TODO: FORMAT DATE PASSED INTO SERVICE
+        
+        NWHConnector().generatePostRequest("job-business-post", params, onSuccess: { data, response in
+            if let response = response as? HTTPURLResponse {
+                guard (200 ... 299) ~= response.statusCode else { // check for http errors
+                    print("statusCode should be 2xx, but is \(response.statusCode)")
+                    print("response = \(response)")
+                    completion()
+                    return
+                }
+                completion()
+            } else {
+                print("error occured calling addUserJob api function")
+                completion()
+            }
+        }, onError: { error in
+            // TO-DO: Display error alert
+            print("error occured calling job-business-post api: ")
+            print(error.localizedDescription)
+            completion()
+        })
+    }
+    
 }
