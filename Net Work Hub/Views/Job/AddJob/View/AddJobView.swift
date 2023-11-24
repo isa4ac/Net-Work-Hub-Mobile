@@ -12,6 +12,8 @@ struct AddJobView: View {
     var body: some View {
         Form {
             NWHTextRowView(title: "Job Title", text: $viewModel.jobTitle, prompt: "Required")
+            // TODO: MAKE A PICKER FOR CATAGORY ONCE IT HAS BEEN INTEGRATED IN API
+            
         }
         .navigationTitle("Create Job Post")
     }
