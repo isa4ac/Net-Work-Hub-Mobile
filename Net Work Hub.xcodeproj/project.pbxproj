@@ -12,6 +12,8 @@
 		11048D012B0C3C5B0069A8C6 /* AddJobView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11048D002B0C3C5B0069A8C6 /* AddJobView+ViewModel.swift */; };
 		11048D032B0C41CB0069A8C6 /* NWHTextEntryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11048D022B0C41CB0069A8C6 /* NWHTextEntryRowView.swift */; };
 		113863702B113A95008FAD77 /* NumbersOnlyViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1138636F2B113A95008FAD77 /* NumbersOnlyViewModifier.swift */; };
+		113863762B12A991008FAD77 /* JobPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113863752B12A991008FAD77 /* JobPreviewView.swift */; };
+		113863782B12A9F5008FAD77 /* NWHRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113863772B12A9F5008FAD77 /* NWHRow.swift */; };
 		113FA0912AFD99E700403AFC /* Net_Work_HubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113FA0902AFD99E700403AFC /* Net_Work_HubApp.swift */; };
 		113FA0932AFD99E700403AFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113FA0922AFD99E700403AFC /* ContentView.swift */; };
 		113FA0952AFD99E700403AFC /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113FA0942AFD99E700403AFC /* Job.swift */; };
@@ -36,6 +38,8 @@
 		11048D002B0C3C5B0069A8C6 /* AddJobView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddJobView+ViewModel.swift"; sourceTree = "<group>"; };
 		11048D022B0C41CB0069A8C6 /* NWHTextEntryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWHTextEntryRowView.swift; sourceTree = "<group>"; };
 		1138636F2B113A95008FAD77 /* NumbersOnlyViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersOnlyViewModifier.swift; sourceTree = "<group>"; };
+		113863752B12A991008FAD77 /* JobPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobPreviewView.swift; sourceTree = "<group>"; };
+		113863772B12A9F5008FAD77 /* NWHRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWHRow.swift; sourceTree = "<group>"; };
 		113FA08D2AFD99E700403AFC /* Net Work Hub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Net Work Hub.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		113FA0902AFD99E700403AFC /* Net_Work_HubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Net_Work_HubApp.swift; sourceTree = "<group>"; };
 		113FA0922AFD99E700403AFC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 		11048CFA2B0C3BE40069A8C6 /* Job */ = {
 			isa = PBXGroup;
 			children = (
+				113863732B12A978008FAD77 /* JobPreview */,
 				11048CFD2B0C3C330069A8C6 /* AddJob */,
 			);
 			path = Job;
@@ -173,6 +178,7 @@
 			children = (
 				113FA0A02AFD9BFD00403AFC /* JobRowView.swift */,
 				11048D022B0C41CB0069A8C6 /* NWHTextEntryRowView.swift */,
+				113863772B12A9F5008FAD77 /* NWHRow.swift */,
 			);
 			path = Rows;
 			sourceTree = "<group>";
@@ -183,6 +189,22 @@
 				113FA0AE2B040EF100403AFC /* PrimaryButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		113863732B12A978008FAD77 /* JobPreview */ = {
+			isa = PBXGroup;
+			children = (
+				113863742B12A983008FAD77 /* View */,
+			);
+			path = JobPreview;
+			sourceTree = "<group>";
+		};
+		113863742B12A983008FAD77 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				113863752B12A991008FAD77 /* JobPreviewView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		113FA0842AFD99E700403AFC = {
@@ -339,8 +361,10 @@
 				113FA0B82B041C6B00403AFC /* JobList.swift in Sources */,
 				11D2EDA32B0EC8B400E1F0F5 /* NWHConnector.swift in Sources */,
 				113FA0A12AFD9BFD00403AFC /* JobRowView.swift in Sources */,
+				113863762B12A991008FAD77 /* JobPreviewView.swift in Sources */,
 				11D2EDA52B0EE76B00E1F0F5 /* DataController.swift in Sources */,
 				113FA0B22B0410BD00403AFC /* UserProfileView.swift in Sources */,
+				113863782B12A9F5008FAD77 /* NWHRow.swift in Sources */,
 				113863702B113A95008FAD77 /* NumbersOnlyViewModifier.swift in Sources */,
 				11048CFC2B0C3C1F0069A8C6 /* AddJobView.swift in Sources */,
 				11048D012B0C3C5B0069A8C6 /* AddJobView+ViewModel.swift in Sources */,

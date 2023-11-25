@@ -14,12 +14,11 @@ extension DashboardView {
             List {
                 Section {
                     ForEach(dataController.activeJobs, id: \.jobDetail_Id_PK) { job in
-                        JobRowView(job: job)
-                        //                    NavigationLink {
-                        //                        // job detail page
-                        //                    } label: {
-                        //                        JobRowView(job: job)
-                        //                    }
+                        NavigationLink {
+                            JobPreviewView()
+                        } label: {
+                            JobRowView(job: job)
+                        }
                     }
                     // TODO: MAKE onDelete FUNCTION ONCE DELETE JOB SERVICE IS IMPLEMENTED
                     //                .onDelete(perform: viewModel.deleteJobs)
