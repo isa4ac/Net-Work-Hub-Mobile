@@ -18,10 +18,17 @@ extension DashboardView {
                             JobPreviewView()
                         } label: {
                             JobRowView(job: job)
+                            
                         }
+                        
                     }
-                    // TODO: MAKE onDelete FUNCTION ONCE DELETE JOB SERVICE IS IMPLEMENTED
-                    //                .onDelete(perform: viewModel.deleteJobs)
+                    .onDelete(perform: { indexSet in
+                        for index in indexSet {
+                            dataController.deleteUserJob(jobId: dataController.activeJobs[index].jobDetail_Id_PK, completion: {
+                                dataController.activeJobs.remove(atOffsets:  indexSet)
+                            })
+                        }
+                    })
                 }
                 Section {
                     PrimaryButton(text: "Add Job", action: {
@@ -36,7 +43,6 @@ extension DashboardView {
         }
         .navigationDestination(isPresented: $viewModel.showAddJob) {
             AddJobView(isPresented: $viewModel.showAddJob, isMainLoading: $viewModel.isLoading)
-//                .environmentObject(dataController)
         }
     }
 }
