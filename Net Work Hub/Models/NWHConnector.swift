@@ -40,7 +40,7 @@ class NWHConnector {
         task.resume()
     }
     
-    func generateParamString(_ params: [String : String]) -> String {
+    private func generateParamString(_ params: [String : String]) -> String {
         var paramsString = "?"
         
         var i = 0

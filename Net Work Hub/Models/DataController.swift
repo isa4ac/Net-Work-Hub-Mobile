@@ -13,8 +13,28 @@ class DataController: ObservableObject {
     @Published var activeJobs = [Job]()
 //    @Published var completedJobs = [Job]()
     
-    func deleteUserJob(completion: @escaping () -> ()) {
-        let params = ["u"]
+    func deleteUserJob(jobId: String, completion: @escaping () -> ()) {
+        let params = ["job_id" : jobId]
+        NWHConnector().generatePostRequest("job-business-remove", onSuccess: { data, response in
+            if let response = response as? HTTPURLResponse {
+                guard (200 ... 299) ~= response.statusCode else { // check for http errors
+                    print("statusCode should be 2xx, but is \(response.statusCode)")
+                    print("response = \(response)")
+                    completion()
+                    return
+                }
+                completion()
+            } else {
+                print("error occured calling addUserJob api function")
+                completion()
+            }
+        }, onError: { error in
+            // TO-DO: Display error alert
+            print("error occured calling job-business-list-active api: ")
+            print(error.localizedDescription)
+            completion()
+            
+        })
     }
     
     func updateUserJobs(completion: @escaping () -> ()) {

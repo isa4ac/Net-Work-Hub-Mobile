@@ -30,8 +30,8 @@
             filePath = "Net Work Hub/Models/DataController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "updateUserJobs(completion:)"
             landmarkType = "7">
             <Locations>
