@@ -22,7 +22,7 @@ struct AddJobView: View {
                     DatePicker("Target Completion", selection: $viewModel.targetDate, in: Date()..., displayedComponents: .date)
                 }
                 
-                TextField("Write a brief desciption of the desired outcome of the job.", text: $viewModel.jobDescription, axis: .vertical)
+                TextField("Write a desciption of the desired outcome of the job...", text: $viewModel.jobDescription, axis: .vertical)
                     .lineLimit(6...)
             }
             .onFirstAppear {

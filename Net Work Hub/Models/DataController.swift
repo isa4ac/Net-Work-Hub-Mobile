@@ -13,6 +13,10 @@ class DataController: ObservableObject {
     @Published var activeJobs = [Job]()
 //    @Published var completedJobs = [Job]()
     
+    func deleteUserJob(completion: @escaping () -> ()) {
+        let params = ["u"]
+    }
+    
     func updateUserJobs(completion: @escaping () -> ()) {
         let params = ["user_id" : "\(currentUserId)",
                       "flatten" : "true"]
@@ -36,11 +40,12 @@ class DataController: ObservableObject {
     }
     
     func addUserJob(_ job: Job, completion: @escaping () -> ()) {
+        var numbers = "01234567890"
         let params = ["business_user_id" : "\(currentUserId)",
                       "job_status" : "job-status-open",
                       "job_title" : job.jobDetail_Title ?? "",
                       "job_description" : job.jobDetail_Description ?? "",
-                      "target_budget" : job.jobDetail_Proposal_Target_Budget ?? "",
+                      "target_budget" : job.jobDetail_Proposal_Target_Budget?.filter { numbers.contains($0) } ?? "",
                       "target_date" : job.jobDetail_Proposal_Target_Date ?? "" ] // TODO: FORMAT DATE PASSED INTO SERVICE
         
         NWHConnector().generatePostRequest("job-business-post", params, onSuccess: { data, response in
