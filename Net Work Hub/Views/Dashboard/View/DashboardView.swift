@@ -31,9 +31,9 @@ struct DashboardView: View {
                         }
                     }
                     .navigationTitle("Dashboard")
-            }
-            .refreshable {
-                viewModel.isLoading = true
+                    .refreshable {
+                        viewModel.isLoading = true
+                    }
             }
         }
     }
