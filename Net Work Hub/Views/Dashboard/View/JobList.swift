@@ -15,7 +15,7 @@ extension DashboardView {
                 Section {
                     ForEach(dataController.activeJobs, id: \.jobDetail_Id_PK) { job in
                         NavigationLink {
-                            JobPreviewView()
+                            JobPreviewView(job: job)
                         } label: {
                             JobRowView(job: job)
                         }
