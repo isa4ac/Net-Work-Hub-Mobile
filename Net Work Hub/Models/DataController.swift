@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DataController: ObservableObject {
+@MainActor class DataController: ObservableObject {
     
     @Published var currentUserId = Int()
     @Published var activeJobs = [Job]()
@@ -23,6 +23,8 @@ class DataController: ObservableObject {
                     completion()
                     return
                 }
+                
+                self.activeJobs.removeAll(where: {$0.jobDetail_Id_PK == jobId})
                 completion()
             } else {
                 print("error occured calling addUserJob api function")

@@ -29,7 +29,7 @@ struct JobRowView: View {
         case "Closed":
             return Image(systemName: "checkmark.circle.fill")
         case "Open for Bids":
-            return Image(systemName: "minus.circle.fill")
+            return Image(systemName: "arrow.down.forward.and.arrow.up.backward.circle.fill")
         case "Work In Progress":
             return Image(systemName: "minus.circle.fill")
         case "Action Needed From Business":

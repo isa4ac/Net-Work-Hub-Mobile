@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct JobPreviewView: View {
+    @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject var dataController: DataController
     var job: Job
     var body: some View {
         List {
@@ -16,14 +18,24 @@ struct JobPreviewView: View {
                 NWHRow(label: "Target Budget", detailText: job.jobDetail_Proposal_Target_Budget?.currencyFormatting() ?? "")
                 NWHRow(label: "Target Delivery", detailText: job.jobDetail_Proposal_Target_Date ?? "")
                 NWHRow(label: "Status", detailText: job.define_Job_Status_Name ?? "")
-                NWHRow(label: "Engineer", detailText: "Hard Coded Engineer")
+                NWHRow(label: "Engineer", detailText: "Link to Engineer Profile")
             }
             Section("Description") {
-                Text("Job description gejnrgijne ejrn gie jnerkmevomervm vekrnnerkjgn n ekrm okemr me ome rfklme lekrmf m. erlkgmneokrnerg. erkgnergkdfkn vnelknpwoekps sp dokw pofwpeo fpok w[pef, mw. fwmepfo . wemwpeogm . ")
+                Text(job.jobDetail_Description ?? "")
                     .multilineTextAlignment(.leading)
             }
         }
         .navigationTitle(job.jobDetail_Title ?? "")
+        .toolbar {
+            ToolbarItem(placement: .bottomBar) {
+                Button("Delete") {
+                    dataController.deleteUserJob(jobId: job.jobDetail_Id_PK, completion: {
+                        dismiss()
+                    })
+                }
+                .foregroundStyle(.red)
+            }
+        }
     }
     
     func getDateString(_ date: Date) -> String {
