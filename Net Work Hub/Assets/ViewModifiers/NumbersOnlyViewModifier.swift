@@ -45,9 +45,9 @@ struct NumberOnlyViewModifier: ViewModifier {
                 }
             }
     }
-    
-    func getSymbol() -> String {
-        let locale = Locale.current
-        return locale.currencySymbol ?? "$"
-    }
+}
+
+func getSymbol() -> String {
+    let locale = Locale.current
+    return locale.currencySymbol ?? "$"
 }

@@ -18,7 +18,7 @@ struct AddJobView: View {
                 Section {
                     NWHTextEntryRowView(label: "Post Title", text: $viewModel.jobTitle, prompt: "Required")
                     // TODO: MAKE A PICKER FOR CATAGORY ONCE IT HAS BEEN INTEGRATED IN API
-                    NWHTextEntryRowView(label: "Target Budget", text: $viewModel.targetBudget, prompt: "$0.00 (optional)", format: .currency)
+                    NWHTextEntryRowView(label: "Target Budget", text: $viewModel.targetBudget, prompt: getSymbol() + "0.00 (optional)", format: .currency)
                     DatePicker("Target Completion", selection: $viewModel.targetDate, in: Date()..., displayedComponents: .date)
                 }
                 
