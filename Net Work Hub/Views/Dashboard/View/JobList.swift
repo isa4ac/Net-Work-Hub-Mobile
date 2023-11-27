@@ -21,20 +21,11 @@ extension DashboardView {
                         }
                     }
                     .onDelete(perform: { indexSet in
-                        viewModel.setDeletePromptAlert {
-                            for index in indexSet {
-                                if dataController.activeJobs[index].define_Job_Status_Name == "Open for Bids" {
-                                    dataController.deleteUserJob(jobId: dataController.activeJobs[index].jobDetail_Id_PK, completion: {
-                                        withAnimation {
-                                            dataController.activeJobs.remove(atOffsets:  indexSet)
-                                        }
-                                    })
-                                } else {
-                                    viewModel.setDeleteAlert()
-                                }
-                            }
+                        for index in indexSet {
+                            dataController.deleteUserJob(jobId: dataController.activeJobs[index].jobDetail_Id_PK, completion: {
+                                dataController.activeJobs.remove(atOffsets:  indexSet)
+                            })
                         }
-                        viewModel.showAlert.toggle()
                     })
                 }
                 Section {
@@ -45,7 +36,7 @@ extension DashboardView {
                 }
             }
         }
-        .alert(isPresented: $viewModel.showAlert, content: { viewModel.alert })
+//        .alert(isPresented: $viewModel.showAlert, content: { viewModel.alert })
         .navigationDestination(isPresented: $viewModel.showAddJob) {
             AddJobView(isPresented: $viewModel.showAddJob, isMainLoading: $viewModel.isLoading)
         }
