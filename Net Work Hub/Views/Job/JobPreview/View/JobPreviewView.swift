@@ -29,16 +29,21 @@ struct JobPreviewView: View {
         .navigationTitle("Post Details")
         .navigationBarTitleDisplayMode(.automatic)
         .toolbar {
-            // only show delete option if there it has not been accepted
+            // only show delete/edit options if there it has not been accepted
             if job.define_Job_Status_Name?.lowercased() == "open for bids" {
                 ToolbarItem(placement: .bottomBar) {
-                    // only show delete option if there it has not been accepted
                     Button("Delete") {
                         dataController.deleteUserJob(jobId: job.jobDetail_Id_PK, completion: {
                             dismiss()
                         })
                     }
                     .foregroundStyle(.red)
+                }
+                
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Edit") {
+                        // open edit page here
+                    }
                 }
             }
         }

@@ -20,11 +20,16 @@ struct AddJobView: View {
                     // TODO: MAKE A PICKER FOR CATAGORY ONCE IT HAS BEEN INTEGRATED IN API
                     NWHTextEntryRowView(label: "Target Budget", text: $viewModel.targetBudget, prompt: getSymbol() + "0.00 (optional)", format: .currency)
                     DatePicker("Target Completion", selection: $viewModel.targetDate, in: Date()..., displayedComponents: .date)
+    
                 }
                 
-                TextField("Write a desciption of the desired outcome of the job...", text: $viewModel.jobDescription, axis: .vertical)
-                    .lineLimit(6...)
+                Section {
+                    TextField("Write a desciption of the desired outcome of the job...", text: $viewModel.jobDescription, axis: .vertical)
+                        .lineLimit(6...)
+                }
+                
             }
+            .listSectionSpacing(20)
             .onFirstAppear {
                 viewModel.targetDate = viewModel.getNextWeek()
             }
