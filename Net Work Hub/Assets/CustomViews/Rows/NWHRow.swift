@@ -12,6 +12,8 @@ struct NWHRow: View {
     @State var detailText = String()
     @State var icon = String()
     @State var iconColor = Color.primary
+    @State var detailIcon = String()
+    @State var detailIconColor = Color.secondary
     var body: some View {
         HStack {
             if icon != String() {
@@ -24,6 +26,10 @@ struct NWHRow: View {
             Text(detailText)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.trailing)
+            if detailIcon != String() {
+                Image(systemName: detailIcon)
+                    .foregroundStyle(detailIconColor)
+            }
         }
         
     }

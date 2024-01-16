@@ -21,17 +21,17 @@ extension DashboardView {
                         }
                     }
                     .onDelete(perform: { indexSet in
-                        viewModel.setDeletePromptAlert {
-                            for index in indexSet {
-                                if dataController.activeJobs[index].define_Job_Status_Name == "Open for Bids" {
+                        for index in indexSet {
+                            if dataController.activeJobs[index].define_Job_Status_Name == "Open for Bids" {
+                                viewModel.setDeletePromptAlert {
                                     dataController.deleteUserJob(jobId: dataController.activeJobs[index].jobDetail_Id_PK, completion: {
                                         withAnimation {
                                             dataController.activeJobs.remove(atOffsets:  indexSet)
                                         }
                                     })
-                                } else {
-                                    viewModel.setDeleteAlert()
                                 }
+                            } else {
+                                viewModel.setDeleteAlert()
                             }
                         }
                         viewModel.showAlert.toggle()

@@ -27,8 +27,7 @@ extension DashboardView {
         }
         
         func setDeleteAlert() {
-            alert = Alert(title: Text("Are you sure you want to delete this job post?"),
-                          message: Text("This will also delete any bids on the job"),
+            alert = Alert(title: Text("You cannot delete the job since it has already been agreed apon."),
                           dismissButton: .cancel())
         }
     }

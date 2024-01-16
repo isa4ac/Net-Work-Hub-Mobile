@@ -14,10 +14,11 @@ struct JobPreviewView: View {
     var body: some View {
         List {
             Section {
+                NWHRow(label: "Job Title", detailText: job.jobDetail_Title ?? "")
     //            NWHRow(label: "Category")
                 NWHRow(label: "Target Budget", detailText: job.jobDetail_Proposal_Target_Budget?.currencyFormatting() ?? "")
                 NWHRow(label: "Target Delivery", detailText: job.jobDetail_Proposal_Target_Date ?? "")
-                NWHRow(label: "Status", detailText: job.define_Job_Status_Name ?? "")
+                NWHRow(label: "Status", detailText: job.define_Job_Status_Name ?? "", detailIcon: getStatusIcon(job: job), detailIconColor: getStatusIconColor(job: job))
                 NWHRow(label: "Engineer", detailText: "Link to Engineer Profile")
             }
             Section("Description") {
@@ -25,15 +26,20 @@ struct JobPreviewView: View {
                     .multilineTextAlignment(.leading)
             }
         }
-        .navigationTitle(job.jobDetail_Title ?? "")
+        .navigationTitle("Post Details")
+        .navigationBarTitleDisplayMode(.automatic)
         .toolbar {
-            ToolbarItem(placement: .bottomBar) {
-                Button("Delete") {
-                    dataController.deleteUserJob(jobId: job.jobDetail_Id_PK, completion: {
-                        dismiss()
-                    })
+            // only show delete option if there it has not been accepted
+            if job.define_Job_Status_Name?.lowercased() == "open for bids" {
+                ToolbarItem(placement: .bottomBar) {
+                    // only show delete option if there it has not been accepted
+                    Button("Delete") {
+                        dataController.deleteUserJob(jobId: job.jobDetail_Id_PK, completion: {
+                            dismiss()
+                        })
+                    }
+                    .foregroundStyle(.red)
                 }
-                .foregroundStyle(.red)
             }
         }
     }

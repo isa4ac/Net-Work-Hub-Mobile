@@ -12,8 +12,8 @@ struct JobRowView: View {
     var body: some View {
         HStack {
             // Status Icon
-            getIcon()
-                .foregroundStyle(getIconColor())
+            Image(systemName: getStatusIcon(job: job))
+                .foregroundStyle(getStatusIconColor(job: job))
             
             VStack(alignment: .leading) {
                 Text(job.jobDetail_Title ?? "")
@@ -23,35 +23,34 @@ struct JobRowView: View {
             }
         }
     }
-    
-    func getIcon() -> Image {
-        switch((job.define_Job_Status_Name ?? "")) {
-        case "Closed":
-            return Image(systemName: "checkmark.circle.fill")
-        case "Open for Bids":
-            return Image(systemName: "arrow.down.forward.and.arrow.up.backward.circle.fill")
-        case "Work In Progress":
-            return Image(systemName: "minus.circle.fill")
-        case "Action Needed From Business":
-            return Image(systemName: "exclamationmark.circle.fill")
-        default:
-            return Image(String())
-        }
-    }
-    
-    func getIconColor() -> Color {
-        switch((job.define_Job_Status_Name ?? "")) {
-        case "Closed":
-            return .green
-        case "Open for Bids":
-            return .yellow
-        case "Work In Progress":
-            return .yellow
-        case "Action Needed From Business":
-            return .red
-        default:
-            return .clear
-        }
+}
+
+func getStatusIcon(job: Job) -> String {
+    switch((job.define_Job_Status_Name ?? "")) {
+    case "Closed":
+        return "checkmark.circle.fill"
+    case "Open for Bids":
+        return "arrow.down.forward.and.arrow.up.backward.circle.fill"
+    case "Work In Progress":
+        return "minus.circle.fill"
+    case "Action Needed From Business":
+        return "exclamationmark.circle.fill"
+    default:
+        return String()
     }
 }
 
+func getStatusIconColor(job: Job) -> Color {
+    switch((job.define_Job_Status_Name ?? "")) {
+    case "Closed":
+        return .green
+    case "Open for Bids":
+        return .yellow
+    case "Work In Progress":
+        return .yellow
+    case "Action Needed From Business":
+        return .red
+    default:
+        return .clear
+    }
+}
