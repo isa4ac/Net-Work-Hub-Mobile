@@ -1,5 +1,5 @@
 //
-//  AddJobView+ViewModel.swift
+//  AddEditJobView+ViewModel.swift
 //  Net Work Hub
 //
 //  Created by Isaac Vanmeter on 11/20/23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension AddJobView {
+extension AddEditJobView {
     class ViewModel: ObservableObject {
         @Published var jobTitle = String()
         @Published var jobDescription = String()
@@ -16,6 +16,20 @@ extension AddJobView {
         @Published var targetDate = Date()
         @Published var showAlert = false
         @Published var errorMessage = String()
+        
+        func loadJob(_ job: Job) {
+            jobTitle = job.jobDetail_Title ?? ""
+            jobDescription = job.jobDetail_Description ?? ""
+            targetBudget = job.jobDetail_Proposal_Target_Budget ?? ""
+            targetDate = stringToDate(job.jobDetail_Proposal_Target_Date ?? "")
+        }
+        
+        private func stringToDate(_ string: String) -> Date {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd MMM, yyyy"
+            
+            return dateFormatter.date(from: string) ?? Date()
+        }
         
         func controlsValid() -> Bool {
             if jobTitle == String() {
@@ -30,11 +44,7 @@ extension AddJobView {
         }
         
         func generateJobObject() -> Job {
-            Job(jobDetail_Id_PK: "",
-                jobDetail_Title: jobTitle,
-                jobDetail_Description: jobDescription,
-                jobDetail_Proposal_Target_Budget: targetBudget,
-                jobDetail_Proposal_Target_Date: getFormattedDateString(targetDate))
+            Job("", jobTitle, jobDescription, targetBudget, targetDate)
         }
         
         func getFormattedDateString(_ date: Date) -> String {

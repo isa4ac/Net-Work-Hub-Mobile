@@ -1,5 +1,5 @@
 //
-//  AddJobView.swift
+//  AddEditJobView.swift
 //  Net Work Hub
 //
 //  Created by Isaac Vanmeter on 11/20/23.
@@ -7,11 +7,14 @@
 
 import SwiftUI
 
-struct AddJobView: View {
+struct AddEditJobView: View {
     @EnvironmentObject var dataController: DataController
     @StateObject var viewModel = ViewModel()
     @Binding var isPresented: Bool
     @Binding var isMainLoading: Bool
+    // if != nil, it is editting an existing job
+    @State var job = Job()
+    @State var isNewJob = false
     var body: some View {
         VStack {
             Form {
@@ -52,16 +55,30 @@ struct AddJobView: View {
         })
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                Button("Post") {
-                    if viewModel.controlsValid() {
+                Button(isNewJob ? "Update" : "Post") {
+                    if !viewModel.controlsValid() {
+                        viewModel.showAlert.toggle()
+                        return
+                    }
+                    if isNewJob {
+                        // add
                         dataController.addUserJob(viewModel.generateJobObject(), completion: {
                             isMainLoading = true
                             isPresented = false
                         })
                     } else {
-                        viewModel.showAlert.toggle()
+                        // edit
+                        dataController.addUserJob(viewModel.generateJobObject(), completion: {
+                            isMainLoading = true
+                            isPresented = false
+                        })
                     }
                 }
+            }
+        }
+        .onAppear {
+            if isNewJob {
+                viewModel.loadJob(job)
             }
         }
     }

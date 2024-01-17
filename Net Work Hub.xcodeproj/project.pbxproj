@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		11048CF32B0C33B10069A8C6 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11048CF22B0C33B10069A8C6 /* Binding.swift */; };
-		11048CFC2B0C3C1F0069A8C6 /* AddJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11048CFB2B0C3C1F0069A8C6 /* AddJobView.swift */; };
-		11048D012B0C3C5B0069A8C6 /* AddJobView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11048D002B0C3C5B0069A8C6 /* AddJobView+ViewModel.swift */; };
+		11048CFC2B0C3C1F0069A8C6 /* AddEditJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11048CFB2B0C3C1F0069A8C6 /* AddEditJobView.swift */; };
+		11048D012B0C3C5B0069A8C6 /* AddEditJobView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11048D002B0C3C5B0069A8C6 /* AddEditJobView+ViewModel.swift */; };
 		11048D032B0C41CB0069A8C6 /* NWHTextEntryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11048D022B0C41CB0069A8C6 /* NWHTextEntryRowView.swift */; };
 		113863702B113A95008FAD77 /* NumbersOnlyViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1138636F2B113A95008FAD77 /* NumbersOnlyViewModifier.swift */; };
 		113863762B12A991008FAD77 /* JobPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113863752B12A991008FAD77 /* JobPreviewView.swift */; };
@@ -35,8 +35,8 @@
 
 /* Begin PBXFileReference section */
 		11048CF22B0C33B10069A8C6 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
-		11048CFB2B0C3C1F0069A8C6 /* AddJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJobView.swift; sourceTree = "<group>"; };
-		11048D002B0C3C5B0069A8C6 /* AddJobView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddJobView+ViewModel.swift"; sourceTree = "<group>"; };
+		11048CFB2B0C3C1F0069A8C6 /* AddEditJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditJobView.swift; sourceTree = "<group>"; };
+		11048D002B0C3C5B0069A8C6 /* AddEditJobView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddEditJobView+ViewModel.swift"; sourceTree = "<group>"; };
 		11048D022B0C41CB0069A8C6 /* NWHTextEntryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWHTextEntryRowView.swift; sourceTree = "<group>"; };
 		1138636F2B113A95008FAD77 /* NumbersOnlyViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersOnlyViewModifier.swift; sourceTree = "<group>"; };
 		113863752B12A991008FAD77 /* JobPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobPreviewView.swift; sourceTree = "<group>"; };
@@ -122,24 +122,24 @@
 			isa = PBXGroup;
 			children = (
 				113863732B12A978008FAD77 /* JobPreview */,
-				11048CFD2B0C3C330069A8C6 /* AddJob */,
+				11048CFD2B0C3C330069A8C6 /* Add or Edit Job */,
 			);
 			path = Job;
 			sourceTree = "<group>";
 		};
-		11048CFD2B0C3C330069A8C6 /* AddJob */ = {
+		11048CFD2B0C3C330069A8C6 /* Add or Edit Job */ = {
 			isa = PBXGroup;
 			children = (
 				11048CFE2B0C3C3E0069A8C6 /* View */,
 				11048CFF2B0C3C420069A8C6 /* ViewModel */,
 			);
-			path = AddJob;
+			path = "Add or Edit Job";
 			sourceTree = "<group>";
 		};
 		11048CFE2B0C3C3E0069A8C6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				11048CFB2B0C3C1F0069A8C6 /* AddJobView.swift */,
+				11048CFB2B0C3C1F0069A8C6 /* AddEditJobView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -147,7 +147,7 @@
 		11048CFF2B0C3C420069A8C6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				11048D002B0C3C5B0069A8C6 /* AddJobView+ViewModel.swift */,
+				11048D002B0C3C5B0069A8C6 /* AddEditJobView+ViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -370,8 +370,8 @@
 				113863782B12A9F5008FAD77 /* NWHRow.swift in Sources */,
 				113863702B113A95008FAD77 /* NumbersOnlyViewModifier.swift in Sources */,
 				11833F682B130D4000F16AB7 /* String.swift in Sources */,
-				11048CFC2B0C3C1F0069A8C6 /* AddJobView.swift in Sources */,
-				11048D012B0C3C5B0069A8C6 /* AddJobView+ViewModel.swift in Sources */,
+				11048CFC2B0C3C1F0069A8C6 /* AddEditJobView.swift in Sources */,
+				11048D012B0C3C5B0069A8C6 /* AddEditJobView+ViewModel.swift in Sources */,
 				113FA0A32AFDA31800403AFC /* DashboardView+ViewModel.swift in Sources */,
 				113FA0AF2B040EF100403AFC /* PrimaryButton.swift in Sources */,
 				113FA0952AFD99E700403AFC /* Job.swift in Sources */,

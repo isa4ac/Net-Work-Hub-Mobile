@@ -14,7 +14,7 @@ struct DashboardView: View {
         if viewModel.isLoading {
             ProgressView()
                 .onFirstAppear {
-                    dataController.updateUserJobs(completion: {
+                    dataController.getUserJobs(completion: {
                         viewModel.isLoading = false
                     })
                 }

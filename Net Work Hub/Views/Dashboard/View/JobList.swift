@@ -48,7 +48,7 @@ extension DashboardView {
         }
         .alert(isPresented: $viewModel.showAlert, content: { viewModel.alert })
         .navigationDestination(isPresented: $viewModel.showAddJob) {
-            AddJobView(isPresented: $viewModel.showAddJob, isMainLoading: $viewModel.isLoading)
+            AddEditJobView(isPresented: $viewModel.showAddJob, isMainLoading: $viewModel.isLoading)
         }
     }
 }
