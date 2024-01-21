@@ -9,19 +9,16 @@ import Foundation
 
 extension AddEditJobView {
     class ViewModel: ObservableObject {
-        @Published var jobTitle = String()
-        @Published var jobDescription = String()
-//        @Published var category = String() // TO-DO: Not in database yet
-        @Published var targetBudget = String()
         @Published var targetDate = Date()
         @Published var showAlert = false
         @Published var errorMessage = String()
         
-        func loadJob(_ job: Job) {
-            jobTitle = job.jobDetail_Title ?? ""
-            jobDescription = job.jobDetail_Description ?? ""
-            targetBudget = job.jobDetail_Proposal_Target_Budget ?? ""
-            targetDate = stringToDate(job.jobDetail_Proposal_Target_Date ?? "")
+        func loadTargetDate(_ job: Job) {
+            targetDate = stringToDate(job.targetDate ?? "")
+        }
+        
+        func saveTargetDate(_ job: Job) {
+            
         }
         
         private func stringToDate(_ string: String) -> Date {
@@ -31,20 +28,16 @@ extension AddEditJobView {
             return dateFormatter.date(from: string) ?? Date()
         }
         
-        func controlsValid() -> Bool {
-            if jobTitle == String() {
+        func controlsValid(_ job: Job) -> Bool {
+            if job.title == String() {
                 errorMessage = "Please Enter Post Title"
                 return false
             }
-            if jobDescription == String() {
+            if job.description == String() {
                 errorMessage = "Please Enter a Thoughful Description"
                 return false
             }
             return true
-        }
-        
-        func generateJobObject() -> Job {
-            Job("", jobTitle, jobDescription, targetBudget, targetDate)
         }
         
         func getFormattedDateString(_ date: Date) -> String {

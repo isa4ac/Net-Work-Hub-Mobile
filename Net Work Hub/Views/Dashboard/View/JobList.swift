@@ -13,7 +13,7 @@ extension DashboardView {
         NavigationStack {
             List {
                 Section {
-                    ForEach(dataController.activeJobs, id: \.jobDetail_Id_PK) { job in
+                    ForEach(dataController.activeJobs, id: \.id) { job in
                         NavigationLink {
                             JobPreviewView(job: job)
                         } label: {
@@ -22,9 +22,9 @@ extension DashboardView {
                     }
                     .onDelete(perform: { indexSet in
                         for index in indexSet {
-                            if dataController.activeJobs[index].define_Job_Status_Name == "Open for Bids" {
+                            if dataController.activeJobs[index].status == "Open for Bids" {
                                 viewModel.setDeletePromptAlert {
-                                    dataController.deleteUserJob(jobId: dataController.activeJobs[index].jobDetail_Id_PK, completion: {
+                                    dataController.deleteUserJob(jobId: dataController.activeJobs[index].id, completion: {
                                         withAnimation {
                                             dataController.activeJobs.remove(atOffsets:  indexSet)
                                         }

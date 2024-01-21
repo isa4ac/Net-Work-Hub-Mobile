@@ -26,7 +26,7 @@ import Foundation
                     return
                 }
                 
-                self.activeJobs.removeAll(where: {$0.jobDetail_Id_PK == jobId})
+                self.activeJobs.removeAll(where: {$0.id == jobId})
                 completion()
             } else {
                 print("error occured calling addUserJob api function")
@@ -47,12 +47,13 @@ import Foundation
         
         NWHConnector().generatePostRequest("job-business-list-active", params, onSuccess: { data, response in
             let decoder = JSONDecoder()
+            
             do {
                 let results = try decoder.decode([Job].self, from: data)
                 self.activeJobs = results
                 completion()
             } catch {
-                print("error decoding data inside updateUserJobs")
+                print("error decoding data inside getUserJobs")
                 completion()
             }
         }, onError: { error in
@@ -66,10 +67,10 @@ import Foundation
     func addUserJob(_ job: Job, completion: @escaping () -> ()) {
         let params = ["business_user_id" : "\(currentUserId)",
                       "job_status" : "job-status-open",
-                      "job_title" : job.jobDetail_Title ?? "",
-                      "job_description" : job.jobDetail_Description ?? "",
-                      "target_budget" : job.jobDetail_Proposal_Target_Budget?.filter { numbers.contains($0) } ?? "",
-                      "target_date" : job.jobDetail_Proposal_Target_Date ?? "" ] // TODO: FORMAT DATE PASSED INTO SERVICE
+                      "job_title" : job.title ?? "",
+                      "job_description" : job.description ?? "",
+                      "target_budget" : job.targetBudget?.filter { numbers.contains($0) } ?? "",
+                      "target_date" : job.targetDate ?? "" ] // TODO: FORMAT DATE PASSED INTO SERVICE
         
         NWHConnector().generatePostRequest("job-business-post", params, onSuccess: { data, response in
             if let response = response as? HTTPURLResponse {
@@ -95,10 +96,10 @@ import Foundation
     func updateUserJob(_ job: Job, completion: @escaping () -> ()) {
         let params = ["business_user_id" : "\(currentUserId)",
                       "job_status" : "job-status-open",
-                      "job_title" : job.jobDetail_Title ?? "",
-                      "job_description" : job.jobDetail_Description ?? "",
-                      "target_budget" : job.jobDetail_Proposal_Target_Budget?.filter { numbers.contains($0) } ?? "",
-                      "target_date" : job.jobDetail_Proposal_Target_Date ?? "" ] // TODO: FORMAT DATE PASSED INTO SERVICE
+                      "job_title" : job.title ?? "",
+                      "job_description" : job.description ?? "",
+                      "target_budget" : job.targetBudget?.filter { numbers.contains($0) } ?? "",
+                      "target_date" : job.targetDate ?? "" ] // TODO: FORMAT DATE PASSED INTO SERVICE
         
         NWHConnector().generatePostRequest("job-business-post", params, onSuccess: { data, response in
             if let response = response as? HTTPURLResponse {

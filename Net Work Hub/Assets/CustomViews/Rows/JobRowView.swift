@@ -16,8 +16,8 @@ struct JobRowView: View {
                 .foregroundStyle(getStatusIconColor(job: job))
             
             VStack(alignment: .leading) {
-                Text(job.jobDetail_Title ?? "")
-                Text((job.define_Job_Status_Name ?? "").capitalized)
+                Text(job.title ?? "")
+                Text((job.status ?? "").capitalized)
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }
@@ -26,7 +26,7 @@ struct JobRowView: View {
 }
 
 func getStatusIcon(job: Job) -> String {
-    switch((job.define_Job_Status_Name ?? "")) {
+    switch((job.status ?? "")) {
     case "Closed":
         return "checkmark.circle.fill"
     case "Open for Bids":
@@ -41,7 +41,7 @@ func getStatusIcon(job: Job) -> String {
 }
 
 func getStatusIconColor(job: Job) -> Color {
-    switch((job.define_Job_Status_Name ?? "")) {
+    switch((job.status ?? "")) {
     case "Closed":
         return .green
     case "Open for Bids":
