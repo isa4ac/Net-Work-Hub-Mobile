@@ -19,23 +19,28 @@ extension DashboardView {
                         } label: {
                             JobRowView(job: job)
                         }
-                    }
-                    .onDelete(perform: { indexSet in
-                        for index in indexSet {
-                            if dataController.activeJobs[index].status == "Open for Bids" {
-                                viewModel.setDeletePromptAlert {
-                                    dataController.deleteUserJob(jobId: dataController.activeJobs[index].id, completion: {
-                                        withAnimation {
-                                            dataController.activeJobs.remove(atOffsets:  indexSet)
-                                        }
-                                    })
+                        .swipeActions(allowsFullSwipe: false) {
+                            Button("Delete", role: .cancel) {
+                                if job.status == "Open for Bids" {
+                                    viewModel.showConfirmation = true
+                                } else {
+                                    viewModel.setDeleteAlert()
+                                    viewModel.showWarning = true
                                 }
-                            } else {
-                                viewModel.setDeleteAlert()
+                            }
+                            .tint(Color.red)
+                        }
+                        .confirmationDialog(
+                            Text("Are you sure you want to delete this job?"),
+                            isPresented: $viewModel.showConfirmation,
+                            titleVisibility: .visible
+                        ) {
+                            Button("Delete", role: .destructive) {
+                                dataController.deleteUserJob(jobId: job.id, completion: { })
+                                viewModel.isLoading = true
                             }
                         }
-                        viewModel.showAlert.toggle()
-                    })
+                    }
                 }
                 Section {
                     PrimaryButton(text: "Add Job", action: {
@@ -46,9 +51,10 @@ extension DashboardView {
             }
             .listSectionSpacing(20)
         }
-        .alert(isPresented: $viewModel.showAlert, content: { viewModel.alert })
+        .alert(isPresented: $viewModel.showWarning, content: { viewModel.alert })
         .navigationDestination(isPresented: $viewModel.showAddJob) {
-            AddEditJobView(isPresented: $viewModel.showAddJob, isMainLoading: $viewModel.isLoading)
+            AddEditJobView(isPresented: $viewModel.showAddJob, isMainLoading: $viewModel.isLoading, isNewJob: true)
+                .environmentObject(Job())
         }
     }
 }

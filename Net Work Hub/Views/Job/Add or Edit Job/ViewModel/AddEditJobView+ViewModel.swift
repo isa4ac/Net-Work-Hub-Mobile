@@ -10,15 +10,38 @@ import Foundation
 extension AddEditJobView {
     class ViewModel: ObservableObject {
         @Published var targetDate = Date()
+        @Published var targetBudget = String()
         @Published var showAlert = false
         @Published var errorMessage = String()
+        @Published var preEditJob = Job()
         
-        func loadTargetDate(_ job: Job) {
-            targetDate = stringToDate(job.targetDate ?? "")
+        func saveJob(_ job: Job) {
+            preEditJob = job
         }
         
-        func saveTargetDate(_ job: Job) {
+        func wasEditted(_ job: Job) -> Bool {
+            if job == preEditJob {
+                return false
+            }
+            return true
+        }
+        
+        func loadValues(_ job: Job) {
+            targetDate = job.stringToDate(job.targetDate ?? "")
+            targetBudget = job.targetBudget ?? ""
+        }
+        
+        func saveValues(_ job: Job) {
+            job.targetDate = job.dateToString(targetDate)
+            let numbers = "01234567890"
+            job.targetBudget = targetBudget.filter { numbers.contains($0) }
+        }
+        
+        private func dateToString(_ date: Date) -> String{
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd MMM, yyyy"
             
+            return dateFormatter.string(from: date)
         }
         
         private func stringToDate(_ string: String) -> Date {
@@ -33,7 +56,7 @@ extension AddEditJobView {
                 errorMessage = "Please Enter Post Title"
                 return false
             }
-            if job.description == String() {
+            if job.details == String() {
                 errorMessage = "Please Enter a Thoughful Description"
                 return false
             }

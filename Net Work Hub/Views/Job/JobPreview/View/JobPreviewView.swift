@@ -28,12 +28,12 @@ struct JobPreviewView: View {
                     NWHRow(label: "Job Title", detailText: job.title ?? "")
                     //            NWHRow(label: "Category")
                     NWHRow(label: "Target Budget", detailText: job.targetBudget?.currencyFormatting() ?? "")
-                    NWHRow(label: "Target Delivery", detailText: job.targetDate ?? "")
+                    NWHRow(label: "Target Delivery", detailText: job.formatDateString(from: job.targetDate ?? ""))
                     NWHRow(label: "Status", detailText: job.status ?? "", detailIcon: getStatusIcon(job: job), detailIconColor: getStatusIconColor(job: job))
                     NWHRow(label: "Engineer", detailText: "Link to Engineer Profile")
                 }
                 Section("Description") {
-                    Text(job.description ?? "")
+                    Text(job.details ?? "")
                         .multilineTextAlignment(.leading)
                 }
             }
@@ -58,16 +58,10 @@ struct JobPreviewView: View {
                     }
                 }
             }
-            .fullScreenCover(isPresented: $showEditView) {
+            .navigationDestination(isPresented: $showEditView) {
                 AddEditJobView(isPresented: $showEditView, isMainLoading: $isLoading)
                     .environmentObject(job)
             }
         }
-    }
-    
-    func getDateString(_ date: Date) -> String {
-        let format = DateFormatter()
-        format.dateFormat = "E, d MMM"
-        return format.string(from: date)
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-@MainActor class DataController: ObservableObject {
+class DataController: ObservableObject {
     
     @Published var currentUserId = Int()
     @Published var activeJobs = [Job]()
@@ -17,7 +17,7 @@ import Foundation
     
     func deleteUserJob(jobId: String, completion: @escaping () -> ()) {
         let params = ["job_id" : jobId]
-        NWHConnector().generatePostRequest("job-business-remove", onSuccess: { data, response in
+        NWHConnector().generatePostRequest("job-business-remove", params, onSuccess: { data, response in
             if let response = response as? HTTPURLResponse {
                 guard (200 ... 299) ~= response.statusCode else { // check for http errors
                     print("statusCode should be 2xx, but is \(response.statusCode)")
@@ -52,6 +52,22 @@ import Foundation
                 let results = try decoder.decode([Job].self, from: data)
                 self.activeJobs = results
                 completion()
+                
+            } catch let DecodingError.dataCorrupted(context) {
+                print(context)
+                completion()
+            } catch let DecodingError.keyNotFound(key, context) {
+                print("Key '\(key)' not found:", context.debugDescription)
+                print("codingPath:", context.codingPath)
+                completion()
+            } catch let DecodingError.valueNotFound(value, context) {
+                print("Value '\(value)' not found:", context.debugDescription)
+                print("codingPath:", context.codingPath)
+                completion()
+            } catch let DecodingError.typeMismatch(type, context)  {
+                print("Type '\(type)' mismatch:", context.debugDescription)
+                print("codingPath:", context.codingPath)
+                completion()
             } catch {
                 print("error decoding data inside getUserJobs")
                 completion()
@@ -68,7 +84,7 @@ import Foundation
         let params = ["business_user_id" : "\(currentUserId)",
                       "job_status" : "job-status-open",
                       "job_title" : job.title ?? "",
-                      "job_description" : job.description ?? "",
+                      "job_description" : job.details ?? "",
                       "target_budget" : job.targetBudget?.filter { numbers.contains($0) } ?? "",
                       "target_date" : job.targetDate ?? "" ] // TODO: FORMAT DATE PASSED INTO SERVICE
         
@@ -97,9 +113,9 @@ import Foundation
         let params = ["business_user_id" : "\(currentUserId)",
                       "job_status" : "job-status-open",
                       "job_title" : job.title ?? "",
-                      "job_description" : job.description ?? "",
+                      "job_description" : job.details ?? "",
                       "target_budget" : job.targetBudget?.filter { numbers.contains($0) } ?? "",
-                      "target_date" : job.targetDate ?? "" ] // TODO: FORMAT DATE PASSED INTO SERVICE
+                      "target_date" : formatDateString(from: job.targetDate ?? "") ]
         
         NWHConnector().generatePostRequest("job-business-post", params, onSuccess: { data, response in
             if let response = response as? HTTPURLResponse {
@@ -120,6 +136,16 @@ import Foundation
             print(error.localizedDescription)
             completion()
         })
+    }
+    
+    func formatDateString(from date: String) -> String {
+        let formatPost = DateFormatter()
+        formatPost.dateFormat = "Y-m-d H:i:s"
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM, yyyy"
+        
+        return formatPost.string(from: dateFormatter.date(from: date) ?? Date())
     }
     
 }

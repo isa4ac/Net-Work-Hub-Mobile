@@ -16,68 +16,88 @@ struct AddEditJobView: View {
     // if != nil, it is editting an existing job
     @State var isNewJob = false
     var body: some View {
-        VStack {
-            Form {
-                Section {
-                    NWHTextEntryRowView(label: "Post Title",
-                                        text: $job.title.toUnwrapped(defaultValue: ""),
-                                        prompt: "Required")
-                    // TODO: MAKE A PICKER FOR CATAGORY ONCE IT HAS BEEN INTEGRATED IN API
-                    NWHTextEntryRowView(label: "Target Budget",
-                                        text: $job.targetBudget.toUnwrapped(defaultValue: ""),
-                                        prompt: getSymbol() + "0.00 (optional)",
-                                        format: .currency)
-                    DatePicker("Target Completion",
-                               selection: $viewModel.targetDate,
-                               in: Date()...,
-                               displayedComponents: .date)
-    
-                }
-                
-                Section {
-                    TextField("Write a desciption of the desired outcome of the job...",
-                              text: $job.description.toUnwrapped(defaultValue: ""),
-                              axis: .vertical)
-                        .lineLimit(6...)
-                }
-                
-            }
-            .listSectionSpacing(20)
-            .onFirstAppear {
-                viewModel.targetDate = viewModel.getNextWeek()
-            }
-            Spacer()
-            PrimaryButton(text: isNewJob ? "Update Job" : "Post Job", action: {
-                if viewModel.controlsValid(job) { // TODO VALIDATE JOB DATE SELECTION
-                    // save job date selection as string to object
-                    dataController.addUserJob(job, completion: {
-                        isMainLoading = true
-                        isPresented = false
-                    })
-                } else {
-                    viewModel.showAlert.toggle()
-                }
-            })
-            .padding()
-        }
-        .navigationTitle(isNewJob ? "Create Job Post" : "Update Job Post")
-        .alert(isPresented: $viewModel.showAlert, content: {
-            Alert(title: Text(viewModel.errorMessage))
-        })
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button(isNewJob ? "Update" : "Post") {
-                    if !viewModel.controlsValid(job) {
-                        viewModel.showAlert.toggle()
-                        return
+//        NavigationView {
+            VStack {
+                Form {
+                    Section {
+                        NWHTextEntryRowView(label: "Post Title",
+                                            text: $job.title.toUnwrapped(defaultValue: ""),
+                                            prompt: "Required")
+                        // TODO: MAKE A PICKER FOR CATAGORY ONCE IT HAS BEEN INTEGRATED IN API
+                        NWHTextEntryRowView(label: "Target Budget",
+                                            text: $viewModel.targetBudget,
+                                            prompt: getSymbol() + "0.00 (optional)",
+                                            format: .currency)
+                        DatePicker("Target Completion",
+                                   selection: $viewModel.targetDate,
+                                   in: Date()...,
+                                   displayedComponents: .date)
+        
                     }
-                    dataController.addUserJob(job, completion: {
-                        isMainLoading = true
-                        isPresented = false
-                    })
+                    
+                    Section {
+                        TextField("Write a desciption of the desired outcome of the job...",
+                                  text: $job.details.toUnwrapped(defaultValue: ""),
+                                  axis: .vertical)
+                            .lineLimit(6...)
+                    }
+                    
+                }
+                .listSectionSpacing(20)
+                .onFirstAppear {
+                    viewModel.targetDate = viewModel.getNextWeek()
+                }
+                Spacer()
+                PrimaryButton(text: isNewJob ? "Post Job" : "Update Job", action: {
+                    if viewModel.controlsValid(job) { // TODO VALIDATE JOB DATE SELECTION
+                        // save job date selection as string to object
+                        dataController.addUserJob(job, completion: {
+                            isMainLoading = true
+                            isPresented = false
+                        })
+                    } else {
+                        viewModel.showAlert.toggle()
+                    }
+                })
+                .padding()
+            }
+            .navigationTitle(isNewJob ? "Create Job Post" : "Update Job Post")
+            .alert(isPresented: $viewModel.showAlert, content: {
+                Alert(title: Text(viewModel.errorMessage))
+            })
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(isNewJob ? "Post" : "Update") {
+                        if !viewModel.controlsValid(job) {
+                            viewModel.showAlert.toggle()
+                            return
+                        }
+                        
+                        // save target date and target budget
+                        viewModel.saveValues(job)
+                        
+                        dataController.addUserJob(job, completion: {
+                            isMainLoading = true
+                            isPresented = false
+                        })
+                    }
+                }
+                ToolbarItem(placement: .topBarLeading) {
+                    Button("Cancel") {
+                        // check if there where any edits, from the original
+                        if viewModel.wasEditted(job) {
+                            // send alert here
+                        } else { // if no changes:
+                            isPresented = false
+                        }
+                    }
                 }
             }
-        }
+            .onAppear {
+                viewModel.loadValues(job)
+                viewModel.saveJob(job)
+            }
+//        }
     }
 }
 
