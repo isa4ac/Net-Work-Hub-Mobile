@@ -17,6 +17,7 @@ extension DashboardView {
         @Published var showConfirmation = false
         @Published var showWarning = false
         @Published var alert = Alert(title: Text(""))
+        @Published var deleteJobID = String()
         
         func setDeleteAlert() {
             alert = Alert(title: Text("You cannot delete the job since it has already been agreed apon."),

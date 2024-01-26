@@ -110,7 +110,8 @@ class DataController: ObservableObject {
     }
     
     func updateUserJob(_ job: Job, completion: @escaping () -> ()) {
-        let params = ["business_user_id" : "\(currentUserId)",
+        let params = ["job_id" : job.id,
+                      "business_user_id" : "\(currentUserId)",
                       "job_status" : "job-status-open",
                       "job_title" : job.title ?? "",
                       "job_description" : job.details ?? "",

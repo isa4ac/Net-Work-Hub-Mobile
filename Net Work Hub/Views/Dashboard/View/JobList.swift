@@ -23,6 +23,7 @@ extension DashboardView {
                             Button("Delete", role: .cancel) {
                                 if job.status == "Open for Bids" {
                                     viewModel.showConfirmation = true
+                                    viewModel.deleteJobID = job.id
                                 } else {
                                     viewModel.setDeleteAlert()
                                     viewModel.showWarning = true
@@ -36,7 +37,7 @@ extension DashboardView {
                             titleVisibility: .visible
                         ) {
                             Button("Delete", role: .destructive) {
-                                dataController.deleteUserJob(jobId: job.id, completion: { })
+                                dataController.deleteUserJob(jobId: viewModel.deleteJobID, completion: { })
                                 viewModel.isLoading = true
                             }
                         }

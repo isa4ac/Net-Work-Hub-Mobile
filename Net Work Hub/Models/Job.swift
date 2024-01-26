@@ -45,16 +45,6 @@ class Job: Codable, ObservableObject, Equatable {
     @Published var finalBudget: String?
     @Published var finalDate: String?
     
-    func formatDateString(from date: String) -> String {
-        let formatPost = DateFormatter()
-        formatPost.dateFormat = "Y-m-d H:i:s"
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMM, yyyy"
-        
-        return dateFormatter.string(from: formatPost.date(from: date) ?? Date())
-    }
-    
     public func dateToString(_ date: Date) -> String{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMM, yyyy"

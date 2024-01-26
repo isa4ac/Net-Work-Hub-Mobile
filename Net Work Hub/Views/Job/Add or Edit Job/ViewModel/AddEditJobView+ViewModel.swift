@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 extension AddEditJobView {
     class ViewModel: ObservableObject {
@@ -37,20 +38,6 @@ extension AddEditJobView {
             job.targetBudget = targetBudget.filter { numbers.contains($0) }
         }
         
-        private func dateToString(_ date: Date) -> String{
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd MMM, yyyy"
-            
-            return dateFormatter.string(from: date)
-        }
-        
-        private func stringToDate(_ string: String) -> Date {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd MMM, yyyy"
-            
-            return dateFormatter.date(from: string) ?? Date()
-        }
-        
         func controlsValid(_ job: Job) -> Bool {
             if job.title == String() {
                 errorMessage = "Please Enter Post Title"
@@ -63,10 +50,20 @@ extension AddEditJobView {
             return true
         }
         
-        func getFormattedDateString(_ date: Date) -> String {
-            let formatPost = DateFormatter()
-            formatPost.dateFormat = "Y-m-d H:i:s"
-            return formatPost.string(from: date)
+        func addJob(_ job: Job, isNew: Bool, completion: @escaping () -> (), _ dataController: DataController) {
+            if !controlsValid(job) {
+                showAlert.toggle()
+                return
+            }
+            
+            // save target date and target budget
+            saveValues(job)
+            
+            if isNew {
+                dataController.addUserJob(job, completion: { completion() })
+            } else {
+                dataController.updateUserJob(job, completion: { completion() })
+            }
         }
         
         func getNextWeek() -> Date {

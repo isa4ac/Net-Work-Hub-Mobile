@@ -16,7 +16,7 @@ struct AddEditJobView: View {
     // if != nil, it is editting an existing job
     @State var isNewJob = false
     var body: some View {
-//        NavigationView {
+        NavigationStack {
             VStack {
                 Form {
                     Section {
@@ -32,14 +32,14 @@ struct AddEditJobView: View {
                                    selection: $viewModel.targetDate,
                                    in: Date()...,
                                    displayedComponents: .date)
-        
+                        
                     }
                     
                     Section {
                         TextField("Write a desciption of the desired outcome of the job...",
                                   text: $job.details.toUnwrapped(defaultValue: ""),
                                   axis: .vertical)
-                            .lineLimit(6...)
+                        .lineLimit(6...)
                     }
                     
                 }
@@ -49,15 +49,10 @@ struct AddEditJobView: View {
                 }
                 Spacer()
                 PrimaryButton(text: isNewJob ? "Post Job" : "Update Job", action: {
-                    if viewModel.controlsValid(job) { // TODO VALIDATE JOB DATE SELECTION
-                        // save job date selection as string to object
-                        dataController.addUserJob(job, completion: {
-                            isMainLoading = true
-                            isPresented = false
-                        })
-                    } else {
-                        viewModel.showAlert.toggle()
-                    }
+                    viewModel.addJob(job, isNew: isNewJob, completion: {
+                        isPresented = false
+                        isMainLoading = true
+                    }, dataController)
                 })
                 .padding()
             }
@@ -68,25 +63,18 @@ struct AddEditJobView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(isNewJob ? "Post" : "Update") {
-                        if !viewModel.controlsValid(job) {
-                            viewModel.showAlert.toggle()
-                            return
-                        }
-                        
-                        // save target date and target budget
-                        viewModel.saveValues(job)
-                        
-                        dataController.addUserJob(job, completion: {
-                            isMainLoading = true
+                        viewModel.addJob(job, isNew: isNewJob, completion: {
                             isPresented = false
-                        })
+                            isMainLoading = true
+                        }, dataController)
                     }
                 }
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Cancel") {
                         // check if there where any edits, from the original
                         if viewModel.wasEditted(job) {
-                            // send alert here
+                            // send alert her
+                            
                         } else { // if no changes:
                             isPresented = false
                         }
@@ -97,12 +85,13 @@ struct AddEditJobView: View {
                 viewModel.loadValues(job)
                 viewModel.saveJob(job)
             }
-//        }
+            .navigationBarBackButtonHidden(true)
+        }
     }
 }
 
 extension Binding {
-     func toUnwrapped<T>(defaultValue: T) -> Binding<T> where Value == Optional<T>  {
+    func toUnwrapped<T>(defaultValue: T) -> Binding<T> where Value == Optional<T>  {
         Binding<T>(get: { self.wrappedValue ?? defaultValue }, set: { self.wrappedValue = $0 })
     }
 }
