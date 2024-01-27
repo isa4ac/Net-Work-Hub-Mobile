@@ -116,7 +116,7 @@ class DataController: ObservableObject {
                       "job_title" : job.title ?? "",
                       "job_description" : job.details ?? "",
                       "target_budget" : job.targetBudget?.filter { numbers.contains($0) } ?? "",
-                      "target_date" : formatDateString(from: job.targetDate ?? "") ]
+                      "target_date" : job.targetDate ?? "" ]
         
         NWHConnector().generatePostRequest("job-business-post", params, onSuccess: { data, response in
             if let response = response as? HTTPURLResponse {
@@ -137,16 +137,6 @@ class DataController: ObservableObject {
             print(error.localizedDescription)
             completion()
         })
-    }
-    
-    func formatDateString(from date: String) -> String {
-        let formatPost = DateFormatter()
-        formatPost.dateFormat = "Y-m-d H:i:s"
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMM, yyyy"
-        
-        return formatPost.string(from: dateFormatter.date(from: date) ?? Date())
     }
     
 }
