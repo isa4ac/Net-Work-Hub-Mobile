@@ -32,6 +32,7 @@
 		11D2EDA52B0EE76B00E1F0F5 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D2EDA42B0EE76B00E1F0F5 /* DataController.swift */; };
 		11D2EDA72B0EEB9500E1F0F5 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D2EDA62B0EEB9500E1F0F5 /* View.swift */; };
 		11DC508B2B64DB4200FCF3ED /* JobBidders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC508A2B64DB4200FCF3ED /* JobBidders.swift */; };
+		11DC508D2B656CB700FCF3ED /* JobBidderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC508C2B656CB700FCF3ED /* JobBidderRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		11D2EDA42B0EE76B00E1F0F5 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		11D2EDA62B0EEB9500E1F0F5 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		11DC508A2B64DB4200FCF3ED /* JobBidders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobBidders.swift; sourceTree = "<group>"; };
+		11DC508C2B656CB700FCF3ED /* JobBidderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobBidderRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 				113FA0A02AFD9BFD00403AFC /* JobRowView.swift */,
 				11048D022B0C41CB0069A8C6 /* NWHTextEntryRowView.swift */,
 				113863772B12A9F5008FAD77 /* NWHRow.swift */,
+				11DC508C2B656CB700FCF3ED /* JobBidderRow.swift */,
 			);
 			path = Rows;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 			files = (
 				113FA0B42B0410CD00403AFC /* UserProfileView+ViewModel.swift in Sources */,
 				113FA0932AFD99E700403AFC /* ContentView.swift in Sources */,
+				11DC508D2B656CB700FCF3ED /* JobBidderRow.swift in Sources */,
 				11048D032B0C41CB0069A8C6 /* NWHTextEntryRowView.swift in Sources */,
 				113FA0A52AFDAB1000403AFC /* DashboardView.swift in Sources */,
 				113FA0B82B041C6B00403AFC /* JobList.swift in Sources */,
