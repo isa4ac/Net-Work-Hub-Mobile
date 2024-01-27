@@ -31,6 +31,7 @@
 		11D2EDA32B0EC8B400E1F0F5 /* NWHConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D2EDA22B0EC8B400E1F0F5 /* NWHConnector.swift */; };
 		11D2EDA52B0EE76B00E1F0F5 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D2EDA42B0EE76B00E1F0F5 /* DataController.swift */; };
 		11D2EDA72B0EEB9500E1F0F5 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D2EDA62B0EEB9500E1F0F5 /* View.swift */; };
+		11DC508B2B64DB4200FCF3ED /* JobBidders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC508A2B64DB4200FCF3ED /* JobBidders.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		11D2EDA22B0EC8B400E1F0F5 /* NWHConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWHConnector.swift; sourceTree = "<group>"; };
 		11D2EDA42B0EE76B00E1F0F5 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		11D2EDA62B0EEB9500E1F0F5 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		11DC508A2B64DB4200FCF3ED /* JobBidders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobBidders.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		11048CFA2B0C3BE40069A8C6 /* Job */ = {
 			isa = PBXGroup;
 			children = (
+				11DC50872B64DB1600FCF3ED /* Bidders */,
 				113863732B12A978008FAD77 /* JobPreview */,
 				11048CFD2B0C3C330069A8C6 /* Add or Edit Job */,
 			);
@@ -287,6 +290,30 @@
 			path = "User Profile";
 			sourceTree = "<group>";
 		};
+		11DC50872B64DB1600FCF3ED /* Bidders */ = {
+			isa = PBXGroup;
+			children = (
+				11DC50892B64DB2600FCF3ED /* ViewModel */,
+				11DC50882B64DB2000FCF3ED /* View */,
+			);
+			path = Bidders;
+			sourceTree = "<group>";
+		};
+		11DC50882B64DB2000FCF3ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				11DC508A2B64DB4200FCF3ED /* JobBidders.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		11DC50892B64DB2600FCF3ED /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -376,6 +403,7 @@
 				113FA0AF2B040EF100403AFC /* PrimaryButton.swift in Sources */,
 				113FA0952AFD99E700403AFC /* Job.swift in Sources */,
 				11D2EDA72B0EEB9500E1F0F5 /* View.swift in Sources */,
+				11DC508B2B64DB4200FCF3ED /* JobBidders.swift in Sources */,
 				113FA0B62B04115300403AFC /* User.swift in Sources */,
 				11048CF32B0C33B10069A8C6 /* Binding.swift in Sources */,
 				113FA0912AFD99E700403AFC /* Net_Work_HubApp.swift in Sources */,
