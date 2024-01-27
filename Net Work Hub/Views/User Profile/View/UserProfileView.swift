@@ -9,8 +9,47 @@ import SwiftUI
 
 struct UserProfileView: View {
     @StateObject var viewModel = ViewModel()
+    // Placeholder data for demonstration
+    var profileImage: Image = Image(systemName: "person.crop.circle.fill")
+    var userName: String = "Isaac Van Meter"
+    var userDescription: String = "I am a small business that primarily focuses on mustache stuff."
+    
     var body: some View {
-        Text("User profile page")
+        NavigationStack {
+            VStack {
+                HStack(alignment: .center, spacing: 16) {
+                    profileImage
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 100, height: 100)
+                        .clipShape(Circle())
+                        .shadow(radius: 7)
+                    
+                    VStack(alignment: .leading) {
+                        Text(userName)
+                            .font(.title)
+                            .fontWeight(.bold)
+                    }
+                }
+                .padding(.top)
+                .padding(.horizontal)
+                
+                Text(userDescription)
+                    .foregroundColor(.secondary)
+                    .padding()
+                
+                Spacer()
+                
+                PrimaryButton(text: "Log Out", action: {
+//                    viewModel.showAddJob = true
+                })
+                .padding(.bottom)
+                .padding(.horizontal)
+            }
+            .navigationBarItems(trailing: Button("Edit") {
+                // edit logic here
+            })
+        }
     }
 }
 
