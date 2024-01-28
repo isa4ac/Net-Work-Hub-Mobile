@@ -38,12 +38,13 @@ struct JobPreviewView: View {
                         .multilineTextAlignment(.leading)
                 }
                 Section {
-                    Spacer()
                     PrimaryButton(text: "Current Bids", action: {
                         showBids.toggle()
                     })
                 }
+                .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
             }
+            
             .navigationTitle("Post Details")
             .navigationBarTitleDisplayMode(.automatic)
             .toolbar {
