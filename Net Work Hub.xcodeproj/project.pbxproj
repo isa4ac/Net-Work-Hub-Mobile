@@ -31,7 +31,7 @@
 		11D2EDA32B0EC8B400E1F0F5 /* NWHConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D2EDA22B0EC8B400E1F0F5 /* NWHConnector.swift */; };
 		11D2EDA52B0EE76B00E1F0F5 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D2EDA42B0EE76B00E1F0F5 /* DataController.swift */; };
 		11D2EDA72B0EEB9500E1F0F5 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D2EDA62B0EEB9500E1F0F5 /* View.swift */; };
-		11DC508B2B64DB4200FCF3ED /* JobBidders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC508A2B64DB4200FCF3ED /* JobBidders.swift */; };
+		11DC508B2B64DB4200FCF3ED /* JobBiddersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC508A2B64DB4200FCF3ED /* JobBiddersView.swift */; };
 		11DC508D2B656CB700FCF3ED /* JobBidderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC508C2B656CB700FCF3ED /* JobBidderRow.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,7 +61,7 @@
 		11D2EDA22B0EC8B400E1F0F5 /* NWHConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWHConnector.swift; sourceTree = "<group>"; };
 		11D2EDA42B0EE76B00E1F0F5 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		11D2EDA62B0EEB9500E1F0F5 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		11DC508A2B64DB4200FCF3ED /* JobBidders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobBidders.swift; sourceTree = "<group>"; };
+		11DC508A2B64DB4200FCF3ED /* JobBiddersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobBiddersView.swift; sourceTree = "<group>"; };
 		11DC508C2B656CB700FCF3ED /* JobBidderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobBidderRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -305,7 +305,7 @@
 		11DC50882B64DB2000FCF3ED /* View */ = {
 			isa = PBXGroup;
 			children = (
-				11DC508A2B64DB4200FCF3ED /* JobBidders.swift */,
+				11DC508A2B64DB4200FCF3ED /* JobBiddersView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -407,7 +407,7 @@
 				113FA0AF2B040EF100403AFC /* PrimaryButton.swift in Sources */,
 				113FA0952AFD99E700403AFC /* Job.swift in Sources */,
 				11D2EDA72B0EEB9500E1F0F5 /* View.swift in Sources */,
-				11DC508B2B64DB4200FCF3ED /* JobBidders.swift in Sources */,
+				11DC508B2B64DB4200FCF3ED /* JobBiddersView.swift in Sources */,
 				113FA0B62B04115300403AFC /* User.swift in Sources */,
 				11048CF32B0C33B10069A8C6 /* Binding.swift in Sources */,
 				113FA0912AFD99E700403AFC /* Net_Work_HubApp.swift in Sources */,

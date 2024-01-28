@@ -21,7 +21,7 @@ struct bidderRowView: View {
     var body: some View {
         // Expandable row:
         Button {
-            withAnimation() {
+            withAnimation(.spring(duration: 0.6, bounce: -1.0, blendDuration: 2.0)) {
                 isExpanded.toggle()
             }
         } label: {
@@ -51,6 +51,8 @@ struct bidderRowView: View {
                 if isExpanded {
                     Text(bidDescription)
                         .multilineTextAlignment(.leading)
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
                     HStack {
                         // Decline Button
                         Button("Decline") {
@@ -58,6 +60,7 @@ struct bidderRowView: View {
                         }
                         .foregroundStyle(.primary)
                         .frame(maxWidth: .infinity, minHeight: 30)
+                        .background(.thinMaterial)
                         .background(.red)
                         .cornerRadius(20)
                         .padding(.horizontal, 10)
@@ -66,6 +69,7 @@ struct bidderRowView: View {
                         }
                         .foregroundStyle(.primary)
                         .frame(maxWidth: .infinity, minHeight: 30)
+                        .background(.thinMaterial)
                         .background(.green)
                         .cornerRadius(20)
                         .padding(.horizontal, 10)

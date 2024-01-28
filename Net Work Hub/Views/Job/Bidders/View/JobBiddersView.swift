@@ -1,5 +1,5 @@
 //
-//  JobBidders.swift
+//  JobBiddersView.swift
 //  Net Work Hub
 //
 //  Created by Isaac Vanmeter on 1/27/24.

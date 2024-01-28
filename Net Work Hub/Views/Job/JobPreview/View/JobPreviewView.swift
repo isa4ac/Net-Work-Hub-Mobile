@@ -14,6 +14,7 @@ struct JobPreviewView: View {
 //    @StateObject var job = Job()
     @State var showEditView = false
     @State var isLoading = false
+    @State var showBids = false
     var body: some View {
         if isLoading {
             ProgressView()
@@ -35,6 +36,12 @@ struct JobPreviewView: View {
                 Section("Description") {
                     Text(job.details ?? "")
                         .multilineTextAlignment(.leading)
+                }
+                Section {
+                    Spacer()
+                    PrimaryButton(text: "Current Bids", action: {
+                        showBids.toggle()
+                    })
                 }
             }
             .navigationTitle("Post Details")
@@ -61,6 +68,9 @@ struct JobPreviewView: View {
             .fullScreenCover(isPresented: $showEditView) {
                 AddEditJobView(isPresented: $showEditView, isMainLoading: $isLoading)
                     .environmentObject(job)
+            }
+            .navigationDestination(isPresented: $showBids) {
+                JobBiddersView()
             }
         }
     }
