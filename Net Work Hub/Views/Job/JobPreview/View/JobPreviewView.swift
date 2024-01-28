@@ -11,7 +11,6 @@ struct JobPreviewView: View {
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject var dataController: DataController
     @StateObject var job = Job()
-//    @StateObject var job = Job()
     @State var showEditView = false
     @State var isLoading = false
     @State var showBids = false
@@ -44,7 +43,6 @@ struct JobPreviewView: View {
                 }
                 .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
             }
-            
             .navigationTitle("Post Details")
             .navigationBarTitleDisplayMode(.automatic)
             .toolbar {
@@ -53,7 +51,9 @@ struct JobPreviewView: View {
                     ToolbarItem(placement: .bottomBar) {
                         Button("Delete") {
                             dataController.deleteUserJob(jobId: job.id, completion: {
-                                dismiss()
+                                DispatchQueue.main.async {
+                                    dismiss()
+                                }
                             })
                         }
                         .foregroundStyle(.red)

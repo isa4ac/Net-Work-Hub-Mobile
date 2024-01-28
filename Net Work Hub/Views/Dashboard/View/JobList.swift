@@ -76,7 +76,7 @@ extension DashboardView {
     }
     
     func compairDate(_ date1: String, lessThan date2: String) -> Bool {
-        var j = Job()
+        let j = Job()
         return j.stringToDate(date1) < j.stringToDate(date2)
     }
 }
