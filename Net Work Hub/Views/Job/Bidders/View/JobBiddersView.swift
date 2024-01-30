@@ -57,7 +57,7 @@ struct JobBiddersView: View {
                         return $0.experience > $1.experience
                     }
                 })) { bidder in
-                    bidderRowView(name: bidder.name, yearsOfExperience: bidder.experience, jobsComplete: bidder.jobsDone,
+                    BidderRowView(name: bidder.name, yearsOfExperience: bidder.experience, jobsComplete: bidder.jobsDone,
                                   bidDescription: "SAMPLE BID DESCRIPTION SAMPLE BID DESCRIPTION SAMPLE BID DESCRIPTION SAMPLE BID DESCRIPTION SAMPLE BID DESCRIPTION SAMPLE BID DESCRIPTION SAMPLE BID DESCRIPTION ",
                                   quotePrice: bidder.bidAmount, onAccept: {
                         
