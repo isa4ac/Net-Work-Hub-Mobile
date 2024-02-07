@@ -23,7 +23,7 @@ extension DashboardView {
                         }
                         .swipeActions(allowsFullSwipe: false) {
                             Button("Delete", role: .cancel) {
-                                if job.status == "Open for Bids" {
+                                if job.isOpen() {
                                     viewModel.deleteEditJobID = job.id
                                     viewModel.showConfirmation = true
                                 } else {
@@ -33,7 +33,7 @@ extension DashboardView {
                             }
                             .tint(Color.red)
                             Button("Edit", role: .cancel) {
-                                if job.status == "Open for Bids" {
+                                if job.isOpen() {
                                     viewModel.editJob = job
                                     viewModel.showEditJob = true
                                 } else {

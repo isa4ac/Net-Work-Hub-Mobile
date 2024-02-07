@@ -30,24 +30,28 @@ struct JobPreviewView: View {
                     NWHRow(label: "Target Budget", detailText: job.targetBudget?.currencyFormatting() ?? "")
                     NWHRow(label: "Target Delivery", detailText: job.targetDate ?? "")
                     NWHRow(label: "Status", detailText: job.status ?? "", detailIcon: getStatusIcon(job: job), detailIconColor: getStatusIconColor(job: job))
-                    NWHRow(label: "Engineer", detailText: "Link to Engineer Profile")
+                    if !job.isOpen() {
+                        NWHRow(label: "Engineer", detailText: "Link to Engineer Profile")
+                    }
                 }
                 Section("Description") {
                     Text(job.details ?? "")
                         .multilineTextAlignment(.leading)
                 }
-                Section {
-                    PrimaryButton(text: "Current Bids", action: {
-                        showBids.toggle()
-                    })
+                if job.isOpen() {
+                    Section {
+                        PrimaryButton(text: "Current Bids", action: {
+                            showBids.toggle()
+                        })
+                    }
+                    .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
                 }
-                .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
             }
             .navigationTitle("Post Details")
             .navigationBarTitleDisplayMode(.automatic)
             .toolbar {
                 // only show delete/edit options if there it has not been accepted
-                if job.status?.lowercased() == "open for bids" {
+                if job.isOpen() {
                     ToolbarItem(placement: .bottomBar) {
                         Button("Delete") {
                             dataController.deleteUserJob(jobId: job.id, completion: {

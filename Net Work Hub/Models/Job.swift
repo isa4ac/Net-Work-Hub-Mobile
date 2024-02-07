@@ -45,6 +45,10 @@ class Job: Codable, ObservableObject, Equatable {
     @Published var finalBudget: String?
     @Published var finalDate: String?
     
+    public func isOpen() -> Bool {
+        return self.status?.lowercased() == "open for bids"
+    }
+    
     public func dateToString(_ date: Date) -> String{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMM, yyyy"
