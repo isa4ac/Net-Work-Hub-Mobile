@@ -11,7 +11,7 @@ import SwiftUI
 struct Net_Work_HubApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashScreenView()
         }
     }
 }
