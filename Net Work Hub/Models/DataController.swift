@@ -9,11 +9,56 @@ import Foundation
 
 class DataController: ObservableObject {
     
-    @Published var currentUserId = Int()
+    @Published var currentUser = User()
     @Published var activeJobs = [Job]()
 //    @Published var completedJobs = [Job]()
     
     let numbers = "01234567890"
+    
+    func decodeData<T: Decodable>(_ data: Data, _ type: T.Type) -> T? {
+        let decoder = JSONDecoder()
+        do {
+            let results = try decoder.decode(type.self, from: data)
+            return results
+        } catch let DecodingError.dataCorrupted(context) {
+            print(context)
+            return nil
+        } catch let DecodingError.keyNotFound(key, context) {
+            print("Key '\(key)' not found:", context.debugDescription)
+            print("codingPath:", context.codingPath)
+            return nil
+        } catch let DecodingError.valueNotFound(value, context) {
+            print("Value '\(value)' not found:", context.debugDescription)
+            print("codingPath:", context.codingPath)
+            return nil
+        } catch let DecodingError.typeMismatch(type, context)  {
+            print("Type '\(type)' mismatch:", context.debugDescription)
+            print("codingPath:", context.codingPath)
+            return nil
+        } catch {
+            print("error decoding data inside getUserJobs")
+            return nil
+        }
+    }
+    
+    func userLogin(_ username: String, _ password: String, completion: @escaping () -> ()) {
+        // TODO: UPDATE ONCE AUTHENTICATION IS WORKING INCLUDE USERNAME AND PASS IN PARAMS
+        
+        let params = ["email" : "user@example.com",
+                      "pw": "25d55ad283aa400af464c76d713c07ad"]
+        
+        NWHConnector().generatePostRequest("user-login", params, onSuccess: { data, response in
+            if let user = self.decodeData(data, User.self) {
+                self.currentUser = user
+                completion()
+            }
+        }, onError: { error in
+            // TO-DO: Display error alert
+            print("error occured calling user-login api: ")
+            print(error.localizedDescription)
+            completion()
+        })
+    }
     
     func deleteUserJob(jobId: String, completion: @escaping () -> ()) {
         let params = ["job_id" : jobId]
@@ -37,39 +82,18 @@ class DataController: ObservableObject {
             print("error occured calling job-business-list-active api: ")
             print(error.localizedDescription)
             completion()
-            
         })
     }
     
     func getUserJobs(completion: @escaping () -> ()) {
-        let params = ["user_id" : "\(currentUserId)",
+        let params = ["user_id" : currentUser.id,
                       "flatten" : "true"]
         
         NWHConnector().generatePostRequest("job-business-list-active", params, onSuccess: { data, response in
             let decoder = JSONDecoder()
             
-            do {
-                let results = try decoder.decode([Job].self, from: data)
-                self.activeJobs = results
-                completion()
-                
-            } catch let DecodingError.dataCorrupted(context) {
-                print(context)
-                completion()
-            } catch let DecodingError.keyNotFound(key, context) {
-                print("Key '\(key)' not found:", context.debugDescription)
-                print("codingPath:", context.codingPath)
-                completion()
-            } catch let DecodingError.valueNotFound(value, context) {
-                print("Value '\(value)' not found:", context.debugDescription)
-                print("codingPath:", context.codingPath)
-                completion()
-            } catch let DecodingError.typeMismatch(type, context)  {
-                print("Type '\(type)' mismatch:", context.debugDescription)
-                print("codingPath:", context.codingPath)
-                completion()
-            } catch {
-                print("error decoding data inside getUserJobs")
+            if let activeJobs = self.decodeData(data, [Job].self) {
+                self.activeJobs = activeJobs
                 completion()
             }
         }, onError: { error in
@@ -81,7 +105,7 @@ class DataController: ObservableObject {
     }
     
     func addUserJob(_ job: Job, completion: @escaping () -> ()) {
-        let params = ["business_user_id" : "\(currentUserId)",
+        let params = ["business_user_id" : currentUser.id,
                       "job_status" : "job-status-open",
                       "job_title" : job.title ?? "",
                       "job_description" : job.details ?? "",
@@ -111,7 +135,7 @@ class DataController: ObservableObject {
     
     func updateUserJob(_ job: Job, completion: @escaping () -> ()) {
         let params = ["job_id" : job.id,
-                      "business_user_id" : "\(currentUserId)",
+                      "business_user_id" : currentUser.id,
                       "job_status" : "job-status-open",
                       "job_title" : job.title ?? "",
                       "job_description" : job.details ?? "",
