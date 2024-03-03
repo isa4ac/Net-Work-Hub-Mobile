@@ -17,22 +17,18 @@ struct UserProfileView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                HStack(alignment: .center, spacing: 16) {
+                HStack(alignment: .center) {
                     profileImage
                         .resizable()
                         .scaledToFit()
                         .frame(width: 100, height: 100)
                         .clipShape(Circle())
                         .shadow(radius: 7)
-                    
-                    VStack(alignment: .leading) {
-                        Text(userName)
-                            .font(.title)
-                            .fontWeight(.bold)
-                    }
                 }
-                .padding(.top)
                 .padding(.horizontal)
+                Text(userName)
+                    .font(.title)
+                    .fontWeight(.bold)
                 
                 Text(userDescription)
                     .foregroundColor(.secondary)

@@ -45,9 +45,9 @@ class DataController: ObservableObject {
         // TODO: UPDATE ONCE AUTHENTICATION IS WORKING INCLUDE USERNAME AND PASS IN PARAMS
         
         let params = ["email" : "user@example.com",
-                      "pw": "25d55ad283aa400af464c76d713c07ad"]
+                      "password": "25d55ad283aa400af464c76d713c07ad"]
         
-        NWHConnector().generatePostRequest("user-login", params, onSuccess: { data, response in
+        NWHConnector().generateGetRequest("login", params, onSuccess: { data, response in
             if let user = self.decodeData(data, User.self) {
                 self.currentUser = user
                 completion()
@@ -61,8 +61,8 @@ class DataController: ObservableObject {
     }
     
     func deleteUserJob(jobId: String, completion: @escaping () -> ()) {
-        let params = ["job_id" : jobId]
-        NWHConnector().generatePostRequest("job-business-remove", params, onSuccess: { data, response in
+        let params = ["id" : jobId]
+        NWHConnector().generatePostRequest("removejob", params, onSuccess: { data, response in
             if let response = response as? HTTPURLResponse {
                 guard (200 ... 299) ~= response.statusCode else { // check for http errors
                     print("statusCode should be 2xx, but is \(response.statusCode)")
@@ -86,10 +86,9 @@ class DataController: ObservableObject {
     }
     
     func getUserJobs(completion: @escaping () -> ()) {
-        let params = ["user_id" : currentUser.id,
-                      "flatten" : "true"]
+        let params = ["id" : currentUser.id]
         
-        NWHConnector().generatePostRequest("job-business-list-active", params, onSuccess: { data, response in
+        NWHConnector().generateGetRequest("businessJobs", params, onSuccess: { data, response in
             let decoder = JSONDecoder()
             
             if let activeJobs = self.decodeData(data, [Job].self) {
@@ -106,13 +105,12 @@ class DataController: ObservableObject {
     
     func addUserJob(_ job: Job, completion: @escaping () -> ()) {
         let params = ["business_user_id" : currentUser.id,
-                      "job_status" : "job-status-open",
                       "job_title" : job.title ?? "",
                       "job_description" : job.details ?? "",
                       "target_budget" : job.targetBudget?.filter { numbers.contains($0) } ?? "",
                       "target_date" : job.targetDate ?? "" ] // TODO: FORMAT DATE PASSED INTO SERVICE
         
-        NWHConnector().generatePostRequest("job-business-post", params, onSuccess: { data, response in
+        NWHConnector().generatePostRequest("postjob", params, onSuccess: { data, response in
             if let response = response as? HTTPURLResponse {
                 guard (200 ... 299) ~= response.statusCode else { // check for http errors
                     print("statusCode should be 2xx, but is \(response.statusCode)")

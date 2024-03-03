@@ -9,18 +9,18 @@ import Foundation
 
 class Job: Codable, ObservableObject, Equatable {
     enum CodingKeys: String, CodingKey {
-        case id = "jobDetail_Id_PK"
-        case title = "jobDetail_Title"
-        case engID = "jobDetail_Engineer_UserId_FK"
-        case status = "define_Job_Status_Name"
-        case postDate = "jobDetail_Posted_DT"
-        case details = "jobDetail_Description"
-        case targetBudget = "jobDetail_Proposal_Target_Budget"
-        case targetDate = "jobDetail_Proposal_Target_Date"
-        case agreedBudget = "jobDetail_Proposal_Agreed_Budget"
-        case agreedDate = "jobDetail_Proposal_Agreed_Date"
-        case finalBudget = "jobDetail_Proposal_Final_Budget"
-        case finalDate = "jobDetail_Proposal_Final_Date"
+        case id = "jobdetailIdPk"
+        case title = "jobdetailTitle"
+        case engID = "jobdetailEngineerUseridFk"
+        case status = "jobdetailDefinedJobStatusFk"
+        case postDate = "jobdetailPostedDt"
+        case details = "jobdetailDescriptionFromBusiness"
+        case targetBudget = "jobdetailProposalTargetBudget"
+        case targetDate = "jobdetailProposalTargetDate"
+        case agreedBudget = "jobdetailProposalAgreedBudget"
+        case agreedDate = "jobdetailProposalAgreedDate"
+        case finalBudget = "jobdetailProposalFinalBudget"
+        case finalDate = "jobdetailProposalFinalDate"
     }
     
     static func == (lhs: Job, rhs: Job) -> Bool {
@@ -46,10 +46,18 @@ class Job: Codable, ObservableObject, Equatable {
     @Published var finalDate: String?
     
     public func isOpen() -> Bool {
-        return self.status?.lowercased() == "open for bids"
+        return self.status?.lowercased() == "job-status-open"
     }
     
-    public func dateToString(_ date: Date) -> String{
+    public func prettyDateString(_ string: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+        
+        return dateToString(dateFormatter.date(from: string) ?? Date())
+        
+    }
+    
+    public func dateToString(_ date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMM, yyyy"
         
@@ -58,7 +66,7 @@ class Job: Codable, ObservableObject, Equatable {
     
     public func stringToDate(_ string: String) -> Date {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMM, yyyy"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
         
         return dateFormatter.date(from: string) ?? Date()
     }
@@ -66,17 +74,17 @@ class Job: Codable, ObservableObject, Equatable {
     required init(from decoder: Decoder) throws {
         let contianer = try decoder.container(keyedBy: CodingKeys.self)
         id = try contianer.decode(String.self, forKey: .id)
-        engID = try contianer.decode(String.self, forKey: .engID)
+        engID = try contianer.decodeIfPresent(String.self, forKey: .engID)
         status = try contianer.decode(String.self, forKey: .status)
         postDate = try contianer.decode(String.self, forKey: .postDate)
         title = try contianer.decode(String.self, forKey: .title)
         details = try contianer.decode(String.self, forKey: .details)
         targetBudget = try contianer.decode(String.self, forKey: .targetBudget)
         targetDate = try contianer.decode(String.self, forKey: .targetDate)
-        agreedBudget = try contianer.decode(String.self, forKey: .agreedBudget)
-        agreedDate = try contianer.decode(String.self, forKey: .agreedDate)
-        finalBudget = try contianer.decode(String.self, forKey: .finalBudget)
-        finalDate = try contianer.decode(String.self, forKey: .finalDate)
+        agreedBudget = try contianer.decodeIfPresent(String.self, forKey: .agreedBudget)
+        agreedDate = try contianer.decodeIfPresent(String.self, forKey: .agreedDate)
+        finalBudget = try contianer.decodeIfPresent(String.self, forKey: .finalBudget)
+        finalDate = try contianer.decodeIfPresent(String.self, forKey: .finalDate)
     }
     
     init() {

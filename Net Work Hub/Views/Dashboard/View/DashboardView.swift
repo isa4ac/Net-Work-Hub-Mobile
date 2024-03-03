@@ -19,18 +19,20 @@ struct DashboardView: View {
                     })
                 }
         } else {
-            NavigationStack {
-                jobList
-                    .toolbar {
-                        ToolbarItem(placement: .topBarTrailing) {
-                            NavigationLink {
-                                UserProfileView()
-                            } label: {
-                                Label("Your Profile", systemImage: "person.circle.fill")
+            ZStack {
+                NavigationStack {
+                    jobList
+                        .toolbar {
+                            ToolbarItem(placement: .topBarTrailing) {
+                                NavigationLink {
+                                    UserProfileView()
+                                } label: {
+                                    Label("Your Profile", systemImage: "person.circle.fill")
+                                }
                             }
                         }
-                    }
-                    .navigationTitle("Dashboard")
+                        .navigationTitle("Dashboard")
+                }
             }
             .refreshable {
                 viewModel.isLoading = true

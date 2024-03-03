@@ -28,8 +28,8 @@ struct JobPreviewView: View {
                     NWHRow(label: "Job Title", detailText: job.title ?? "")
                     //            NWHRow(label: "Category")
                     NWHRow(label: "Target Budget", detailText: job.targetBudget?.currencyFormatting() ?? "")
-                    NWHRow(label: "Target Delivery", detailText: job.targetDate ?? "")
-                    NWHRow(label: "Status", detailText: job.status ?? "", detailIcon: getStatusIcon(job: job), detailIconColor: getStatusIconColor(job: job))
+                    NWHRow(label: "Target Delivery", detailText: job.prettyDateString(job.targetDate ?? ""))
+                    NWHRow(label: "Status", detailText: getStatusString(job: job), detailIcon: getStatusIcon(job: job), detailIconColor: getStatusIconColor(job: job))
                     if !job.isOpen() {
                         NWHRow(label: "Engineer", detailText: "Link to Engineer Profile")
                     }

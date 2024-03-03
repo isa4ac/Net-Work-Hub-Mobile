@@ -45,7 +45,9 @@ struct AddEditJobView: View {
                 }
                 .listSectionSpacing(20)
                 .onFirstAppear {
-                    viewModel.targetDate = viewModel.getNextWeek()
+                    if isNewJob {
+                        viewModel.targetDate = viewModel.getNextWeek()
+                    }
                 }
                 Spacer()
                 PrimaryButton(text: isNewJob ? "Post Job" : "Update Job", action: {

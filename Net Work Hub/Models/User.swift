@@ -9,14 +9,14 @@ import Foundation
 
 class User: Codable, ObservableObject, Equatable {
     enum CodingKeys: String, CodingKey {
-        case id = "userData_WordPress_UserId_FK"
-        case role = "userData_Define_Role_Id_FK"
-        case timezone = "userData_Timezone"
-        case email = "userData_Primary_Email"
-        case firstName = "userData_Name_First"
-        case lastName = "userData_Name_Last"
-        case businessName = "userData_Name_Business"
-        case bio = "userData_Profile_Description"
+        case id = "userdataIdPk"
+        case role = "userdataDefineRoleIdFk"
+        case timezone = "userdataTimezone"
+        case email = "userdataPrimaryEmail"
+        case firstName = "userdataNameFirst"
+        case lastName = "userdataNameLast"
+        case businessName = "userdataNameBusiness"
+        case bio = "userdataProfileDescription"
     }
     
     @Published var id: String
@@ -65,19 +65,5 @@ class User: Codable, ObservableObject, Equatable {
         try container.encode(lastName, forKey: .lastName)
         try container.encode(businessName, forKey: .businessName)
         try container.encode(bio, forKey: .bio)
-    }
-    
-    public func dateToString(_ date: Date) -> String{
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMM, yyyy"
-        
-        return dateFormatter.string(from: date)
-    }
-    
-    public func stringToDate(_ string: String) -> Date {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMM, yyyy"
-        
-        return dateFormatter.date(from: string) ?? Date()
     }
 }

@@ -17,7 +17,7 @@ struct JobRowView: View {
             
             VStack(alignment: .leading) {
                 Text(job.title ?? "")
-                Text((job.status ?? "").capitalized)
+                Text((getStatusString(job: job)).capitalized)
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }
@@ -27,13 +27,13 @@ struct JobRowView: View {
 
 func getStatusIcon(job: Job) -> String {
     switch((job.status ?? "")) {
-    case "Closed":
+    case "job-status-closed":
         return "checkmark.circle.fill"
-    case "Open for Bids":
+    case "job-status-open":
         return "arrow.down.forward.and.arrow.up.backward.circle.fill"
-    case "Work In Progress":
+    case "job-status-in-progress":
         return "minus.circle.fill"
-    case "Action Needed From Business":
+    case "job-status-action-needed":
         return "exclamationmark.circle.fill"
     default:
         return String()
@@ -42,15 +42,30 @@ func getStatusIcon(job: Job) -> String {
 
 func getStatusIconColor(job: Job) -> Color {
     switch((job.status ?? "")) {
-    case "Closed":
+    case "job-status-closed":
         return .green
-    case "Open for Bids":
+    case "job-status-open":
         return .yellow
-    case "Work In Progress":
+    case "job-status-in-progress":
         return .yellow
-    case "Action Needed From Business":
+    case "job-status-action-needed":
         return .red
     default:
         return .clear
+    }
+}
+
+func getStatusString(job: Job) -> String {
+    switch((job.status ?? "")) {
+    case "job-status-closed":
+        return "Job Complete"
+    case "job-status-open":
+        return "Open for bidding"
+    case "job-status-in-progress":
+        return "In Progress"
+    case "job-status-action-needed":
+        return "Action Needed!"
+    default:
+        return ""
     }
 }
