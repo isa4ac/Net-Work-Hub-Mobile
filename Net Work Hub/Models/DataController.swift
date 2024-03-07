@@ -161,4 +161,18 @@ class DataController: ObservableObject {
         })
     }
     
+    func getEngProfile(_ id: String, completion: @escaping (EngineerProfile) -> ()) {
+        let params = ["id" : "user-data-13cfdabb-0293-4cda-82fd-b90229994d96"] // TODO: remove once linked
+        
+        NWHConnector().generateGetRequest("engProf", params, onSuccess: { data, response in
+            if let engProf = self.decodeData(data, EngineerProfile.self) {
+                completion(engProf)
+            }
+        }, onError: { error in
+            // TO-DO: Display error alert
+            print("error occured calling user-login api: ")
+            print(error.localizedDescription)
+            completion(EngineerProfile())
+        })
+    }
 }

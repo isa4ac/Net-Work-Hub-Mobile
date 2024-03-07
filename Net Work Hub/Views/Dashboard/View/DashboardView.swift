@@ -25,7 +25,7 @@ struct DashboardView: View {
                         .toolbar {
                             ToolbarItem(placement: .topBarTrailing) {
                                 NavigationLink {
-                                    UserProfileView()
+                                    UserProfileView(user: dataController.currentUser, isEngineer: false)
                                 } label: {
                                     Label("Your Profile", systemImage: "person.circle.fill")
                                 }

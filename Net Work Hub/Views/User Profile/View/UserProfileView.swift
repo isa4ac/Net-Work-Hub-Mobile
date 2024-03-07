@@ -10,9 +10,10 @@ import SwiftUI
 struct UserProfileView: View {
     @StateObject var viewModel = ViewModel()
     // Placeholder data for demonstration
-    var profileImage: Image = Image(systemName: "person.crop.circle.fill")
-    var userName: String = "Isaac Van Meter"
-    var userDescription: String = "I am a small business that primarily focuses on mustache stuff."
+    var profileImage: Image = Image(systemName: "person.crop.circle.fill") // TODO: Add to user object
+    @State var engProfile: EngineerProfile = EngineerProfile()
+    @State var user: User = User()
+    var isEngineer: Bool
     
     var body: some View {
         NavigationStack {
@@ -26,29 +27,34 @@ struct UserProfileView: View {
                         .shadow(radius: 7)
                 }
                 .padding(.horizontal)
-                Text(userName)
+                Text((user.firstName ?? "") + " " + (user.lastName ?? ""))
                     .font(.title)
                     .fontWeight(.bold)
                 
-                Text(userDescription)
-                    .foregroundColor(.secondary)
-                    .padding()
+                List {
+                    Text(user.businessName ?? "")
+                        .foregroundStyle(.secondary)
+                    Text(user.bio ?? "")
+                        .foregroundStyle(.secondary)
+                }
                 
                 Spacer()
                 
-                PrimaryButton(text: "Log Out", action: {
-//                    viewModel.showAddJob = true
-                })
-                .padding(.bottom)
-                .padding(.horizontal)
+                if !isEngineer {
+                    PrimaryButton(text: "Log Out", action: {
+                        // TODO: logout logic here
+                    })
+                    .padding(.bottom)
+                    .padding(.horizontal)
+                }
             }
-            .navigationBarItems(trailing: Button("Edit") {
-                // edit logic here
-            })
+            .navigationBarItems(trailing: !isEngineer ? Button("Edit") {
+                // TODO: Edit logic here
+            } : nil)
         }
     }
 }
 
 #Preview {
-    UserProfileView()
+    UserProfileView(isEngineer: false)
 }
