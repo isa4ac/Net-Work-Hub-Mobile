@@ -31,6 +31,7 @@
 		117BE77C2B748A850043378C /* JobBid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117BE77B2B748A850043378C /* JobBid.swift */; };
 		117BE77E2B748BCF0043378C /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117BE77D2B748BCF0043378C /* SplashScreenView.swift */; };
 		11833F682B130D4000F16AB7 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11833F672B130D4000F16AB7 /* String.swift */; };
+		11BAA6B32B9FB55900C5BDEE /* JobBiddersView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BAA6B22B9FB55900C5BDEE /* JobBiddersView+ViewModel.swift */; };
 		11CEED982B68D8A000ADB6EA /* BidderRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CEED972B68D8A000ADB6EA /* BidderRowView.swift */; };
 		11D2EDA32B0EC8B400E1F0F5 /* NWHConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D2EDA22B0EC8B400E1F0F5 /* NWHConnector.swift */; };
 		11D2EDA52B0EE76B00E1F0F5 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D2EDA42B0EE76B00E1F0F5 /* DataController.swift */; };
@@ -64,6 +65,7 @@
 		117BE77B2B748A850043378C /* JobBid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobBid.swift; sourceTree = "<group>"; };
 		117BE77D2B748BCF0043378C /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		11833F672B130D4000F16AB7 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		11BAA6B22B9FB55900C5BDEE /* JobBiddersView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JobBiddersView+ViewModel.swift"; sourceTree = "<group>"; };
 		11CEED972B68D8A000ADB6EA /* BidderRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidderRowView.swift; sourceTree = "<group>"; };
 		11D2EDA22B0EC8B400E1F0F5 /* NWHConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWHConnector.swift; sourceTree = "<group>"; };
 		11D2EDA42B0EE76B00E1F0F5 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 		11DC50892B64DB2600FCF3ED /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				11BAA6B22B9FB55900C5BDEE /* JobBiddersView+ViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				11048CFC2B0C3C1F0069A8C6 /* AddEditJobView.swift in Sources */,
 				117BE77C2B748A850043378C /* JobBid.swift in Sources */,
 				11048D012B0C3C5B0069A8C6 /* AddEditJobView+ViewModel.swift in Sources */,
+				11BAA6B32B9FB55900C5BDEE /* JobBiddersView+ViewModel.swift in Sources */,
 				113FA0A32AFDA31800403AFC /* DashboardView+ViewModel.swift in Sources */,
 				113FA0AF2B040EF100403AFC /* PrimaryButton.swift in Sources */,
 				113FA0952AFD99E700403AFC /* Job.swift in Sources */,

@@ -9,6 +9,7 @@ import Foundation
 
 extension UserProfileView {
     class ViewModel: ObservableObject {
-        
+        @Published var isLoading = true
+        @Published var engProfile = EngineerProfile()
     }
 }

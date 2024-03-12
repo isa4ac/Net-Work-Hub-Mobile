@@ -14,6 +14,7 @@ struct JobPreviewView: View {
     @State var showEditView = false
     @State var isLoading = false
     @State var showBids = false
+    @State var showEngineerProf = false
     var body: some View {
         if isLoading {
             ProgressView()
@@ -30,9 +31,6 @@ struct JobPreviewView: View {
                     NWHRow(label: "Target Budget", detailText: job.targetBudget?.currencyFormatting() ?? "")
                     NWHRow(label: "Target Delivery", detailText: job.prettyDateString(job.targetDate ?? ""))
                     NWHRow(label: "Status", detailText: getStatusString(job: job), detailIcon: getStatusIcon(job: job), detailIconColor: getStatusIconColor(job: job))
-                    if !job.isOpen() {
-                        NWHRow(label: "Engineer", detailText: "Link to Engineer Profile")
-                    }
                 }
                 Section("Description") {
                     Text(job.details ?? "")
@@ -42,6 +40,13 @@ struct JobPreviewView: View {
                     Section {
                         PrimaryButton(text: "Current Bids", action: {
                             showBids.toggle()
+                        })
+                    }
+                    .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+                } else {
+                    Section {
+                        PrimaryButton(text: "Assigned Engineer", action: {
+                            showEngineerProf.toggle()
                         })
                     }
                     .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
@@ -63,6 +68,7 @@ struct JobPreviewView: View {
                         .foregroundStyle(.red)
                     }
                     
+                    
                     ToolbarItem(placement: .topBarTrailing) {
                         Button("Edit") {
                             showEditView.toggle()
@@ -75,8 +81,12 @@ struct JobPreviewView: View {
                     .environmentObject(job)
             }
             .navigationDestination(isPresented: $showBids) {
-                JobBiddersView()
+                JobBiddersView(jobId: job.id)
+            }
+            .navigationDestination(isPresented: $showEngineerProf) {
+                UserProfileView(engineerId: job.engID ?? "")
             }
         }
     }
 }
+

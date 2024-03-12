@@ -36,7 +36,7 @@ class User: Codable, ObservableObject, Equatable {
         let contianer = try decoder.container(keyedBy: CodingKeys.self)
         id = try contianer.decode(String.self, forKey: .id)
         role = try contianer.decode(String.self, forKey: .role)
-        timezone = try contianer.decode(String.self, forKey: .timezone)
+        timezone = try contianer.decodeIfPresent(String.self, forKey: .timezone)
         email = try contianer.decode(String.self, forKey: .email)
         firstName = try contianer.decode(String.self, forKey: .firstName)
         lastName = try contianer.decode(String.self, forKey: .lastName)

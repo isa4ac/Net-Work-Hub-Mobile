@@ -11,10 +11,10 @@ struct BidderRowView: View {
     @State var isExpanded = false
     //var user: User
     var name: String
-    var yearsOfExperience: Int // in user object
-    var jobsComplete: Int // in user object
-    var bidDescription: String // in job object
-    var quotePrice: Double // in bid object
+    var yearsOfExperience: Double
+    var jobsComplete: Int 
+    var bidDescription: String
+    var quotePrice: Double
     var onAccept: () -> ()
     var onDecline: () -> ()
     var body: some View {
@@ -31,11 +31,11 @@ struct BidderRowView: View {
                             .font(isExpanded ? .title2 : .body)
                             .animation(.linear(duration: 0.3), value: isExpanded)
                         // user.yearsOfExperience
-                        Text("^[\(yearsOfExperience) Years of Experience](inflect: true)")
+                        Text("^[\(yearsOfExperience, specifier: "%.1f") Year](inflect: true) of Experience")
                             .font(isExpanded ? .body : .footnote)
                             .foregroundStyle(.secondary)
                             .animation(.linear(duration: 0.3), value: isExpanded)
-                        Text("^[\(jobsComplete) Jobs Complete](inflect: true)")
+                        Text("^[\(jobsComplete) Job](inflect: true) Complete")
                             .font(isExpanded ? .body : .footnote)
                             .foregroundStyle(.secondary)
                             .animation(.linear(duration: 0.3), value: isExpanded)

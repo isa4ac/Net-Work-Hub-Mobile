@@ -13,7 +13,7 @@ class EngineerProfile: Codable, Equatable {
         case firstName = "firstName"
         case lastName = "lastName"
         case timeZone = "timeZone"
-        case experienceStart = "experienceStart"
+        case experience = "experience"
         case jobsDone = "jobsDone"
         case avgReview = "avgReview"
         case bio = "bio"
@@ -23,9 +23,9 @@ class EngineerProfile: Codable, Equatable {
     var firstName: String?
     var lastName: String?
     var timeZone: String?
-    var experienceStart: String?
-    var jobsDone: String?
-    var avgReview: String?
+    var experience: Double?
+    var jobsDone: Int?
+    var avgReview: Double?
     var bio: String?
     
     static func == (lhs: EngineerProfile, rhs: EngineerProfile) -> Bool {
@@ -38,9 +38,9 @@ class EngineerProfile: Codable, Equatable {
         firstName = try contianer.decode(String.self, forKey: .firstName)
         lastName = try contianer.decode(String.self, forKey: .lastName)
         timeZone = try contianer.decode(String.self, forKey: .timeZone)
-        experienceStart = try contianer.decode(String.self, forKey: .experienceStart)
-        jobsDone = try contianer.decode(String.self, forKey: .jobsDone)
-        avgReview = try contianer.decode(String.self, forKey: .avgReview)
+        experience = try contianer.decode(Double.self, forKey: .experience)
+        jobsDone = try contianer.decode(Int.self, forKey: .jobsDone)
+        avgReview = try contianer.decode(Double.self, forKey: .avgReview)
         bio = try contianer.decode(String.self, forKey: .bio)
     }
     
@@ -49,9 +49,9 @@ class EngineerProfile: Codable, Equatable {
         self.firstName = String()
         self.lastName = String()
         self.timeZone = String()
-        self.experienceStart = String()
-        self.jobsDone = String()
-        self.avgReview = String()
+        self.experience = Double()
+        self.jobsDone = Int()
+        self.avgReview = Double()
         self.bio = String()
     }
     
@@ -59,8 +59,8 @@ class EngineerProfile: Codable, Equatable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(id, forKey: .id)
         try container.encode(firstName, forKey: .firstName)
-        try container.encode(lastName, forKey: .firstName)
-        try container.encode(experienceStart, forKey: .experienceStart)
+        try container.encode(lastName, forKey: .lastName)
+        try container.encode(experience, forKey: .experience)
         try container.encode(jobsDone, forKey: .jobsDone)
         try container.encode(avgReview, forKey: .avgReview)
         try container.encode(bio, forKey: .bio)

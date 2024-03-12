@@ -45,7 +45,7 @@ class DataController: ObservableObject {
         // TODO: UPDATE ONCE AUTHENTICATION IS WORKING INCLUDE USERNAME AND PASS IN PARAMS
         
         let params = ["email" : "user@example.com",
-                      "password": "25d55ad283aa400af464c76d713c07ad"]
+                      "password": "12344321abcddcba"]
         
         NWHConnector().generateGetRequest("login", params, onSuccess: { data, response in
             if let user = self.decodeData(data, User.self) {
@@ -173,6 +173,21 @@ class DataController: ObservableObject {
             print("error occured calling user-login api: ")
             print(error.localizedDescription)
             completion(EngineerProfile())
+        })
+    }
+    
+    func getJobBids(_ jobId: String, completion: @escaping ([JobBid]) -> ()) {
+        let params = ["job_id" : jobId]
+        
+        NWHConnector().generateGetRequest("jobbids", params, onSuccess: { data, response in
+            if let jobBids = self.decodeData(data, [JobBid].self) {
+                completion(jobBids)
+            }
+        }, onError: { error in
+            // TO-DO: Display error alert
+            print("error occured calling user-login api: ")
+            print(error.localizedDescription)
+            completion([JobBid]())
         })
     }
 }
