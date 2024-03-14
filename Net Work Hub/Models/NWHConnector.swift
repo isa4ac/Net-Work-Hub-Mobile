@@ -8,8 +8,8 @@
 import Foundation
 
 class NWHConnector {
-//    let baseURL = "https://app.networkhub.me/wp-json/v1/"
-    let baseURL = "http://localhost:8080/"
+    let baseURL = "http://149.28.118.123:8080/"
+//    let baseURL = "http://localhost:8080/"
     
     func generateGetRequest(_ endpoint: String,
                              _ params: [String : String] = [:],

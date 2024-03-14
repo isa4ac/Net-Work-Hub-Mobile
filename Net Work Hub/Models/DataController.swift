@@ -56,7 +56,7 @@ class DataController: ObservableObject {
             // TO-DO: Display error alert
             print("error occured calling user-login api: ")
             print(error.localizedDescription)
-            completion()
+//            completion() DO NOT COMPLETE WITHOUT LOGIN SUCCESS
         })
     }
     
@@ -107,8 +107,8 @@ class DataController: ObservableObject {
         let params = ["business_user_id" : currentUser.id,
                       "job_title" : job.title ?? "",
                       "job_description" : job.details ?? "",
-                      "target_budget" : job.targetBudget?.filter { numbers.contains($0) } ?? "",
-                      "target_date" : job.targetDate ?? "" ] // TODO: FORMAT DATE PASSED INTO SERVICE
+                      "target_budget" : String(format: "%.2f", job.targetBudget ?? 0.00),
+                      "target_date" : job.serverFormatDateString(from: job.targetDate ?? "")] // TODO: FORMAT DATE PASSED INTO SERVICE
         
         NWHConnector().generatePostRequest("postjob", params, onSuccess: { data, response in
             if let response = response as? HTTPURLResponse {
@@ -133,14 +133,12 @@ class DataController: ObservableObject {
     
     func updateUserJob(_ job: Job, completion: @escaping () -> ()) {
         let params = ["job_id" : job.id,
-                      "business_user_id" : currentUser.id,
-                      "job_status" : "job-status-open",
                       "job_title" : job.title ?? "",
                       "job_description" : job.details ?? "",
-                      "target_budget" : job.targetBudget?.filter { numbers.contains($0) } ?? "",
-                      "target_date" : job.targetDate ?? "" ]
+                      "target_budget" : String(format: "%.2f", job.targetBudget ?? 0.00),
+                      "target_date" : job.serverFormatDateString(from: job.targetDate ?? "")]
         
-        NWHConnector().generatePostRequest("job-business-post", params, onSuccess: { data, response in
+        NWHConnector().generatePostRequest("updatejob", params, onSuccess: { data, response in
             if let response = response as? HTTPURLResponse {
                 guard (200 ... 299) ~= response.statusCode else { // check for http errors
                     print("statusCode should be 2xx, but is \(response.statusCode)")

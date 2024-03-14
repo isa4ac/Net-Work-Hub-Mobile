@@ -52,8 +52,10 @@ struct AddEditJobView: View {
                 Spacer()
                 PrimaryButton(text: isNewJob ? "Post Job" : "Update Job", action: {
                     viewModel.addJob(job, isNew: isNewJob, completion: {
-                        isPresented = false
-                        isMainLoading = true
+                        withAnimation {
+                            isPresented = false
+                            isMainLoading = true
+                        }
                     }, dataController)
                 })
                 .padding()

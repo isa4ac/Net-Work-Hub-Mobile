@@ -29,13 +29,18 @@ extension AddEditJobView {
         
         func loadValues(_ job: Job) {
             targetDate = job.stringToDate(job.targetDate ?? "")
-            targetBudget = job.targetBudget ?? ""
+            targetBudget = String(format: "$%.2f", job.targetBudget ?? 0.00)
         }
         
         func saveValues(_ job: Job) {
-            job.targetDate = job.dateToString(targetDate)
-            let numbers = "01234567890"
-            job.targetBudget = targetBudget.filter { numbers.contains($0) }
+            job.targetDate = job.serverFormatDateString(from: job.dateToString(targetDate))
+
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .currency
+
+            if let number = formatter.number(from: targetBudget) {
+                job.targetBudget = Double(number.doubleValue)
+            }
         }
         
         func controlsValid(_ job: Job) -> Bool {

@@ -64,6 +64,7 @@
 		1166C3592B9A3A8D007C6D8C /* EngineerProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineerProfile.swift; sourceTree = "<group>"; };
 		117BE77B2B748A850043378C /* JobBid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobBid.swift; sourceTree = "<group>"; };
 		117BE77D2B748BCF0043378C /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		1181A4722BA2A98F005070D1 /* Net-Work-Hub-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Net-Work-Hub-Info.plist"; sourceTree = SOURCE_ROOT; };
 		11833F672B130D4000F16AB7 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		11BAA6B22B9FB55900C5BDEE /* JobBiddersView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JobBiddersView+ViewModel.swift"; sourceTree = "<group>"; };
 		11CEED972B68D8A000ADB6EA /* BidderRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidderRowView.swift; sourceTree = "<group>"; };
@@ -243,6 +244,7 @@
 		113FA08F2AFD99E700403AFC /* Net Work Hub */ = {
 			isa = PBXGroup;
 			children = (
+				1181A4722BA2A98F005070D1 /* Net-Work-Hub-Info.plist */,
 				11048CF92B0C3BDE0069A8C6 /* Views */,
 				113FA0AD2B040EE300403AFC /* Assets */,
 				113FA0AC2B040EE000403AFC /* Models */,
@@ -563,6 +565,7 @@
 				DEVELOPMENT_TEAM = SR43B28UH6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Net-Work-Hub-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -592,6 +595,7 @@
 				DEVELOPMENT_TEAM = SR43B28UH6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Net-Work-Hub-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

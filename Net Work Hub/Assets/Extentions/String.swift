@@ -7,6 +7,19 @@
 
 import Foundation
 
+extension Double {
+    func currencyFormatting() -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.maximumFractionDigits = 2
+        formatter.minimumFractionDigits = 2
+        if let str = formatter.string(for: self) {
+            return str
+        }
+        return ""
+    }
+}
+
 extension String {
     // formatting text for currency textField
     func currencyFormatting() -> String {

@@ -38,11 +38,11 @@ class Job: Codable, ObservableObject, Equatable {
     @Published var postDate: String? // date
     @Published var title: String?
     @Published var details: String?
-    @Published var targetBudget: String?
+    @Published var targetBudget: Double?
     @Published var targetDate: String?
-    @Published var agreedBudget: String?
+    @Published var agreedBudget: Double?
     @Published var agreedDate: String?
-    @Published var finalBudget: String?
+    @Published var finalBudget: Double?
     @Published var finalDate: String?
     
     public func isOpen() -> Bool {
@@ -71,6 +71,16 @@ class Job: Codable, ObservableObject, Equatable {
         return dateFormatter.date(from: string) ?? Date()
     }
     
+    public func serverFormatDateString(from dateString: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM, yyyy"
+        
+        let date = dateFormatter.date(from: dateString) ?? Date()
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+        return dateFormatter.string(from: date)
+    }
+    
     required init(from decoder: Decoder) throws {
         let contianer = try decoder.container(keyedBy: CodingKeys.self)
         id = try contianer.decode(String.self, forKey: .id)
@@ -79,11 +89,11 @@ class Job: Codable, ObservableObject, Equatable {
         postDate = try contianer.decode(String.self, forKey: .postDate)
         title = try contianer.decode(String.self, forKey: .title)
         details = try contianer.decode(String.self, forKey: .details)
-        targetBudget = try contianer.decode(String.self, forKey: .targetBudget)
+        targetBudget = try contianer.decode(Double.self, forKey: .targetBudget)
         targetDate = try contianer.decode(String.self, forKey: .targetDate)
-        agreedBudget = try contianer.decodeIfPresent(String.self, forKey: .agreedBudget)
+        agreedBudget = try contianer.decodeIfPresent(Double.self, forKey: .agreedBudget)
         agreedDate = try contianer.decodeIfPresent(String.self, forKey: .agreedDate)
-        finalBudget = try contianer.decodeIfPresent(String.self, forKey: .finalBudget)
+        finalBudget = try contianer.decodeIfPresent(Double.self, forKey: .finalBudget)
         finalDate = try contianer.decodeIfPresent(String.self, forKey: .finalDate)
     }
     
@@ -94,11 +104,11 @@ class Job: Codable, ObservableObject, Equatable {
         self.postDate = String()
         self.title = String()
         self.details = String()
-        self.targetBudget = String()
+        self.targetBudget = Double()
         self.targetDate = String()
-        self.agreedBudget = String()
+        self.agreedBudget = Double()
         self.agreedDate = String()
-        self.finalBudget = String()
+        self.finalBudget = Double()
         self.finalDate = String()
     }
     
