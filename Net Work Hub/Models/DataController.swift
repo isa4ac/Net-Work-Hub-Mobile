@@ -136,7 +136,7 @@ class DataController: ObservableObject {
                       "job_title" : job.title ?? "",
                       "job_description" : job.details ?? "",
                       "target_budget" : String(format: "%.2f", job.targetBudget ?? 0.00),
-                      "target_date" : job.serverFormatDateString(from: job.targetDate ?? "")]
+                      "target_date" : job.targetDate ?? ""]
         
         NWHConnector().generatePostRequest("updatejob", params, onSuccess: { data, response in
             if let response = response as? HTTPURLResponse {

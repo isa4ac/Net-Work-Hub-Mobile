@@ -675,118 +675,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1B0469D2-2563-4098-9334-FCB884626C69"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Net Work Hub/Views/Job/Add or Edit Job/ViewModel/AddEditJobView+ViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "saveValues(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "1B0469D2-2563-4098-9334-FCB884626C69 - b4e73fc68b80add1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Net_Work_Hub.AddEditJobView.ViewModel.saveValues(Net_Work_Hub.Job) -&gt; ()"
-                  moduleName = "Net Work Hub"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ivanmeter/Desktop/Net%20Work%20Hub/Net%20Work%20Hub/Views/Job/Add%20or%20Edit%20Job/ViewModel/AddEditJobView+ViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "120">
-               </Location>
-               <Location
-                  uuid = "1B0469D2-2563-4098-9334-FCB884626C69 - b4e73fc68b80add1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Net_Work_Hub.AddEditJobView.ViewModel.saveValues(Net_Work_Hub.Job) -&gt; ()"
-                  moduleName = "Net Work Hub"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ivanmeter/Desktop/Net%20Work%20Hub/Net%20Work%20Hub/Views/Job/Add%20or%20Edit%20Job/ViewModel/AddEditJobView+ViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "116">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "121EBACE-1E52-41B3-A497-E8355F3AAD64"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Net Work Hub/Views/Job/Add or Edit Job/ViewModel/AddEditJobView+ViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "saveValues(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "121EBACE-1E52-41B3-A497-E8355F3AAD64 - bf2143ab3c814613"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Net_Work_Hub.AddEditJobView.ViewModel.controlsValid(Net_Work_Hub.Job) -&gt; Swift.Bool"
-                  moduleName = "Net Work Hub"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ivanmeter/Desktop/Net%20Work%20Hub/Net%20Work%20Hub/Views/Job/Add%20or%20Edit%20Job/ViewModel/AddEditJobView+ViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "476">
-               </Location>
-               <Location
-                  uuid = "121EBACE-1E52-41B3-A497-E8355F3AAD64 - b4e73fc68b80aed9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Net_Work_Hub.AddEditJobView.ViewModel.saveValues(Net_Work_Hub.Job) -&gt; ()"
-                  moduleName = "Net Work Hub"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ivanmeter/Desktop/Net%20Work%20Hub/Net%20Work%20Hub/Views/Job/Add%20or%20Edit%20Job/ViewModel/AddEditJobView+ViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "444">
-               </Location>
-               <Location
-                  uuid = "121EBACE-1E52-41B3-A497-E8355F3AAD64 - b4e73fc68b80aed9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Net_Work_Hub.AddEditJobView.ViewModel.saveValues(Net_Work_Hub.Job) -&gt; ()"
-                  moduleName = "Net Work Hub"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ivanmeter/Desktop/Net%20Work%20Hub/Net%20Work%20Hub/Views/Job/Add%20or%20Edit%20Job/ViewModel/AddEditJobView+ViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "488">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9B79B2BF-EF3A-4F28-9240-EF1981084B55"
+            uuid = "16B746AC-E74E-4C4D-A360-5C490495AB99"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -802,49 +691,65 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CA200042-DAC0-45E5-ABF1-B9BB720A015D"
+            uuid = "185E3917-8E6F-4135-A6B7-2C6F48C1CCE1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Net Work Hub/Assets/ViewModifiers/SelectTextOnEditingModifier.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "body(content:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "185E3917-8E6F-4135-A6B7-2C6F48C1CCE1 - a84372a32dd34ac5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.Notification) -&gt; () in Net_Work_Hub.SelectTextOnEditingModifier.body(content: SwiftUI._ViewModifier_Content&lt;Net_Work_Hub.SelectTextOnEditingModifier&gt;) -&gt; some"
+                  moduleName = "Net Work Hub"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ivanmeter/Desktop/Net%20Work%20Hub/Net%20Work%20Hub/Assets/ViewModifiers/SelectTextOnEditingModifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "328">
+               </Location>
+               <Location
+                  uuid = "185E3917-8E6F-4135-A6B7-2C6F48C1CCE1 - a84372a32dd34ac5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.Notification) -&gt; () in Net_Work_Hub.SelectTextOnEditingModifier.body(content: SwiftUI._ViewModifier_Content&lt;Net_Work_Hub.SelectTextOnEditingModifier&gt;) -&gt; some"
+                  moduleName = "Net Work Hub"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ivanmeter/Desktop/Net%20Work%20Hub/Net%20Work%20Hub/Assets/ViewModifiers/SelectTextOnEditingModifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "96">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D3BC7E97-9E89-4A80-AA89-78DEB824A543"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Net Work Hub/Views/Job/Add or Edit Job/ViewModel/AddEditJobView+ViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "saveValues(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "CA200042-DAC0-45E5-ABF1-B9BB720A015D - b4e73fc68b80aeba"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Net_Work_Hub.AddEditJobView.ViewModel.saveValues(Net_Work_Hub.Job) -&gt; ()"
-                  moduleName = "Net Work Hub"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ivanmeter/Desktop/Net%20Work%20Hub/Net%20Work%20Hub/Views/Job/Add%20or%20Edit%20Job/ViewModel/AddEditJobView+ViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "432">
-               </Location>
-               <Location
-                  uuid = "CA200042-DAC0-45E5-ABF1-B9BB720A015D - b4e73fc68b80aeba"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Net_Work_Hub.AddEditJobView.ViewModel.saveValues(Net_Work_Hub.Job) -&gt; ()"
-                  moduleName = "Net Work Hub"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ivanmeter/Desktop/Net%20Work%20Hub/Net%20Work%20Hub/Views/Job/Add%20or%20Edit%20Job/ViewModel/AddEditJobView+ViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "476">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

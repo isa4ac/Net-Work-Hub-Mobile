@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct NWHTextEntryRowView: View {
     var label: String
@@ -22,6 +23,7 @@ struct NWHTextEntryRowView: View {
                 TextField(label, text: $text, prompt: Text(prompt))
                     .multilineTextAlignment(.trailing)
                     .numbersOnly($text, isCurrency: true)
+                    
             } else if format == .percent {
                 HStack {
                     TextField(label, text: $text, prompt: Text(prompt))

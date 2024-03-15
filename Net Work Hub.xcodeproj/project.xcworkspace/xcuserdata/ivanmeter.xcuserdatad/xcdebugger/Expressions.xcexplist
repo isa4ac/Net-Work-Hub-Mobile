@@ -3,9 +3,6 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "closure #1 in closure #2 in JobPreviewView.body.getter:JobPreviewView.swift">
-      </ContextState>
-      <ContextState
          contextName = "Job.dateToString(_:):Job.swift">
          <PersistentStrings>
             <PersistentString
@@ -15,6 +12,20 @@
       </ContextState>
       <ContextState
          contextName = "AddEditJobView.ViewModel.saveValues(_:):AddEditJobView+ViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "job.dateToString(targetDate)">
+            </PersistentString>
+            <PersistentString
+               value = "job.serverFormatDateString(from: job.dateToString(targetDate))">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Job.init(from:):Job.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #2 in JobPreviewView.body.getter:JobPreviewView.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>
