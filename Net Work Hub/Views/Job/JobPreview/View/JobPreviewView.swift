@@ -55,7 +55,7 @@ struct JobPreviewView: View {
             .navigationTitle("Post Details")
             .navigationBarTitleDisplayMode(.automatic)
             .toolbar {
-                // only show delete/edit options if there it has not been accepted
+                // only show delete/edit options if it has not been accepted
                 if job.isOpen() {
                     ToolbarItem(placement: .bottomBar) {
                         Button("Delete") {

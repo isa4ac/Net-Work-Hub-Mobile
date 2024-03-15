@@ -42,11 +42,7 @@ struct JobBiddersView: View {
                             return $0.experience ?? 0 > $1.experience ?? 0
                         }
                     }), id: \.id) { bid in
-                        BidderRowView(name: (bid.firstName ?? "") + " " + (bid.lastName ?? ""),
-                                      yearsOfExperience: bid.experience ?? 0,
-                                      jobsComplete: bid.jobsDone ?? 0,
-                                      bidDescription: bid.propFromEng ?? "",
-                                      quotePrice: bid.propAmount ?? 0.0, onAccept: {
+                        BidderRowView(bid: bid, onAccept: {
                             
                         }, onDecline: {
                             

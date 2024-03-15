@@ -9,14 +9,11 @@ import SwiftUI
 
 struct BidderRowView: View {
     @State var isExpanded = false
-    //var user: User
-    var name: String
-    var yearsOfExperience: Double
-    var jobsComplete: Int 
-    var bidDescription: String
-    var quotePrice: Double
+    var bid: JobBid
     var onAccept: () -> ()
     var onDecline: () -> ()
+    @State var showEngProf = false
+    @State var selectedEngId = String()
     var body: some View {
         // Expandable row:
         Button {
@@ -27,22 +24,22 @@ struct BidderRowView: View {
                     VStack(alignment: .leading) {
                         //                    Text((user.firstName?.capitalized ?? "") + " " + (user.lastName?.capitalized ?? ""))
                         //                        .font(isExpanded ? .title2 : .body)
-                        Text(name.capitalized)
+                        Text(((bid.firstName ?? "") + " " + (bid.lastName ?? "")).capitalized)
                             .font(isExpanded ? .title2 : .body)
                             .animation(.linear(duration: 0.3), value: isExpanded)
                         // user.yearsOfExperience
-                        Text("^[\(yearsOfExperience, specifier: "%.1f") Year](inflect: true) of Experience")
+                        Text("^[\((bid.experience ?? 0), specifier: "%.1f") Year](inflect: true) of Experience")
                             .font(isExpanded ? .body : .footnote)
                             .foregroundStyle(.secondary)
                             .animation(.linear(duration: 0.3), value: isExpanded)
-                        Text("^[\(jobsComplete) Job](inflect: true) Complete")
+                        Text("^[\(bid.jobsDone ?? 0) Job](inflect: true) Complete")
                             .font(isExpanded ? .body : .footnote)
                             .foregroundStyle(.secondary)
                             .animation(.linear(duration: 0.3), value: isExpanded)
                     }
                     Group {
                         Spacer()
-                        Text(quotePrice.formatted(.currency(code: "USD")))
+                        Text((bid.propAmount ?? 0.0).formatted(.currency(code: "USD")))
                             .font(isExpanded ? .body : .footnote)
                             .animation(.smooth(duration: 0.3), value: isExpanded)
                         Image(systemName: isExpanded ? "chevron.down" : "chevron.right")
@@ -52,7 +49,7 @@ struct BidderRowView: View {
                 }
                 VStack(alignment: .leading) {
                     if isExpanded {
-                        Text(bidDescription)
+                        Text(bid.propFromEng ?? "")
                             .multilineTextAlignment(.leading)
                             .font(.footnote)
                             .foregroundStyle(.secondary)
