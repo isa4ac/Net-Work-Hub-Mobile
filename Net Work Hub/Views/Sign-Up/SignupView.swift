@@ -14,6 +14,7 @@ struct SignupView: View {
     @State var firstName = String()
     @State var lastName = String()
     @State var businessName = String()
+    @State var businessLocation = String()
     @State var businessDescription = String()
     var body: some View {
         NavigationStack {
@@ -21,20 +22,33 @@ struct SignupView: View {
                 Section{
                     TextField("Email", text: $email)
                     SecureField("Password", text: $password)
-                    SecureField("Re-type Passwod", text: $password2)
+                    SecureField("Re-type Password", text: $password2)
                 }
                 
                 Section {
                     TextField("First Name", text: $firstName)
                     TextField("Last Name", text: $lastName)
                     TextField("Business Name", text: $businessName)
+                    TextField("Business Locaiton", text: $businessLocation)
                     TextField("Write a desciption of your business",
                               text: $businessDescription,
                               axis: .vertical)
                     .lineLimit(6...)
                 }
             }
-            .navigationTitle("Sign-up")
+            Spacer()
+            PrimaryButton(text: "Sign Up", action: {
+                // sign-up service logic here
+            })
+            .padding(.horizontal)
+            .navigationTitle("Sign Up")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Done") {
+                        // sign-up service logic here
+                    }
+                }
+            }
         }
     }
 }

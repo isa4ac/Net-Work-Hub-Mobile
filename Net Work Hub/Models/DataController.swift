@@ -227,4 +227,33 @@ class DataController: ObservableObject {
             completion()
         })
     }
+    
+    func signUp(_ email: String, _ password: String, _ firstName: String,
+                _ lastName: String, completion: @escaping () -> ()) {
+        let params = ["email" : email,
+                      "password" : password,
+                      "first_name" : firstName,
+                      "last_name" : lastName]
+//                      "target_date" : job.serverFormatDateString(from: job.targetDate ?? "")] // TODO: FORMAT DATE PASSED INTO SERVICE
+        
+        NWHConnector().generatePostRequest("postjob", params, onSuccess: { data, response in
+            if let response = response as? HTTPURLResponse {
+                guard (200 ... 299) ~= response.statusCode else { // check for http errors
+                    print("statusCode should be 2xx, but is \(response.statusCode)")
+                    print("response = \(response)")
+                    completion()
+                    return
+                }
+                completion()
+            } else {
+                print("error occured calling addUserJob api function")
+                completion()
+            }
+        }, onError: { error in
+            // TO-DO: Display error alert
+            print("error occured calling postjob api: ")
+            print(error.localizedDescription)
+            completion()
+        })
+    }
 }
