@@ -23,7 +23,7 @@ struct NWHTextEntryRowView: View {
                 TextField(label, text: $text, prompt: Text(prompt))
                     .multilineTextAlignment(.trailing)
                     .numbersOnly($text, isCurrency: true)
-                    
+                
             } else if format == .percent {
                 HStack {
                     TextField(label, text: $text, prompt: Text(prompt))
@@ -31,6 +31,11 @@ struct NWHTextEntryRowView: View {
                         .numbersOnly($text, includeDecimal: true)
                     Text("%")
                 }
+            } else if format == .secure {
+                SecureField(text: $text, label: {
+                    Text(prompt)
+                })
+                .multilineTextAlignment(.trailing)
             } else {
                 TextField(label, text: $text, prompt: Text(prompt))
                     .multilineTextAlignment(.trailing)
@@ -68,6 +73,7 @@ enum BaseFormat {
     case string
     case currency
     case percent
+    case secure
 }
 
 
