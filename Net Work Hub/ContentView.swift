@@ -14,9 +14,10 @@ struct ContentView: View {
         if (isLoading) {
             ProgressView()
                 .onFirstAppear {
-                    // TODO: UPDATE FOR AUTH
                     dataController.userLogin("", "", completion: {
-                        isLoading = false
+                        dataController.getTimeZones {
+                            isLoading = false
+                        }
                     })
                 }
         } else {

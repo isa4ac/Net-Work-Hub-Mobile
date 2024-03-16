@@ -11,7 +11,7 @@ class DataController: ObservableObject {
     
     @Published var currentUser = User()
     @Published var activeJobs = [Job]()
-//    @Published var completedJobs = [Job]()
+    @Published var timeZones = [Timezone]()
     
     let numbers = "01234567890"
     
@@ -209,6 +209,20 @@ class DataController: ObservableObject {
         }, onError: { error in
             // TO-DO: Display error alert
             print("error occured calling updateUserProfile api: ")
+            print(error.localizedDescription)
+            completion()
+        })
+    }
+    
+    func getTimeZones(completion: @escaping () -> ()) {
+        NWHConnector().generateGetRequest("gettimezones", onSuccess: { data, response in
+            if let timeZones = self.decodeData(data, [Timezone].self) {
+                self.timeZones = timeZones
+                completion()
+            }
+        }, onError: { error in
+            // TO-DO: Display error alert
+            print("error occured calling jobbids api: ")
             print(error.localizedDescription)
             completion()
         })

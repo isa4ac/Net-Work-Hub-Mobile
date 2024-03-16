@@ -34,6 +34,7 @@
 		11A47B392BA4BF5400059904 /* SelectTextOnEditingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A47B382BA4BF5400059904 /* SelectTextOnEditingModifier.swift */; };
 		11A47B402BA51B8500059904 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A47B3F2BA51B8500059904 /* SignInView.swift */; };
 		11A47B432BA525EF00059904 /* UpdateProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A47B422BA525EF00059904 /* UpdateProfileView.swift */; };
+		11A47B452BA622BC00059904 /* Timezone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A47B442BA622BC00059904 /* Timezone.swift */; };
 		11BAA6B32B9FB55900C5BDEE /* JobBiddersView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BAA6B22B9FB55900C5BDEE /* JobBiddersView+ViewModel.swift */; };
 		11CEED982B68D8A000ADB6EA /* BidderRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CEED972B68D8A000ADB6EA /* BidderRowView.swift */; };
 		11D2EDA32B0EC8B400E1F0F5 /* NWHConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D2EDA22B0EC8B400E1F0F5 /* NWHConnector.swift */; };
@@ -72,6 +73,7 @@
 		11A47B382BA4BF5400059904 /* SelectTextOnEditingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTextOnEditingModifier.swift; sourceTree = "<group>"; };
 		11A47B3F2BA51B8500059904 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		11A47B422BA525EF00059904 /* UpdateProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileView.swift; sourceTree = "<group>"; };
+		11A47B442BA622BC00059904 /* Timezone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timezone.swift; sourceTree = "<group>"; };
 		11BAA6B22B9FB55900C5BDEE /* JobBiddersView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JobBiddersView+ViewModel.swift"; sourceTree = "<group>"; };
 		11CEED972B68D8A000ADB6EA /* BidderRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidderRowView.swift; sourceTree = "<group>"; };
 		11D2EDA22B0EC8B400E1F0F5 /* NWHConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWHConnector.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				11D2EDA42B0EE76B00E1F0F5 /* DataController.swift */,
 				117BE77B2B748A850043378C /* JobBid.swift */,
 				1166C3592B9A3A8D007C6D8C /* EngineerProfile.swift */,
+				11A47B442BA622BC00059904 /* Timezone.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				11833F682B130D4000F16AB7 /* String.swift in Sources */,
 				11048CFC2B0C3C1F0069A8C6 /* AddEditJobView.swift in Sources */,
 				117BE77C2B748A850043378C /* JobBid.swift in Sources */,
+				11A47B452BA622BC00059904 /* Timezone.swift in Sources */,
 				11048D012B0C3C5B0069A8C6 /* AddEditJobView+ViewModel.swift in Sources */,
 				11BAA6B32B9FB55900C5BDEE /* JobBiddersView+ViewModel.swift in Sources */,
 				113FA0A32AFDA31800403AFC /* DashboardView+ViewModel.swift in Sources */,
