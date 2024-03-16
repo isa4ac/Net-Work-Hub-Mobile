@@ -805,7 +805,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C00905FE-03EF-4AC5-855F-6396E2EA19E0"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Net Work Hub/Views/Job/Add or Edit Job/ViewModel/AddEditJobView+ViewModel.swift"

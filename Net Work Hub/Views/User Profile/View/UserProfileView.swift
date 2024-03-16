@@ -14,11 +14,12 @@ struct UserProfileView: View {
     // Placeholder data for demonstration
     var profileImage: Image = Image(systemName: "person.crop.circle.fill") // TODO: Add to user object
     @State var engineerId = ""
-    @State var user: User = User()
+    @State var showEditView = false
     
     var body: some View {
         if engineerId != "" && viewModel.isLoading {
-            ProgressView().onFirstAppear {
+            ProgressView()
+                .onFirstAppear {
                 dataController.getEngProfile(engineerId, completion: { engProf in
                     viewModel.engProfile = engProf
                     viewModel.isLoading = false
@@ -55,14 +56,14 @@ struct UserProfileView: View {
                         }
                     }
                 } else {
-                    Text((user.firstName ?? "") + " " + (user.lastName ?? ""))
+                    Text((dataController.currentUser.firstName ?? "") + " " + (dataController.currentUser.lastName ?? ""))
                         .font(.title)
                         .fontWeight(.bold)
                     
                     List {
-                        Text(user.businessName ?? "")
+                        Text(dataController.currentUser.businessName ?? "")
                             .foregroundStyle(.secondary)
-                        Text(user.bio ?? "")
+                        Text(dataController.currentUser.bio ?? "")
                             .foregroundStyle(.secondary)
                     }
                 }
@@ -79,7 +80,11 @@ struct UserProfileView: View {
             }
             .navigationBarItems(trailing: engineerId == "" ? Button("Edit") {
                 // TODO: Edit logic here
+                showEditView = true
             } : nil)
+            .navigationDestination(isPresented: $showEditView) {
+                UpdateProfileView()
+            }
         }
     }
 }

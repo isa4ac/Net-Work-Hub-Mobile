@@ -37,10 +37,10 @@ class EngineerProfile: Codable, Equatable {
         id = try contianer.decode(String.self, forKey: .id)
         firstName = try contianer.decode(String.self, forKey: .firstName)
         lastName = try contianer.decode(String.self, forKey: .lastName)
-        timeZone = try contianer.decode(String.self, forKey: .timeZone)
-        experience = try contianer.decode(Double.self, forKey: .experience)
-        jobsDone = try contianer.decode(Int.self, forKey: .jobsDone)
-        avgReview = try contianer.decode(Double.self, forKey: .avgReview)
+        timeZone = try contianer.decodeIfPresent(String.self, forKey: .timeZone)
+        experience = try contianer.decodeIfPresent(Double.self, forKey: .experience)
+        jobsDone = try contianer.decodeIfPresent(Int.self, forKey: .jobsDone)
+        avgReview = try contianer.decodeIfPresent(Double.self, forKey: .avgReview)
         bio = try contianer.decode(String.self, forKey: .bio)
     }
     

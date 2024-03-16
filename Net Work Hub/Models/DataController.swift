@@ -54,7 +54,7 @@ class DataController: ObservableObject {
             }
         }, onError: { error in
             // TO-DO: Display error alert
-            print("error occured calling user-login api: ")
+            print("error occured calling login api: ")
             print(error.localizedDescription)
 //            completion() DO NOT COMPLETE WITHOUT LOGIN SUCCESS
         })
@@ -74,12 +74,12 @@ class DataController: ObservableObject {
                 self.activeJobs.removeAll(where: {$0.id == jobId})
                 completion()
             } else {
-                print("error occured calling addUserJob api function")
+                print("error occured calling deleteUserJob api function")
                 completion()
             }
         }, onError: { error in
             // TO-DO: Display error alert
-            print("error occured calling job-business-list-active api: ")
+            print("error occured calling removejob api: ")
             print(error.localizedDescription)
             completion()
         })
@@ -97,7 +97,7 @@ class DataController: ObservableObject {
             }
         }, onError: { error in
             // TO-DO: Display error alert
-            print("error occured calling job-business-list-active api: ")
+            print("error occured calling businessJobs api: ")
             print(error.localizedDescription)
             completion()
         })
@@ -125,7 +125,7 @@ class DataController: ObservableObject {
             }
         }, onError: { error in
             // TO-DO: Display error alert
-            print("error occured calling job-business-post api: ")
+            print("error occured calling postjob api: ")
             print(error.localizedDescription)
             completion()
         })
@@ -148,19 +148,19 @@ class DataController: ObservableObject {
                 }
                 completion()
             } else {
-                print("error occured calling addUserJob api function")
+                print("error occured calling updateUserJob api function")
                 completion()
             }
         }, onError: { error in
             // TO-DO: Display error alert
-            print("error occured calling job-business-post api: ")
+            print("error occured calling updatejob api: ")
             print(error.localizedDescription)
             completion()
         })
     }
     
     func getEngProfile(_ id: String, completion: @escaping (EngineerProfile) -> ()) {
-        let params = ["id" : "user-data-13cfdabb-0293-4cda-82fd-b90229994d96"] // TODO: remove once linked
+        let params = ["id" : id] // TODO: remove once linked
         
         NWHConnector().generateGetRequest("engProf", params, onSuccess: { data, response in
             if let engProf = self.decodeData(data, EngineerProfile.self) {
@@ -168,7 +168,7 @@ class DataController: ObservableObject {
             }
         }, onError: { error in
             // TO-DO: Display error alert
-            print("error occured calling user-login api: ")
+            print("error occured calling engProf api: ")
             print(error.localizedDescription)
             completion(EngineerProfile())
         })
@@ -183,9 +183,34 @@ class DataController: ObservableObject {
             }
         }, onError: { error in
             // TO-DO: Display error alert
-            print("error occured calling user-login api: ")
+            print("error occured calling jobbids api: ")
             print(error.localizedDescription)
             completion([JobBid]())
+        })
+    }
+    
+    func updateUserProfile(_ userId: String, _ bName: String, _ bio: String, completion: @escaping () -> ()) {
+        let params = ["user_id" : userId,
+                      "business_name" : bName,
+                      "bio" : bio]
+        NWHConnector().generatePostRequest("updateprofile", params, onSuccess: { data, response in
+            if let response = response as? HTTPURLResponse {
+                guard (200 ... 299) ~= response.statusCode else { // check for http errors
+                    print("statusCode should be 2xx, but is \(response.statusCode)")
+                    print("response = \(response)")
+                    completion()
+                    return
+                }
+                completion()
+            } else {
+                print("error occured calling updateUserProfile api function")
+                completion()
+            }
+        }, onError: { error in
+            // TO-DO: Display error alert
+            print("error occured calling updateUserProfile api: ")
+            print(error.localizedDescription)
+            completion()
         })
     }
 }
