@@ -10,37 +10,56 @@ import SwiftUI
 
 extension AddEditJobView {
     class ViewModel: ObservableObject {
+        @Published var title = String()
         @Published var targetDate = Date()
         @Published var targetBudget = String()
-        @Published var showAlert = false
+        @Published var description = String()
         @Published var errorMessage = String()
-        @Published var preEditJob = Job()
+        @Published var showExitAlert = false
+        @Published var showValidationAlert = false
         
-        func saveJob(_ job: Job) {
-            preEditJob = job
-        }
-        
-        func wasEditted(_ job: Job) -> Bool {
-            if job == preEditJob {
-                return false
+        func wasEditted(_ job: Job, _ isNew: Bool) -> Bool {
+            if isNew { // don't check date if it is a new job
+                if job.title == title &&
+                    job.targetBudget == getTargetBudgetDouble() &&
+                    job.details == description {
+                    return false
+                }
+                return true
+            } else {
+                if job.title == title &&
+                    job.targetDate == getTargetDateString(job) &&
+                    job.targetBudget == getTargetBudgetDouble() &&
+                    job.details == description {
+                    return false
+                }
+                return true
             }
-            return true
         }
         
-        func loadValues(_ job: Job) {
-            targetDate = job.stringToDate(job.targetDate ?? "")
-            targetBudget = String(format: "$%.2f", job.targetBudget ?? 0.00)
+        func getTargetDateString(_ job: Job) -> String {
+            job.serverFormatDateString(from: job.dateToString(targetDate))
         }
         
-        func saveValues(_ job: Job) {
-            job.targetDate = job.serverFormatDateString(from: job.dateToString(targetDate))
-
+        func getTargetBudgetDouble() -> Double {
             let formatter = NumberFormatter()
             formatter.numberStyle = .currency
 
             if let number = formatter.number(from: targetBudget) {
-                job.targetBudget = Double(number.doubleValue)
+                return Double(number.doubleValue)
             }
+            return 0.0
+        }
+        
+        func loadValues(_ job: Job) {
+            title = job.title ?? ""
+            targetDate = job.stringToDate(job.targetDate ?? "")
+            if job.targetDate == nil || job.targetBudget == 0.00 {
+                targetBudget = ""
+            } else {
+                targetBudget = String(format: "$%.2f", job.targetBudget ?? 0.00)
+            }
+            description = job.details ?? ""
         }
         
         func controlsValid(_ job: Job) -> Bool {
@@ -57,12 +76,15 @@ extension AddEditJobView {
         
         func addJob(_ job: Job, isNew: Bool, completion: @escaping () -> (), _ dataController: DataController) {
             if !controlsValid(job) {
-                showAlert.toggle()
+                showValidationAlert = true
+                showValidationAlert.toggle()
                 return
             }
             
-            // save target date and target budget
-            saveValues(job)
+            job.title = title
+            job.targetBudget = getTargetBudgetDouble()
+            job.targetDate = getTargetDateString(job)
+            job.details = description
             
             if isNew {
                 dataController.addUserJob(job, completion: { completion() })

@@ -21,7 +21,7 @@ struct AddEditJobView: View {
                 Form {
                     Section {
                         NWHTextEntryRowView(label: "Post Title",
-                                            text: $job.title.toUnwrapped(defaultValue: ""),
+                                            text: $viewModel.title,
                                             prompt: "Required")
                         // TODO: MAKE A PICKER FOR CATAGORY ONCE IT HAS BEEN INTEGRATED IN API
                         NWHTextEntryRowView(label: "Target Budget",
@@ -37,7 +37,7 @@ struct AddEditJobView: View {
                     
                     Section {
                         TextField("Write a desciption of the desired outcome of the job...",
-                                  text: $job.details.toUnwrapped(defaultValue: ""),
+                                  text: $viewModel.description,
                                   axis: .vertical)
                         .lineLimit(6...)
                     }
@@ -61,9 +61,18 @@ struct AddEditJobView: View {
                 .padding()
             }
             .navigationTitle(isNewJob ? "Create Job Post" : "Update Job Post")
-            .alert(isPresented: $viewModel.showAlert, content: {
+            .alert(isPresented: $viewModel.showValidationAlert, content: {
                 Alert(title: Text(viewModel.errorMessage))
             })
+            .alert("Are you sure you want to leave without saving changes?", isPresented: $viewModel.showExitAlert) {
+                Button("Yes, leave") {
+                    viewModel.showExitAlert = false
+                    isPresented = false
+                }
+                Button("Stay") {
+                    viewModel.showExitAlert = false
+                }
+            }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(isNewJob ? "Post" : "Update") {
@@ -76,9 +85,9 @@ struct AddEditJobView: View {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Cancel") {
                         // check if there where any edits, from the original
-                        if viewModel.wasEditted(job) {
+                        if viewModel.wasEditted(job, isNewJob) {
                             // send alert her
-                            
+                            viewModel.showExitAlert = true
                         } else { // if no changes:
                             isPresented = false
                         }
@@ -87,7 +96,6 @@ struct AddEditJobView: View {
             }
             .onAppear {
                 viewModel.loadValues(job)
-                viewModel.saveJob(job)
             }
             .navigationBarBackButtonHidden(true)
         }
