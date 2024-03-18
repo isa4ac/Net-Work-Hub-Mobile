@@ -13,44 +13,49 @@ extension DashboardView {
         NavigationStack {
             List {
                 Section {
-                    ForEach(dataController.activeJobs.sorted(by: {
-                        compairDate($0.targetDate ?? "", lessThan: $1.targetDate ?? "")
-                    }), id: \.id) { job in
-                        NavigationLink {
-                            JobPreviewView(job: job)
-                        } label: {
-                            JobRowView(job: job)
-                        }
-                        .swipeActions(allowsFullSwipe: false) {
-                            Button("Delete", role: .cancel) {
-                                if job.isOpen() {
-                                    viewModel.deleteEditJobID = job.id
-                                    viewModel.showConfirmation = true
-                                } else {
-                                    viewModel.setDeleteAlert()
-                                    viewModel.showWarning = true
-                                }
+                    if dataController.activeJobs.count < 1 {
+                        Text("No Jobs Posted.")
+                            .foregroundStyle(.secondary)
+                    } else {
+                        ForEach(dataController.activeJobs.sorted(by: {
+                            compairDate($0.targetDate ?? "", lessThan: $1.targetDate ?? "")
+                        }), id: \.id) { job in
+                            NavigationLink {
+                                JobPreviewView(job: job)
+                            } label: {
+                                JobRowView(job: job)
                             }
-                            .tint(Color.red)
-                            Button("Edit", role: .cancel) {
-                                if job.isOpen() {
-                                    viewModel.editJob = job
-                                    viewModel.showEditJob = true
-                                } else {
-                                    viewModel.setEditAlert()
-                                    viewModel.showWarning = true
+                            .swipeActions(allowsFullSwipe: false) {
+                                Button("Delete", role: .cancel) {
+                                    if job.isOpen() {
+                                        viewModel.deleteEditJobID = job.id
+                                        viewModel.showConfirmation = true
+                                    } else {
+                                        viewModel.setDeleteAlert()
+                                        viewModel.showWarning = true
+                                    }
                                 }
+                                .tint(Color.red)
+                                Button("Edit", role: .cancel) {
+                                    if job.isOpen() {
+                                        viewModel.editJob = job
+                                        viewModel.showEditJob = true
+                                    } else {
+                                        viewModel.setEditAlert()
+                                        viewModel.showWarning = true
+                                    }
+                                }
+                                .tint(Color.blue)
                             }
-                            .tint(Color.blue)
-                        }
-                        .confirmationDialog(
-                            Text("Are you sure you want to delete this job?"),
-                            isPresented: $viewModel.showConfirmation,
-                            titleVisibility: .visible
-                        ) {
-                            Button("Delete", role: .destructive) {
-                                dataController.deleteUserJob(jobId: viewModel.deleteEditJobID, completion: { })
-                                viewModel.isLoading = true
+                            .confirmationDialog(
+                                Text("Are you sure you want to delete this job?"),
+                                isPresented: $viewModel.showConfirmation,
+                                titleVisibility: .visible
+                            ) {
+                                Button("Delete", role: .destructive) {
+                                    dataController.deleteUserJob(jobId: viewModel.deleteEditJobID, completion: { })
+                                    viewModel.isLoading = true
+                                }
                             }
                         }
                     }
