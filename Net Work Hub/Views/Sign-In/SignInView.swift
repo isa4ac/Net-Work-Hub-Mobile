@@ -13,7 +13,7 @@ struct SignInView: View {
     @State var password = String()
     @State var showSignUpView = false
     @State var showDashboardView = false
-    @State var showLoading = false
+    @State var showAlert = false
     var body: some View {
         NavigationStack {
             VStack {
@@ -47,11 +47,14 @@ struct SignInView: View {
                                 .stroke(.secondary, lineWidth: 1)
                         )
                     PrimaryButton(text: "Login", action: {
-                        showLoading = true
                         DispatchQueue.main.async {
                             dataController.userLogin(email, password, completion: {
-                                showLoading = false
-                                showDashboardView = true
+                                if dataController.currentUser.id == "" {
+                                     // toggle alert display
+                                    showAlert = true
+                                } else {
+                                    showDashboardView = true
+                                }
                             })
                         }
                     })
@@ -68,7 +71,9 @@ struct SignInView: View {
                     .environmentObject(dataController)
             }
         }
-        
+        .alert(isPresented: $showAlert, content: {
+            Alert(title: Text("Invalid Credentials."), message: Text("Either your email, password, or both is incorrect."))
+        })
         .fullScreenCover(isPresented: $showDashboardView) {
             DashboardView()
                 .environmentObject(dataController)

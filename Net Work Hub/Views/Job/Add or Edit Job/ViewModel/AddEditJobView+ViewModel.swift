@@ -75,16 +75,16 @@ extension AddEditJobView {
         }
         
         func addJob(_ job: Job, isNew: Bool, completion: @escaping () -> (), _ dataController: DataController) {
+            job.title = title
+            job.targetBudget = getTargetBudgetDouble()
+            job.targetDate = getTargetDateString(job)
+            job.details = description
+            
             if !controlsValid(job) {
                 showValidationAlert = true
                 showValidationAlert.toggle()
                 return
             }
-            
-            job.title = title
-            job.targetBudget = getTargetBudgetDouble()
-            job.targetDate = getTargetDateString(job)
-            job.details = description
             
             if isNew {
                 dataController.addUserJob(job, completion: { completion() })

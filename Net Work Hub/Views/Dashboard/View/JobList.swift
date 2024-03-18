@@ -65,7 +65,7 @@ extension DashboardView {
             .listSectionSpacing(20)
         }
         .alert(isPresented: $viewModel.showWarning, content: { viewModel.alert })
-        .navigationDestination(isPresented: $viewModel.showAddJob) {
+        .fullScreenCover(isPresented: $viewModel.showAddJob) {
             AddEditJobView(isPresented: $viewModel.showAddJob, isMainLoading: $viewModel.isLoading, isNewJob: true)
                 .environmentObject(Job())
         }
