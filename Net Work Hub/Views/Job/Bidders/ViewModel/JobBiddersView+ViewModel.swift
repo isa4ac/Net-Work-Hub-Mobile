@@ -17,6 +17,7 @@ enum SortBy {
 }
 
 extension JobBiddersView {
+    @MainActor
     class ViewModel: ObservableObject {
         @Published var jobBids = [JobBid]()
         @Published var sortBy = SortBy.priceAsc

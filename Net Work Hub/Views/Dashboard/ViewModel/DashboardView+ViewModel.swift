@@ -8,6 +8,7 @@
 import SwiftUI
 
 extension DashboardView {
+    @MainActor
     class ViewModel: ObservableObject {
         @Published var isLoading = true
         @Published var user = User()

@@ -25,29 +25,34 @@ struct JobBiddersView: View {
         } else {
             NavigationStack {
                 List {
-                    // Loop through each bidder to create a GridRow
-                    ForEach(viewModel.jobBids.sorted(by: {
-                        switch(viewModel.sortBy) {
-                        case .priceAsc:
-                            return $0.propAmount ?? 0.0 < $1.propAmount ?? 0.0
-                        case .priceDes:
-                            return $0.propAmount ?? 0.0 > $1.propAmount ?? 0.0
-                        case .jobsAsc:
-                            return $0.jobsDone ?? 0 < $1.jobsDone ?? 0
-                        case .jobsDes:
-                            return $0.jobsDone ?? 0 > $1.jobsDone ?? 0
-                        case .yearsAsc:
-                            return $0.experience ?? 0 < $1.experience ?? 0
-                        case .yearsDes:
-                            return $0.experience ?? 0 > $1.experience ?? 0
+                    if viewModel.jobBids.count < 1 {
+                        Text("No bids yet.")
+                            .foregroundStyle(.secondary)
+                    } else {
+                        // Loop through each bidder to create a GridRow
+                        ForEach(viewModel.jobBids.sorted(by: {
+                            switch(viewModel.sortBy) {
+                            case .priceAsc:
+                                return $0.propAmount ?? 0.0 < $1.propAmount ?? 0.0
+                            case .priceDes:
+                                return $0.propAmount ?? 0.0 > $1.propAmount ?? 0.0
+                            case .jobsAsc:
+                                return $0.jobsDone ?? 0 < $1.jobsDone ?? 0
+                            case .jobsDes:
+                                return $0.jobsDone ?? 0 > $1.jobsDone ?? 0
+                            case .yearsAsc:
+                                return $0.experience ?? 0 < $1.experience ?? 0
+                            case .yearsDes:
+                                return $0.experience ?? 0 > $1.experience ?? 0
+                            }
+                        }), id: \.id) { bid in
+                            BidderRowView(bid: bid, onAccept: {
+                                
+                            }, onDecline: {
+                                
+                            })
+                            .listRowSeparator(.hidden)
                         }
-                    }), id: \.id) { bid in
-                        BidderRowView(bid: bid, onAccept: {
-                            
-                        }, onDecline: {
-                            
-                        })
-                        .listRowSeparator(.hidden)
                     }
                 }
                 .navigationTitle("Job Bidders")

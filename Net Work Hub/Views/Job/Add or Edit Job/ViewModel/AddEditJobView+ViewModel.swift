@@ -74,7 +74,7 @@ extension AddEditJobView {
             return true
         }
         
-        func addJob(_ job: Job, isNew: Bool, completion: @escaping () -> (), _ dataController: DataController) {
+        @MainActor func addJob(_ job: Job, isNew: Bool, completion: @escaping () -> (), _ dataController: DataController) {
             job.title = title
             job.targetBudget = getTargetBudgetDouble()
             job.targetDate = getTargetDateString(job)

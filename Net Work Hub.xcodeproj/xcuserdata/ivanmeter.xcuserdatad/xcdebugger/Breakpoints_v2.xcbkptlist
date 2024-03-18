@@ -139,8 +139,8 @@
             filePath = "Net Work Hub/Models/DataController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "addUserJob(_:completion:)"
             landmarkType = "7">
             <Locations>
@@ -187,8 +187,8 @@
             filePath = "Net Work Hub/Models/DataController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "addUserJob(_:completion:)"
             landmarkType = "7">
             <Locations>
@@ -235,8 +235,8 @@
             filePath = "Net Work Hub/Models/DataController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "addUserJob(_:completion:)"
             landmarkType = "7">
             <Locations>
@@ -379,13 +379,13 @@
             filePath = "Net Work Hub/Models/DataController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "decodeData(_:_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "4854002D-FBE5-4190-8A4B-0CBB95C07954 - 10fa262e7e78e882"
+                  uuid = "4854002D-FBE5-4190-8A4B-0CBB95C07954 - 10fa262e7e78e8ad"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -395,12 +395,12 @@
                   urlString = "file:///Users/ivanmeter/Desktop/Net%20Work%20Hub/Net%20Work%20Hub/Models/DataController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "824">
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "1296">
                </Location>
                <Location
-                  uuid = "4854002D-FBE5-4190-8A4B-0CBB95C07954 - 10fa262e7e78e882"
+                  uuid = "4854002D-FBE5-4190-8A4B-0CBB95C07954 - 10fa262e7e78e8ad"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -410,23 +410,8 @@
                   urlString = "file:///Users/ivanmeter/Desktop/Net%20Work%20Hub/Net%20Work%20Hub/Models/DataController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "1000">
-               </Location>
-               <Location
-                  uuid = "4854002D-FBE5-4190-8A4B-0CBB95C07954 - 10fa262e7e78e882"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Net_Work_Hub.DataController.decodeData&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(Foundation.Data, &#x3c4;_0_0.Type) -&gt; Swift.Optional&lt;&#x3c4;_0_0&gt;"
-                  moduleName = "Net Work Hub"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ivanmeter/Desktop/Net%20Work%20Hub/Net%20Work%20Hub/Models/DataController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
                   offsetFromSymbolStart = "1100">
                </Location>
             </Locations>
@@ -442,10 +427,42 @@
             filePath = "Net Work Hub/Models/DataController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "decodeData(_:_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9BD5549F-9165-4FBD-88EA-55E4366C06D0 - 10fa262e7e78eb6f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Net_Work_Hub.DataController.decodeData&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(Foundation.Data, &#x3c4;_0_0.Type) -&gt; Swift.Optional&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "Net Work Hub"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ivanmeter/Desktop/Net%20Work%20Hub/Net%20Work%20Hub/Models/DataController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "1580">
+               </Location>
+               <Location
+                  uuid = "9BD5549F-9165-4FBD-88EA-55E4366C06D0 - 10fa262e7e78eb0e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Net_Work_Hub.DataController.decodeData&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(Foundation.Data, &#x3c4;_0_0.Type) -&gt; Swift.Optional&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "Net Work Hub"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ivanmeter/Desktop/Net%20Work%20Hub/Net%20Work%20Hub/Models/DataController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "1580">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -458,10 +475,42 @@
             filePath = "Net Work Hub/Models/DataController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "decodeData(_:_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "89321C8A-80D5-4FB1-ACE7-A767CFBA958A - 10fa262e7e78eb8a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Net_Work_Hub.DataController.decodeData&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(Foundation.Data, &#x3c4;_0_0.Type) -&gt; Swift.Optional&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "Net Work Hub"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ivanmeter/Desktop/Net%20Work%20Hub/Net%20Work%20Hub/Models/DataController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "3392">
+               </Location>
+               <Location
+                  uuid = "89321C8A-80D5-4FB1-ACE7-A767CFBA958A - 10fa262e7e78eb8a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Net_Work_Hub.DataController.decodeData&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(Foundation.Data, &#x3c4;_0_0.Type) -&gt; Swift.Optional&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "Net Work Hub"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ivanmeter/Desktop/Net%20Work%20Hub/Net%20Work%20Hub/Models/DataController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "2808">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -474,10 +523,42 @@
             filePath = "Net Work Hub/Models/DataController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "decodeData(_:_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "688BD0EA-6CB9-43E9-8D10-623F37458F0D - 10fa262e7e78ea36"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Net_Work_Hub.DataController.decodeData&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(Foundation.Data, &#x3c4;_0_0.Type) -&gt; Swift.Optional&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "Net Work Hub"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ivanmeter/Desktop/Net%20Work%20Hub/Net%20Work%20Hub/Models/DataController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "4572">
+               </Location>
+               <Location
+                  uuid = "688BD0EA-6CB9-43E9-8D10-623F37458F0D - 10fa262e7e78ea36"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Net_Work_Hub.DataController.decodeData&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(Foundation.Data, &#x3c4;_0_0.Type) -&gt; Swift.Optional&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "Net Work Hub"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ivanmeter/Desktop/Net%20Work%20Hub/Net%20Work%20Hub/Models/DataController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "3976">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -490,10 +571,42 @@
             filePath = "Net Work Hub/Models/DataController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "decodeData(_:_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9D11F62F-9FAA-4079-9118-9CCBAF49DC1C - 10fa262e7e78ea93"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Net_Work_Hub.DataController.decodeData&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(Foundation.Data, &#x3c4;_0_0.Type) -&gt; Swift.Optional&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "Net Work Hub"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ivanmeter/Desktop/Net%20Work%20Hub/Net%20Work%20Hub/Models/DataController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "5092">
+               </Location>
+               <Location
+                  uuid = "9D11F62F-9FAA-4079-9118-9CCBAF49DC1C - 10fa262e7e78eab2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Net_Work_Hub.DataController.decodeData&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(Foundation.Data, &#x3c4;_0_0.Type) -&gt; Swift.Optional&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "Net Work Hub"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ivanmeter/Desktop/Net%20Work%20Hub/Net%20Work%20Hub/Models/DataController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "5092">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -666,8 +779,8 @@
             filePath = "Net Work Hub/Models/DataController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "getUserJobs(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -890,8 +1003,8 @@
             filePath = "Net Work Hub/Models/DataController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
+            startingLineNumber = "246"
+            endingLineNumber = "246"
             landmarkName = "signUp(_:_:_:_:_:_:_:_:completion:)"
             landmarkType = "7">
             <Locations>
@@ -938,8 +1051,8 @@
             filePath = "Net Work Hub/Models/DataController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "244"
-            endingLineNumber = "244"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
             landmarkName = "signUp(_:_:_:_:_:_:_:_:completion:)"
             landmarkType = "7">
             <Locations>

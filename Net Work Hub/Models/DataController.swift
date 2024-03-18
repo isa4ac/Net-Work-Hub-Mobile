@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 class DataController: ObservableObject {
     @Published var currentUser = User()
     @Published var activeJobs = [Job]()
