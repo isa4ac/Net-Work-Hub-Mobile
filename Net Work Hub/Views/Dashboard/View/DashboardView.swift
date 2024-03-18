@@ -11,16 +11,16 @@ struct DashboardView: View {
     @EnvironmentObject var dataController: DataController
     @StateObject var viewModel = ViewModel()
     var body: some View {
-        if viewModel.isLoading {
-            ProgressView()
-                .onFirstAppear {
-                    dataController.getUserJobs(completion: {
-                        viewModel.isLoading = false
-                    })
-                }
-        } else {
-            ZStack {
-                NavigationStack {
+        NavigationStack {
+            if viewModel.isLoading {
+                ProgressView()
+                    .onFirstAppear {
+                        dataController.getUserJobs(completion: {
+                            viewModel.isLoading = false
+                        })
+                    }
+            } else {
+                ZStack {
                     jobList
                         .toolbar {
                             ToolbarItem(placement: .topBarTrailing) {
@@ -33,9 +33,9 @@ struct DashboardView: View {
                         }
                         .navigationTitle("Dashboard")
                 }
-            }
-            .refreshable {
-                viewModel.isLoading = true
+                .refreshable {
+                    viewModel.isLoading = true
+                }
             }
         }
     }

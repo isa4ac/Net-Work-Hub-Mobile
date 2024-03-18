@@ -34,14 +34,14 @@ class User: Codable, ObservableObject, Equatable {
     
     required init(from decoder: Decoder) throws {
         let contianer = try decoder.container(keyedBy: CodingKeys.self)
-        id = try contianer.decode(String.self, forKey: .id)
-        role = try contianer.decode(String.self, forKey: .role)
+        id = try contianer.decodeIfPresent(String.self, forKey: .id) ?? ""
+        role = try contianer.decodeIfPresent(String.self, forKey: .role)
         timezone = try contianer.decodeIfPresent(String.self, forKey: .timezone)
-        email = try contianer.decode(String.self, forKey: .email)
-        firstName = try contianer.decode(String.self, forKey: .firstName)
-        lastName = try contianer.decode(String.self, forKey: .lastName)
-        businessName = try contianer.decode(String.self, forKey: .businessName)
-        bio = try contianer.decode(String.self, forKey: .bio)
+        email = try contianer.decodeIfPresent(String.self, forKey: .email)
+        firstName = try contianer.decodeIfPresent(String.self, forKey: .firstName)
+        lastName = try contianer.decodeIfPresent(String.self, forKey: .lastName)
+        businessName = try contianer.decodeIfPresent(String.self, forKey: .businessName)
+        bio = try contianer.decodeIfPresent(String.self, forKey: .bio)
     }
     
     init() {

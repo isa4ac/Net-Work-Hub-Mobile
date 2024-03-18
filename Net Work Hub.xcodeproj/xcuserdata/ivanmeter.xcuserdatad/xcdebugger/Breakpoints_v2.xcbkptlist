@@ -139,8 +139,8 @@
             filePath = "Net Work Hub/Models/DataController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "addUserJob(_:completion:)"
             landmarkType = "7">
             <Locations>
@@ -187,8 +187,8 @@
             filePath = "Net Work Hub/Models/DataController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "addUserJob(_:completion:)"
             landmarkType = "7">
             <Locations>
@@ -235,8 +235,8 @@
             filePath = "Net Work Hub/Models/DataController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "addUserJob(_:completion:)"
             landmarkType = "7">
             <Locations>
@@ -357,7 +357,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D37F003E-AF68-4DE6-B32B-7ABB27F7DAB9"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Net Work Hub/Models/User.swift"
@@ -379,10 +379,57 @@
             filePath = "Net Work Hub/Models/DataController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "decodeData(_:_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4854002D-FBE5-4190-8A4B-0CBB95C07954 - 10fa262e7e78e882"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Net_Work_Hub.DataController.decodeData&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(Foundation.Data, &#x3c4;_0_0.Type) -&gt; Swift.Optional&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "Net Work Hub"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ivanmeter/Desktop/Net%20Work%20Hub/Net%20Work%20Hub/Models/DataController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "824">
+               </Location>
+               <Location
+                  uuid = "4854002D-FBE5-4190-8A4B-0CBB95C07954 - 10fa262e7e78e882"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Net_Work_Hub.DataController.decodeData&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(Foundation.Data, &#x3c4;_0_0.Type) -&gt; Swift.Optional&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "Net Work Hub"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ivanmeter/Desktop/Net%20Work%20Hub/Net%20Work%20Hub/Models/DataController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "1000">
+               </Location>
+               <Location
+                  uuid = "4854002D-FBE5-4190-8A4B-0CBB95C07954 - 10fa262e7e78e882"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Net_Work_Hub.DataController.decodeData&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(Foundation.Data, &#x3c4;_0_0.Type) -&gt; Swift.Optional&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "Net Work Hub"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ivanmeter/Desktop/Net%20Work%20Hub/Net%20Work%20Hub/Models/DataController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "1100">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -395,8 +442,8 @@
             filePath = "Net Work Hub/Models/DataController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "decodeData(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -411,8 +458,8 @@
             filePath = "Net Work Hub/Models/DataController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "decodeData(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -427,8 +474,8 @@
             filePath = "Net Work Hub/Models/DataController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "decodeData(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -443,8 +490,8 @@
             filePath = "Net Work Hub/Models/DataController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "decodeData(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -619,8 +666,8 @@
             filePath = "Net Work Hub/Models/DataController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "getUserJobs(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -852,17 +899,129 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "60460309-66BD-4815-96AC-4E39FCA7D5F2"
-            shouldBeEnabled = "No"
+            uuid = "AA915E85-FA72-4DB7-A01A-44F7AC9943B6"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Net Work Hub/ContentView.swift"
+            filePath = "Net Work Hub/Views/Sign-Up/SignupView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "body"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "29FF434D-DE94-4EEA-A74D-1C7D1B2E92A4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Net Work Hub/Views/Sign-Up/SignupView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7E3065BF-5523-469A-B976-C8B88F47BEBB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Net Work Hub/Models/DataController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
+            landmarkName = "signUp(_:_:_:_:_:_:_:_:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7E3065BF-5523-469A-B976-C8B88F47BEBB - c005ca8e54b2b969"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.Data, __C.NSURLResponse) -&gt; () in Net_Work_Hub.DataController.signUp(_: Swift.String, _: Swift.String, _: Swift.String, _: Swift.String, _: Swift.String, _: Swift.String, _: Swift.String, _: Swift.String, completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "Net Work Hub"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ivanmeter/Desktop/Net%20Work%20Hub/Net%20Work%20Hub/Models/DataController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "245"
+                  endingLineNumber = "245"
+                  offsetFromSymbolStart = "664">
+               </Location>
+               <Location
+                  uuid = "7E3065BF-5523-469A-B976-C8B88F47BEBB - c005ca8e54b2b969"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.Data, __C.NSURLResponse) -&gt; () in Net_Work_Hub.DataController.signUp(_: Swift.String, _: Swift.String, _: Swift.String, _: Swift.String, _: Swift.String, _: Swift.String, _: Swift.String, _: Swift.String, completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "Net Work Hub"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ivanmeter/Desktop/Net%20Work%20Hub/Net%20Work%20Hub/Models/DataController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "245"
+                  endingLineNumber = "245"
+                  offsetFromSymbolStart = "468">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "35955241-A4C0-4988-9C29-BC03406EB3AF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Net Work Hub/Models/DataController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
+            landmarkName = "signUp(_:_:_:_:_:_:_:_:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "35955241-A4C0-4988-9C29-BC03406EB3AF - c005ca8e54b2b948"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.Data, __C.NSURLResponse) -&gt; () in Net_Work_Hub.DataController.signUp(_: Swift.String, _: Swift.String, _: Swift.String, _: Swift.String, _: Swift.String, _: Swift.String, _: Swift.String, _: Swift.String, completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "Net Work Hub"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ivanmeter/Desktop/Net%20Work%20Hub/Net%20Work%20Hub/Models/DataController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "244"
+                  endingLineNumber = "244"
+                  offsetFromSymbolStart = "196">
+               </Location>
+               <Location
+                  uuid = "35955241-A4C0-4988-9C29-BC03406EB3AF - c005ca8e54b2b948"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.Data, __C.NSURLResponse) -&gt; () in Net_Work_Hub.DataController.signUp(_: Swift.String, _: Swift.String, _: Swift.String, _: Swift.String, _: Swift.String, _: Swift.String, _: Swift.String, _: Swift.String, completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "Net Work Hub"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ivanmeter/Desktop/Net%20Work%20Hub/Net%20Work%20Hub/Models/DataController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "244"
+                  endingLineNumber = "244"
+                  offsetFromSymbolStart = "124">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -8,7 +8,6 @@
 import Foundation
 
 class DataController: ObservableObject {
-    
     @Published var currentUser = User()
     @Published var activeJobs = [Job]()
     @Published var timeZones = [Timezone]()
@@ -41,23 +40,23 @@ class DataController: ObservableObject {
         }
     }
     
-    func userLogin(_ username: String, _ password: String, completion: @escaping () -> ()) {
+    func userLogin(_ email: String, _ password: String, completion: @escaping () -> ()) {
         // TODO: UPDATE ONCE AUTHENTICATION IS WORKING INCLUDE USERNAME AND PASS IN PARAMS
         
-        let params = ["email" : "user@example.com",
-                      "password": "12344321abcddcba"]
+        let params = ["email" : email,
+                      "password": password]
         
-        NWHConnector().generateGetRequest("login", params, onSuccess: { data, response in
-            if let user = self.decodeData(data, User.self) {
-                self.currentUser = user
-                completion()
-            }
-        }, onError: { error in
-            // TO-DO: Display error alert
-            print("error occured calling login api: ")
-            print(error.localizedDescription)
-//            completion() DO NOT COMPLETE WITHOUT LOGIN SUCCESS
-        })
+            NWHConnector().generateGetRequest("login", params, onSuccess: { data, response in
+                if let user = self.decodeData(data, User.self) {
+                    self.currentUser = user
+                    completion()
+                }
+            }, onError: { error in
+                // TO-DO: Display error alert
+                print("error occured calling login api: ")
+                print(error.localizedDescription)
+    //            completion() DO NOT COMPLETE WITHOUT LOGIN SUCCESS
+            })
     }
     
     func deleteUserJob(jobId: String, completion: @escaping () -> ()) {
@@ -229,29 +228,33 @@ class DataController: ObservableObject {
     }
     
     func signUp(_ email: String, _ password: String, _ firstName: String,
-                _ lastName: String, completion: @escaping () -> ()) {
+                _ lastName: String, _ timeZone: String, _ businessName: String,
+                _ businessLocation: String, _ bio: String, completion: @escaping () -> ()) {
         let params = ["email" : email,
                       "password" : password,
                       "first_name" : firstName,
-                      "last_name" : lastName]
-//                      "target_date" : job.serverFormatDateString(from: job.targetDate ?? "")] // TODO: FORMAT DATE PASSED INTO SERVICE
+                      "last_name" : lastName,
+                      "time_zone" : timeZone,
+                      "business_name": businessName,
+                      "business_location": businessLocation,
+                      "bio": bio]
         
-        NWHConnector().generatePostRequest("postjob", params, onSuccess: { data, response in
+        
+        NWHConnector().generatePostRequest("business_signup", params, onSuccess: { data, response in
             if let response = response as? HTTPURLResponse {
-                guard (200 ... 299) ~= response.statusCode else { // check for http errors
-                    print("statusCode should be 2xx, but is \(response.statusCode)")
-                    print("response = \(response)")
+                if let newUser = self.decodeData(data, User.self) {
+                    self.currentUser = newUser
                     completion()
-                    return
                 }
                 completion()
+                return
             } else {
-                print("error occured calling addUserJob api function")
+                print("error occured calling signUp api function")
                 completion()
             }
         }, onError: { error in
             // TO-DO: Display error alert
-            print("error occured calling postjob api: ")
+            print("error occured calling business_signup api: ")
             print(error.localizedDescription)
             completion()
         })

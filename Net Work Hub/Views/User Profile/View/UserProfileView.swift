@@ -15,7 +15,7 @@ struct UserProfileView: View {
     var profileImage: Image = Image(systemName: "person.crop.circle.fill") // TODO: Add to user object
     @State var engineerId = ""
     @State var showEditView = false
-    
+    @State var showLoginView = false
     var body: some View {
         if engineerId != "" && viewModel.isLoading {
             ProgressView()
@@ -73,6 +73,9 @@ struct UserProfileView: View {
                 if engineerId == "" {
                     PrimaryButton(text: "Log Out", action: {
                         // TODO: logout logic here
+                        dataController.currentUser = User()
+                        dataController.activeJobs = [Job]()
+                        showLoginView = true
                     })
                     .padding(.bottom)
                     .padding(.horizontal)
@@ -84,6 +87,9 @@ struct UserProfileView: View {
             } : nil)
             .navigationDestination(isPresented: $showEditView) {
                 UpdateProfileView()
+            }
+            .fullScreenCover(isPresented: $showLoginView) {
+                SignInView()
             }
         }
     }

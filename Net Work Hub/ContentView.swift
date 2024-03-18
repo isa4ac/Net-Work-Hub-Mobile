@@ -14,14 +14,12 @@ struct ContentView: View {
         if (isLoading) {
             ProgressView()
                 .onFirstAppear {
-                    dataController.userLogin("", "", completion: {
-                        dataController.getTimeZones {
-                            isLoading = false
-                        }
-                    })
+                    dataController.getTimeZones {
+                        isLoading = false
+                    }
                 }
         } else {
-            DashboardView()
+            SignInView()
                 .environmentObject(dataController)
         }
     }

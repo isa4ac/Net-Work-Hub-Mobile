@@ -26,6 +26,7 @@ struct UpdateProfileView: View {
                     dataController.currentUser.bio = bio
                 })
             })
+            .padding(.horizontal)
         }
         .onFirstAppear {
             bName = dataController.currentUser.businessName ?? ""
